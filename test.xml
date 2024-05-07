@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="css/formTeiHeader.css"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" xml:id="B_D579_Lesetext">
+<teiHeader>
+    <fileDesc>
+        <titleStmt>
+            <title></title>
+            <author></author>
+            <respStmt>
+                <resp></resp>
+                <name></name>
+            </respStmt>
+            <respStmt>
+                <resp></resp>
+                <name></name>
+            </respStmt>
+        </titleStmt>
+        <publicationStmt>
+            <distributor></distributor>
+            <address>
+                <addrLine></addrLine>
+            </address>
+            <idno></idno>
+            <availability>
+                <p></p>
+            </availability>
+            <date></date>
+        </publicationStmt>
+        <sourceDesc>
+            <bibl></bibl>
+        </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+        <projectDesc>
+            <p></p>
+        </projectDesc>
+        <editorialDecl>
+            <correction>
+                <p></p>
+            </correction>
+            <normalization>
+                <p></p>
+            </normalization>
+        </editorialDecl>
+    </encodingDesc>
+    <revisionDesc>
+        <list>
+            <item>
+                <date></date></item>
+            <item>
+                <date></date></item>
+        </list>
+    </revisionDesc>
+</teiHeader>
+</TEI>
