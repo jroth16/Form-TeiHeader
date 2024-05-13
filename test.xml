@@ -3,33 +3,41 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" xml:id="">
 <teiHeader>
     <fileDesc>
-        <titleStmt>
-            <title></title>
-            <author></author>
-            <respStmt>
-                <resp></resp>
-                <name></name>
-            </respStmt>
-            <respStmt>
-                <resp></resp>
-                <name></name>
-            </respStmt>
-        </titleStmt>
-        <publicationStmt>
-            <distributor></distributor>
-            <address>
-                <addrLine></addrLine>
-            </address>
-            <idno></idno>
-            <availability>
-                <p></p>
-            </availability>
-            <date></date>
-        </publicationStmt>
-        <sourceDesc>
-            <bibl></bibl>
-        </sourceDesc>
-    </fileDesc>
+            <titleStmt>
+                <title type="main"/>
+                <title type="sub"/>
+                <author>
+                    <persName>
+                        <surname></surname>
+                        <forename></forename>
+                    </persName>
+                </author>
+                <respStmt/>
+            </titleStmt>
+            <publicationStmt>
+                <distributor/>
+                <address>
+                    <addrLine/>
+                </address>
+                <idno/>
+                <availability>
+                    <p/>
+                </availability>
+                <date/>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl type=""/>
+                <biblFull>
+                    <titlestmt>
+                        <title level=""/>
+                        <author>
+                            <forename/>
+                            <surname/>
+                        </author>
+                    </titlestmt>
+                </biblFull>
+            </sourceDesc>
+        </fileDesc>
     <encodingDesc>
         <projectDesc>
             <p></p>

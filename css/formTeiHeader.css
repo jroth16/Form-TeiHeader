@@ -50,6 +50,7 @@ titleStmt::after{
         arg-fragment, '<author xmlns="http://www.tei-c.org/ns/1.0"><persName><surname></surname><forename></forename></persName></author>'
     ));
 }
+        
 title[type="main"]::before {
     content: "Titel";
 }
@@ -126,6 +127,7 @@ respStmt note::before, respStmt note::after {
 titleStatement {
     display: inline-block;
 }
+
 
 editor::before, ref::before, teiHeader p, repository::before, surname::after, forename::before, forename::after, orgName::before, orgName::after, note::before, email::before, date::before, availability::before, availability::after, idno::after,settlement::before, settlement::after, pubPlace::before, repository::after, physDesc::after, encodingDesc::after {
     content:"\a";
