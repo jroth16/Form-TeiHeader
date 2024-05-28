@@ -181,10 +181,6 @@ teiHeader note{
      visibility: -oxy-collapse-text;
 }
 
-biblFull {
-    content: "Bibliografische Beschreibung: \a ";
-}
-
 sourceDesc titleStmt {
     display:none;
 }
@@ -241,6 +237,10 @@ addrLine{
                 columns, 40,
                 fontInherit,true);
      visibility: -oxy-collapse-text;
+}
+
+address::before {
+    display:none;
 }
 
 pubPlace{

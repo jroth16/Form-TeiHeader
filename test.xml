@@ -12,52 +12,69 @@
                         <forename></forename>
                     </persName>
                 </author>
-                <respStmt/>
+                <editor>
+                    <persName>
+                        <surname></surname>
+                        <forename></forename>
+                    </persName>
+                </editor>
+                <respStmt>
+                    <orgName></orgName>
+                    <resp>
+                        <note></note>
+                        <ref></ref>
+                    </resp>
+                </respStmt>
             </titleStmt>
+            <editonStmt>
+                <edition></edition>
+            </editonStmt>
             <publicationStmt>
-                <distributor/>
-                <address>
-                    <addrLine/>
-                </address>
-                <idno/>
+                <publisher>
+                    <orgName role="hostingInstitution"></orgName>
+                    <orgName role="project"></orgName>
+                    <email></email>
+                    <address>
+                        <addrLine></addrLine>
+                    </address>
+                </publisher>
+                <pubPlace></pubPlace>
+                <date type="publication"></date>
+                <date type="firstPublication"></date>
                 <availability>
-                    <p/>
+                    <licence>
+                        <p></p>
+                    </licence>
                 </availability>
-                <date/>
+                <idno>
+                    <idno resp=""></idno>
+                    <idno type="URLWeb"></idno>
+                </idno>
             </publicationStmt>
             <sourceDesc>
-                <bibl type=""/>
-                <biblFull>
-                    <titlestmt>
-                        <title level=""/>
-                        <author>
-                            <forename/>
-                            <surname/>
-                        </author>
-                    </titlestmt>
-                </biblFull>
+                <bibl type=""></bibl>
+                <msDesc>
+                    <msIdentifier>
+                        <settlement></settlement>
+                        <repository></repository>
+                    </msIdentifier>
+                    <physDesc>
+                        <typeDesc>
+                            <p></p>
+                        </typeDesc>
+                    </physDesc>
+                </msDesc>
             </sourceDesc>
         </fileDesc>
     <encodingDesc>
-        <projectDesc>
-            <p></p>
-        </projectDesc>
         <editorialDecl>
-            <correction>
-                <p></p>
-            </correction>
-            <normalization>
-                <p></p>
-            </normalization>
+            <p></p>
         </editorialDecl>
     </encodingDesc>
-    <revisionDesc>
-        <list>
-            <item>
-                <date></date></item>
-            <item>
-                <date></date></item>
-        </list>
-    </revisionDesc>
+    <profileDesc>
+        <langUsage>
+            <language ident=""></language>
+        </langUsage>
+    </profileDesc>
 </teiHeader>
 </TEI>
