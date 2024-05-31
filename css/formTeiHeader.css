@@ -10,7 +10,7 @@
   
 /* TEIHEADER */
 TEI::before{
-    content: "TEI Dokument\a" "ID" 
+    content: "TEI Dokument\a" "ID:" 
         oxy_textfield(
             edit, '@xml:id',
             columns, 40,
@@ -26,7 +26,7 @@ titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sour
     padding: 1em;
     margin: 0 0 0.5em 0;
 }
-titleStmt, teiHeader, fileDesc, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc{
+titleStmt, teiHeader, fileDesc, fileDesc > publicationStmt, fileDesc > editionStmt, sourceDesc, encodingDesc, profileDesc{
     content: "";
     display: block;
 }
@@ -113,7 +113,7 @@ forename{
 }
 
 editor {
-    content:"Editor: \a ";
+    content:"Editor/in: \a ";
 }
 
 editor::after {
@@ -129,7 +129,7 @@ titleStatement {
 }
 
 
-editor::before, ref::before, teiHeader p, repository::before, surname::after, forename::before, forename::after, orgName::before, orgName::after, note::before, email::before, date::before, availability::before, availability::after, idno::after,settlement::before, settlement::after, pubPlace::before, repository::after, physDesc::after, encodingDesc::after {
+editor::before, ref::before, teiHeader p, repository::before, surname::after, forename::before, forename::after, orgName::before, orgName::after, note::before, email::before, date::before, availability::before, availability::after, idno::after, idno[type]::before,settlement::before, settlement::after, pubPlace::before, repository::after, physDesc::after, encodingDesc::after {
     content:"\a";
     white-space: pre;
 }
@@ -143,6 +143,7 @@ orgName{
                 fontInherit,true);
      visibility: -oxy-collapse-text;
 }
+
 orgName[role="hostingInstitution"]{
     content:
         oxy_label(text, "Name der ausrichtenden Institution: ")
@@ -152,6 +153,7 @@ orgName[role="hostingInstitution"]{
                 fontInherit,true);
      visibility: -oxy-collapse-text;
 }
+
 orgName[role="project"]{
     content:
         oxy_label(text, "Name des Projekts: ")
@@ -161,7 +163,6 @@ orgName[role="project"]{
                 fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 
 oxy|comment {
     display:none !important;
@@ -206,7 +207,13 @@ edition{
 }
 
 ref {
-    content: "Referenz: " attr(target);
+    content: 
+        oxy_label(text,"Referenz: " attr(target))
+            oxy_textfield(
+            edit, '@target',
+            columns, 40,
+            fontInherit,true);
+    visibility: -oxy-collapse-text;;
 }
 
 publisher{
@@ -280,6 +287,34 @@ idno:has(>idno[resp]) {
     content:"Identifikation: \a ";
 }
 
+idno[resp]::before{
+    content:
+        oxy_label(text, "Identifikator " attr(resp))
+            oxy_textfield(
+            edit, 'resp',
+            columns, 20,
+            fontInherit,true);
+    visibility: -oxy-collapse-text;
+}
+
+idno [resp] {
+    content:
+            oxy_textfield(
+                edit, "#text",
+                columns, 60,
+                fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+idno[resp]::after {
+    content: oxy_button(action, oxy_action(
+        name, "Add Idno",
+        description, "Inserts idno to the TEIHeader",
+        operation, "InsertFragmentOperation",
+        arg-fragment, '<idno xmlns="http://www.tei-c.org/ns/1.0" resp=""></idno>'
+    ));
+}
+
 idno[type="URLWeb"]{
     content:
         oxy_label(text, "URL: ")
@@ -288,6 +323,10 @@ idno[type="URLWeb"]{
                 columns, 60,
                 fontInherit,true);
      visibility: -oxy-collapse-text;
+}
+
+bibl {
+    content:"Bibliographische Beschreibung: \a";
 }
 
 settlement{
@@ -308,6 +347,10 @@ repository{
             columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
+}
+
+repository::after {
+    display:none;
 }
 
 physDesc::before {
