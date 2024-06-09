@@ -27,7 +27,7 @@
                 </respStmt>
             </titleStmt>
             <editonStmt>
-                <edition></edition>
+                <edition><date></date></edition>
             </editonStmt>
             <publicationStmt>
                 <publisher>
@@ -38,6 +38,12 @@
                         <addrLine></addrLine>
                     </address>
                 </publisher>
+                <distributor>
+                    <orgName></orgName>
+                    <address>
+                        <addrLine></addrLine>
+                    </address>
+                </distributor>
                 <pubPlace></pubPlace>
                 <date type="publication"></date>
                 <date type="firstPublication"></date>
@@ -67,14 +73,28 @@
             </sourceDesc>
         </fileDesc>
     <encodingDesc>
+        <samplingDecl>
+            <p></p>
+        </samplingDecl>
         <editorialDecl>
             <p></p>
         </editorialDecl>
+        <classDecl>
+            
+        </classDecl>
     </encodingDesc>
     <profileDesc>
+        <creation><date></date></creation>
         <langUsage>
             <language ident=""></language>
         </langUsage>
     </profileDesc>
+    <revisionDesc>
+        <listChange>
+            <change who="">
+                    <p/>
+                </change>
+        </listChange>
+    </revisionDesc>
 </teiHeader>
 </TEI>

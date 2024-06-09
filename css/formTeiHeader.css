@@ -283,13 +283,13 @@ availability{
     content:"Verfügbarkeit: ";
 }
 
-idno:has(>idno[resp]) {
+availability::after {
     content:"Identifikation: \a ";
 }
 
 idno[resp]::before{
     content:
-        oxy_label(text, "Identifikator " attr(resp))
+        oxy_label(text, "\a Identifikator " attr(resp))
             oxy_textfield(
             edit, 'resp',
             columns, 20,
@@ -297,7 +297,7 @@ idno[resp]::before{
     visibility: -oxy-collapse-text;
 }
 
-idno [resp] {
+idno[resp] {
     content:
             oxy_textfield(
                 edit, "#text",
@@ -306,7 +306,7 @@ idno [resp] {
      visibility: -oxy-collapse-text;
 }
 
-idno[resp]::after {
+idno::before {
     content: oxy_button(action, oxy_action(
         name, "Add Idno",
         description, "Inserts idno to the TEIHeader",
