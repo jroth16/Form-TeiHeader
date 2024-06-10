@@ -77,13 +77,22 @@ title[level]{
      visibility: -oxy-collapse-text;
 }
 
-author persName{
-    content: "Autor/in: \a ";
+author > persName::before{
+    content: 
+        oxy_button(action, oxy_action(
+            name, "Autor hinzufügen",
+            description, "Inserts idno to the TEIHeader",
+            operation, "InsertFragmentOperation",
+            arg-fragment, '<persName xmlns="http://www.tei-c.org/ns/1.0"><surname></surname><forename></forename></persName>'
+        )) 
 }
-
+author surname::before{
+    content:
+        oxy_label(text, "\a Autor/in: ")
+}
 surname{
     content:
-        oxy_label(text, "Nachname: ")
+        oxy_label(text, "\a Nachname: ")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -104,50 +113,33 @@ forename{
      visibility: -oxy-collapse-text;
 }
 
-/* author::after{
+
+author::before {
     content: 
-        oxy_button(action,oxy_action(
-            name, "Add Author",
-            description, "Inserts personal dto the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<author xmlns="http://www.tei-c.org/ns/1.0"><persName><surname></surname><forename></forename></persName></author>'
-           ))
-       " "
-       oxy_button(action, oxy_action(
-            name, "Delete Author",
-            description, "Delete the author",
-            operation, "DeleteElementOperation")
-        );
-}*/
-author{
-    content: 
-        oxy_button(action,oxy_action(
-            name, "Add Author",
-            description, "Inserts personal dto the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<author xmlns="http://www.tei-c.org/ns/1.0"><persName><surname></surname><forename></forename></persName></author>'
-           ))
-       " "
-       oxy_button(action, oxy_action(
-            name, "Delete Author",
-            description, "Delete the author",
-            operation, "DeleteElementOperation")
-        );
+        oxy_label(text, "Autor(en): \a")
 }
 
 editor {
-    content:"Editor: \a ";
+    content:"Editor(en): \a ";
 }
 
-editor::after {
-    content: oxy_button(action, oxy_action(
-        name, "Add Editor",
-        description, "Inserts personal dto the TEIHeader",
-        operation, "InsertFragmentOperation",
-        arg-fragment, '<editor xmlns="http://www.tei-c.org/ns/1.0"><persName><surname></surname><forename></forename></persName></editor>'
-    ));
+editor > persName::before{
+    content: 
+        oxy_button(action, oxy_action(
+            name, "Editor hinzufügen",
+            description, "Inserts idno to the TEIHeader",
+            operation, "InsertFragmentOperation",
+            arg-fragment, '<persName xmlns="http://www.tei-c.org/ns/1.0"><surname></surname><forename></forename></persName>'
+        )) 
+}
+editor surname::before{
+    content:
+        oxy_label(text, "\a Editor/in: ")
 }
 
+editor::after{
+    display:none;
+}
 
 respStmt note::before, respStmt note::after {
     display:none;
