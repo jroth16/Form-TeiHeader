@@ -8,73 +8,94 @@
                 <title type="sub"/>
                 <author>
                     <persName>
-                        <surname></surname>
-                        <forename></forename>
+                        <surname/>
+                        <forename/>
                     </persName>
                 </author>
                 <editor>
                     <persName>
-                        <surname></surname>
-                        <forename></forename>
+                        <surname/><forename/>
                     </persName>
                 </editor>
                 <respStmt>
-                    <orgName></orgName>
-                    <resp>
-                        <note></note>
-                        <ref></ref>
-                    </resp>
+                    <orgName/><note/>
+                    <ref/>
                 </respStmt>
             </titleStmt>
-            <editonStmt>
-                <edition></edition>
-            </editonStmt>
+            <editionStmt>
+                <edition><date/></edition>
+            </editionStmt>
             <publicationStmt>
                 <publisher>
-                    <orgName role="hostingInstitution"></orgName>
-                    <orgName role="project"></orgName>
-                    <email></email>
+                    <orgName role="hostingInstitution"/>
+                    <orgName role="project"/>
+                    <email/>
                     <address>
-                        <addrLine></addrLine>
+                        <addrLine/>
                     </address>
                 </publisher>
-                <pubPlace></pubPlace>
-                <date type="publication"></date>
-                <date type="firstPublication"></date>
+                <distributor>
+                    <orgName/>
+                    <address>
+                        <addrLine/>
+                    </address>
+                </distributor>
+                <pubPlace/>
+                <date type="publication"/>
+                <date type="firstPublication"/>
                 <availability>
                     <licence>
-                        <p></p>
+                        <p/>
                     </licence>
                 </availability>
                 <idno>
-                    <idno resp=""></idno>
-                    <idno type="URLWeb"></idno>
+                    <idno type=""/>
                 </idno>
             </publicationStmt>
             <sourceDesc>
-                <bibl type=""></bibl>
+                <bibl type=""/>
                 <msDesc>
                     <msIdentifier>
-                        <settlement></settlement>
-                        <repository></repository>
+                        <settlement/>
+                        <repository/>
                     </msIdentifier>
                     <physDesc>
                         <typeDesc>
-                            <p></p>
+                            <p/>
                         </typeDesc>
                     </physDesc>
                 </msDesc>
             </sourceDesc>
         </fileDesc>
     <encodingDesc>
+        <samplingDecl>
+            <p></p>
+        </samplingDecl>
         <editorialDecl>
             <p></p>
         </editorialDecl>
+        <classDecl>
+            
+        </classDecl>
     </encodingDesc>
     <profileDesc>
+        <creation><date></date></creation>
         <langUsage>
             <language ident=""></language>
         </langUsage>
+        <textClass>
+            <keywords>
+                <term></term>
+            </keywords>
+            <classCode></classCode>
+        </textClass>
     </profileDesc>
+    <revisionDesc>
+            <listChange>
+                <change when="" who="">
+                    <p/>
+                </change>
+            </listChange>
+        </revisionDesc>
 </teiHeader>
 </TEI>
