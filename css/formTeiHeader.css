@@ -26,13 +26,16 @@ TEI::before{
     display:block;;
     color:  #5A5A5A;
     font-size: 1.2em;
+    white-space:nowrap;
 }
+
 titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, revisionDesc{
     border: 1px solid #5A5A5A;
     border-radius: 4px;
     padding: 1em;
     margin: 0 0 0.5em 0;
 }
+
 titleStmt, teiHeader, fileDesc, fileDesc > publicationStmt, fileDesc > editionStmt, sourceDesc, encodingDesc, profileDesc{
     content: "";
     display: block;
@@ -43,11 +46,10 @@ titleStmt::before, title[type="main"]::before, title[type="sub"]::before{
     color: #5A5A5A;
 }
 
-editor::before, ref::before, teiHeader p, repository::before, surname::after, forename::before, forename::after, orgName::before, orgName::after, note::before, email::before, availability::before, availability::after, idno::after, idno[type]::before,settlement::before, settlement::after, pubPlace::before, repository::after, physDesc::after, encodingDesc::after, edition::after {
+teiHeader p, repository::before, forename::before, forename::after, orgName::before, note::before, availability::before, availability::after, idno::after, idno[type]::before,settlement::before, settlement::after, repository::after, physDesc::after, encodingDesc::after, edition::after, date::before {
     content:"\a";
     white-space: pre;
 }
-
 oxy|comment {
     display:none !important;
 }
@@ -77,7 +79,6 @@ forename{
 
 teiHeader p{
     content:
-        oxy_label(text, "Beschreibung: ")
         oxy_textArea(
             edit, "#text",
             columns, 60,
@@ -117,18 +118,9 @@ titleStmt{
     -oxy-foldable: true;
 }
 
-titleStmt::after{
-    content: oxy_button(action, oxy_action(
-        name, "Add Author",
-        description, "Inserts personal dto the TEIHeader",
-        operation, "InsertFragmentOperation",
-        arg-fragment, '<author xmlns="http://www.tei-c.org/ns/1.0"><persName><surname></surname><forename></forename></persName></author>'
-    ));
-}
-
 title[type="main"] {
     content: 
-        oxy_label(text,"Titel")
+        oxy_label(text,"Titel: ")
         oxy_textfield(
             edit, '#text',
             columns, 40,
@@ -139,7 +131,7 @@ title[type="main"] {
 
 title[type="sub"]{
     content:  
-        oxy_label(text,"Untertitel")
+        oxy_label(text,"Untertitel: ")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -176,7 +168,7 @@ surname::after {
 }
 forename{
     content:
-        oxy_label(text, "Vorname:")
+        oxy_label(text, "Vorname: ")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -211,10 +203,10 @@ editor::after{
 orgName{
     content:
         oxy_label(text, "Name der Institution: ")
-            oxy_textfield(
-                edit, "#text",
-                columns, 40,
-                fontInherit,true);
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
      visibility: -oxy-collapse-text;
 }
 
@@ -243,9 +235,10 @@ ref {
 }
 
 /* editionStmt */
-editionStmt{
+editionStmt::before{
     content: 
-        oxy_label(text,"Angabe zur Ausgabe: ")
+        oxy_label(text,"Angabe zur Ausgabe ");
+    white-space: nowrap;
 }
 
 edition{
@@ -259,10 +252,10 @@ edition{
 }
 
 /* publicationStmt */
-publicationStmt {
+publicationStmt::before {
     content:
-        oxy_label(text,"Angaben zur Veröffentlichung: \a ");
-    display: block !important;
+        oxy_label(text,"Angaben zur Veröffentlichung \a ");
+    white-space: nowrap;
 }
 
 publisher{
@@ -306,7 +299,6 @@ email{
 
 addrLine{
     content:
-        oxy_label(text, "Adresse: ")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -314,8 +306,19 @@ addrLine{
      visibility: -oxy-collapse-text;
 }
 
-address::before {
-    content:" \a";
+address::before{
+    content:
+        oxy_label(text,"Adresse: ");
+}
+
+address::after {
+    content:
+        oxy_button(action, oxy_action(
+             name, "Adresszeile hinzufügen",
+             description, "Inserts idno to the TEIHeader",
+             operation, "InsertFragmentOperation",
+             arg-fragment, '<addrLine xmlns="http://www.tei-c.org/ns/1.0"></addrLine>'
+         ))
 }
 
 distributor{
@@ -342,7 +345,7 @@ date[type="publication"]{
         oxy_label(text,"Veröffentlichung: ")
         oxy_datePicker(
             columns, 10, 
-            edit, "@attribute",
+            edit, "@date",
             format, "yyyy-MM-dd");
 }
 date[type="firstPublication"]{
@@ -350,17 +353,18 @@ date[type="firstPublication"]{
         oxy_label(text,"Erstveröffentlichung: ")
         oxy_datePicker(
             columns, 10, 
-            edit, "@attribute",
+            edit, "@date",
             format, "yyyy-MM-dd");
 }
 
 availability{
-    content:"Verfügbarkeit: ";
+    content:
+        oxy_label(text,"Verfügbarkeit: \a");
 }
 
-availability::after {
+licence{
     content:
-        oxy_label(text,"Identifikation: \a ");
+        oxy_label(text,"Lizenz: \a");
 }
 
 idno[type]::before{
@@ -386,6 +390,10 @@ idno[type] {
 idno:has(idno)::before {
     content: 
         oxy_label(text, "Identifikation: \a")
+}
+
+idno:has(idno)::after {
+    content: 
         oxy_button(action, oxy_action(
             name, "Add Idno",
             description, "Inserts idno to the TEIHeader",
@@ -393,7 +401,6 @@ idno:has(idno)::before {
             arg-fragment, '<idno xmlns="http://www.tei-c.org/ns/1.0" type=""></idno>'
         ));
 }
-
 /* sourceDesc */
 sourceDesc titleStmt {
     display:none;
@@ -401,7 +408,7 @@ sourceDesc titleStmt {
 
 bibl {
     content:
-        oxy_label(text,"Bibliographische Beschreibung: \a");
+        oxy_label(text,"Bibliographische Beschreibung \a");
 }
 
 msDesc {
@@ -436,22 +443,18 @@ repository::after {
 physDesc::before {
     content: 
         oxy_label(text,"Physische Beschreibung: ") !important;
+        white-space:nowrap;
 }
 
 typeDesc{
     content:
         oxy_label(text, "Schriftbeschreibung: ")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text !important;
 }
 
 /* encodingDesc */
 encodingDesc{
     content:
-        oxy_label(text,"Kodierungsbeschreibung: ");
+        oxy_label(text,"Kodierungsbeschreibung ");
 }
 
 samplingDecl{
@@ -467,19 +470,20 @@ editorialDecl{
 /* profileDesc */
 profileDesc{
     content:
-        oxy_label(text,"Textprofilbeschreibung: ");
+        oxy_label(text,"Textprofilbeschreibung ");
 }
 
-creation {
+creation date {
     content:
         oxy_label(text, "Datei erstellt am: ")
         oxy_datePicker(
              columns, 10, 
-             edit, "@date",
+             edit, "date",
              format, "yyyy-MM-dd");
+     white-space:nowrap;
 }
 
-creation date::before {
+creation date::before{
     display:none;
 }
 
@@ -503,8 +507,8 @@ keywords::before{
         oxy_label(text,"Schlagwörter/Themen: \a")!important;
 }
 
-keywords{
-    content:
+keywords::after{
+    content:"\a"
         oxy_button(action, oxy_action(
             name, "Schlüsselwort hinzufügen",
             description, "Inserts idno to the TEIHeader",
@@ -544,6 +548,7 @@ revisionDesc {
 revisionDesc::after {
     display:none;
 }
+
 listChange::before {
     content: oxy_button(action, oxy_action(
         name, "Änderung hinzufügen",
@@ -552,17 +557,24 @@ listChange::before {
         arg-fragment, '<change xmlns="http://www.tei-c.org/ns/1.0" when="" who=""><p></p></change>'
     )) !important;
 }
+
 change::before{
     content:
-        oxy_label(text, "Datum: " attr(when))
+        oxy_label(text,"Datum: " attr(when))
         oxy_datePicker(
             columns, 10, 
             edit, "@when",
             format, "yyyy-MM-dd")
-        oxy_label(text, "Verantwortliche Person: " attr(who)) 
+        oxy_label(text, "\a Verantwortliche Person: " attr(who)) 
         oxy_textfield(
             edit, '@who',
             columns, 40,
             fontInherit,true)! important;
     visibility: -oxy-collapse-text;
+    white-space:nowrap;
+}
+
+change p::before{
+    content:
+        oxy_label(text, "Beschreibung der Änderung: ");
 }
