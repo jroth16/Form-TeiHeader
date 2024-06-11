@@ -77,7 +77,7 @@ title[level]{
      visibility: -oxy-collapse-text;
 }
 
-author > persName::before{
+author > persName::after{
     content: 
         oxy_button(action, oxy_action(
             name, "Autor hinzufügen",
@@ -123,7 +123,7 @@ editor {
     content:"Editor(en): \a ";
 }
 
-editor > persName::before{
+editor > persName::after{
     content: 
         oxy_button(action, oxy_action(
             name, "Editor hinzufügen",
