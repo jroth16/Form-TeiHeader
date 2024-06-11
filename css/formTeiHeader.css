@@ -125,7 +125,7 @@ titleStmt::after{
         arg-fragment, '<author xmlns="http://www.tei-c.org/ns/1.0"><persName><surname></surname><forename></forename></persName></author>'
     ));
 }
- 
+
 title[type="main"] {
     content: 
         oxy_label(text,"Titel")
@@ -136,6 +136,7 @@ title[type="main"] {
      visibility: -oxy-collapse-text;
      margin: 0;
 }
+
 title[type="sub"]{
     content:  
         oxy_label(text,"Untertitel")
@@ -147,17 +148,63 @@ title[type="sub"]{
      margin: 0;
 }
 
-author persName{
+author > persName::after{
     content: 
-        oxy_label(text,"Autor/in: \a");
+        oxy_button(action, oxy_action(
+            name, "Autor hinzufügen",
+            description, "Inserts idno to the TEIHeader",
+            operation, "InsertFragmentOperation",
+            arg-fragment, '<persName xmlns="http://www.tei-c.org/ns/1.0"><surname></surname><forename></forename></persName>'
+        )) 
 }
-
-editor {
+author surname::before{
     content:
-        oxy_label(text,"Editor/in: \a");
+        oxy_label(text, "\a Autor/in: ")
+}
+surname{
+    content:
+        oxy_label(text, "\a Nachname: ")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
 }
 
-editor::after {
+surname::after {
+    display:none;
+}
+forename{
+    content:
+        oxy_label(text, "Vorname:")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+
+author::before {
+    content: 
+        oxy_label(text, "Autor(en): \a")
+}
+
+editor > persName::after{
+    content: 
+        oxy_button(action, oxy_action(
+            name, "Editor hinzufügen",
+            description, "Inserts idno to the TEIHeader",
+            operation, "InsertFragmentOperation",
+            arg-fragment, '<persName xmlns="http://www.tei-c.org/ns/1.0"><surname></surname><forename></forename></persName>'
+        )) 
+}
+editor surname::before{
+    content:
+        oxy_label(text, "\a Editor/in: ")
+}
+
+editor::after{
     display:none;
 }
 
