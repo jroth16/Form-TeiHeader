@@ -49,11 +49,11 @@
                     </licence>
                 </availability>
                 <idno>
-                    <idno type=""/>
+                    <idno/>
                 </idno>
             </publicationStmt>
             <sourceDesc>
-                <bibl type=""/>
+                <bibl/>
                 <msDesc>
                     <msIdentifier>
                         <settlement/>

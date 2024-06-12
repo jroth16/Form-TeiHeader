@@ -119,7 +119,7 @@ titleStmt{
 }
 
 title[type="main"] {
-    content: 
+    content:
         oxy_label(text,"Titel: ")
         oxy_textfield(
             edit, '#text',
@@ -370,11 +370,11 @@ licence{
 idno[type]::before{
     content:
         oxy_label(text, "\a Art des Identifikators: " attr(type))
-        oxy_textfield(
-            edit, '@type',
-            columns, 20,
-            fontInherit,true);
-    visibility: -oxy-collapse-text;
+        oxy_combobox(           
+            edit, "@type",
+            editable, true,
+            values, "ISBN, ISSN, DOI, URI, VIAF, ESTC, OCLC",
+            labels, "ISBN, ISSN, DOI, URI, VIAF, ESTC, OCLC");
 }
 
 idno[type] {
@@ -408,7 +408,8 @@ sourceDesc titleStmt {
 
 bibl {
     content:
-        oxy_label(text,"Bibliographische Beschreibung \a");
+        oxy_label(text,"Bibliographische Beschreibung \a")
+        
 }
 
 msDesc {
@@ -493,8 +494,13 @@ language {
         oxy_textfield(
              edit, "#text",
              columns, 40,
-             fontInherit,true);
-     visibility: -oxy-collapse-text;
+             fontInherit,true)
+        oxy_label(text, "\a Sprachkürzel: ")
+        oxy_textfield(
+              edit, "@ident",
+              columns, 40,
+              fontInherit,true);
+        visibility: -oxy-collapse-text;  
 }
 
 textClass::before{
