@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="css/formTeiHeader.css"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" xml:id="">
-<teiHeader>
-    <fileDesc>
+    <teiHeader>
+        <fileDesc>
             <titleStmt>
                 <title type="main"/>
                 <title type="sub"/>
@@ -50,7 +50,7 @@
                 </availability>
                 <idno>
                     <idno/>
-                </idno>
+                    <idno type=""/></idno>
             </publicationStmt>
             <sourceDesc>
                 <bibl/>
@@ -67,35 +67,35 @@
                 </msDesc>
             </sourceDesc>
         </fileDesc>
-    <encodingDesc>
-        <samplingDecl>
-            <p></p>
-        </samplingDecl>
-        <editorialDecl>
-            <p></p>
-        </editorialDecl>
-        <classDecl>
-            
-        </classDecl>
-    </encodingDesc>
-    <profileDesc>
-        <creation><date></date></creation>
-        <langUsage>
-            <language ident=""></language>
-        </langUsage>
-        <textClass>
-            <keywords>
-                <term></term>
-            </keywords>
-            <classCode></classCode>
-        </textClass>
-    </profileDesc>
-    <revisionDesc>
+        <encodingDesc>
+            <samplingDecl>
+                <p/>
+            </samplingDecl>
+            <editorialDecl>
+                <p/>
+            </editorialDecl>
+            <classDecl> </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date/>
+            </creation>
+            <langUsage>
+                <language/>
+            </langUsage>
+            <textClass>
+                <keywords>
+                    <term/>
+                </keywords>
+                <classCode/>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
             <listChange>
-                <change who="">
+                <change who="" when="">
                     <p/>
                 </change>
             </listChange>
         </revisionDesc>
-</teiHeader>
+    </teiHeader>
 </TEI>
