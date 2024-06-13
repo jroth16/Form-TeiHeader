@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="css/formTeiHeader.css"?>
+<?xml-stylesheet type="text/css" href="css/main.css"?>
+<?xml-stylesheet type="text/css" href="css/letters.css"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" xml:id="">
     <teiHeader>
         <fileDesc>
@@ -14,8 +15,7 @@
                 </author>
                 <editor>
                     <persName>
-                        <surname/><forename/>
-                    </persName>
+                        <surname/><forename/></persName>
                 </editor>
                 <respStmt>
                     <orgName/><note/>
@@ -68,9 +68,6 @@
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
-            <samplingDecl>
-                <p/>
-            </samplingDecl>
             <editorialDecl>
                 <p/>
             </editorialDecl>
@@ -89,6 +86,13 @@
                 </keywords>
                 <classCode/>
             </textClass>
+            <correspDesc>
+                <correspAction type="">
+                    <persName></persName>
+                    <settlement></settlement>
+                    <date when=""></date>
+                </correspAction>
+            </correspDesc>
         </profileDesc>
         <revisionDesc>
             <listChange>

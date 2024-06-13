@@ -1,0 +1,53 @@
+@import url("../../Form-TeiHeader/css/main.css");
+
+/* profileDesc */
+correspDesc {
+    content:
+        oxy_label(text, "Korrespondenzbeschreibung");
+}
+
+correspAction[type]::before{
+    content:
+        oxy_label(text, "Art der Korrespondenzaktion: " attr(type))
+        oxy_combobox(           
+            edit, "@type",
+            editable, false,
+            values, "sent, received, transmitted, redirected, forwarded",
+            labels, "gesendet, erhalten, übermittelt,  umgeleitet, weitergeleitet");
+    white-space:nowrap;
+}
+
+correspAction[type] {
+    content:
+        oxy_label(text, "\a Korrespondenzaktion: ")
+        oxy_textfield(
+            edit, "#text",
+            columns, 60,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+correspAction::after{
+    content: 
+        oxy_button(action, oxy_action(
+            name, "Korrespondenzaktion hinzufügen",
+            description, "Inserts idno to the TEIHeader",
+            operation, "InsertFragmentOperation",
+            arg-fragment, '<correspAction xmlns="http://www.tei-c.org/ns/1.0" type=""><persName/><settlement/><date/></correspAction>'
+        ));
+}
+
+correspAction > persName {
+    content:
+        oxy_label(text, "Betreffende Person: ")
+        oxy_textfield(
+            edit, "#text",
+            columns, 60,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+correspAction > date::before {
+    content:
+        oxy_label(text, "Datum: ")
+}
