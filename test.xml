@@ -61,7 +61,7 @@
                 <note></note>
             </notesStmt>
             <sourceDesc>
-                <bibl/>
+                <bibl></bibl>
                 <msDesc>
                     <msIdentifier>
                         <settlement/>
@@ -76,10 +76,21 @@
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
+            <projectDesc>
+                <p/>
+            </projectDesc>
             <editorialDecl>
                 <p/>
             </editorialDecl>
-            <classDecl> </classDecl>
+            <classDecl>
+                <taxonomy xml:id=""><bibl/>
+                    <category xml:id="">
+                        <category xml:id="">
+                            <catDesc/>
+                        </category>
+                    </category>
+                </taxonomy>
+            </classDecl>
         </encodingDesc>
         <profileDesc>
             <creation>
@@ -96,9 +107,9 @@
             </textClass>
             <correspDesc>
                 <correspAction type="">
-                    <persName></persName>
-                    <settlement></settlement>
-                    <date when=""></date>
+                    <persName/>
+                    <settlement/>
+                    <date when=""/>
                 </correspAction>
             </correspDesc>
         </profileDesc>
