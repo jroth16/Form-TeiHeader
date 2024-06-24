@@ -15,15 +15,20 @@
                 </author>
                 <editor>
                     <persName>
-                        <surname/><forename/></persName>
+                        <surname/>
+                        <forename/>
+                    </persName>
                 </editor>
                 <respStmt>
-                    <orgName/><note/>
+                    <orgName/>
+                    <note/>
                     <ref/>
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition><date/></edition>
+                <edition>
+                    <date/>
+                </edition>
             </editionStmt>
             <publicationStmt>
                 <publisher>
@@ -52,6 +57,9 @@
                     <idno/>
                     <idno type=""/></idno>
             </publicationStmt>
+            <notesStmt>
+                <note></note>
+            </notesStmt>
             <sourceDesc>
                 <bibl/>
                 <msDesc>

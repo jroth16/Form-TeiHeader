@@ -29,11 +29,12 @@ TEI::before{
     white-space:nowrap;
 }
 
-titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, revisionDesc{
+titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, notesStmt, revisionDesc{
     border: 1px solid #5A5A5A;
     border-radius: 4px;
     padding: 1em;
     margin: 0 0 0.5em 0;
+    -oxy-foldable: true;
 }
 
 titleStmt, teiHeader, fileDesc, fileDesc > publicationStmt, fileDesc > editionStmt, sourceDesc, encodingDesc, profileDesc{
@@ -81,7 +82,7 @@ teiHeader p{
     content:
         oxy_textArea(
             edit, "#text",
-            columns, 60,
+            columns, 40,
             fontInherit,true);
     visibility: -oxy-collapse-text;
 }
@@ -111,11 +112,6 @@ titleStmt::before{
     content: 
         oxy_label(text,"Titelei");
     margin: 0 0 0.5em 0;
-}
-
-titleStmt{
-    display: flex;
-    -oxy-foldable: true;
 }
 
 title[type="main"] {
@@ -197,7 +193,7 @@ respStmt note{
         oxy_label(text, "Bemerkung zur Bereitstellung: ")
         oxy_textArea(
             edit, "#text",
-            columns, 60,
+            columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
@@ -224,7 +220,7 @@ edition{
         oxy_label(text, "Edition: ")
         oxy_textfield(
             edit, "#text",
-            columns, 60,
+            columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
@@ -359,7 +355,7 @@ idno[type] {
         oxy_label(text, "\a Identifikator: ")
         oxy_textfield(
             edit, "#text",
-            columns, 60,
+            columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
@@ -378,14 +374,54 @@ idno:has(idno)::after {
             arg-fragment, '<idno xmlns="http://www.tei-c.org/ns/1.0" type=""></idno>'
         ));
 }
+
+/* notesStmt */
+notesStmt {
+    content: 
+        oxy_label(text, "Zusätzliche Anmerkungen: \a")
+}
+
+notesStmt note::before{
+    content:
+         oxy_label(text, "Anmerkung zum Text: ", styles, "font-weight:normal");
+}
+
+notesStmt note {
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+notesStmt::after{
+    content: 
+        oxy_button(action, oxy_action(
+            name, "Anmerkung hinzufügen",
+            description, "Inserts persName for editor to the TEIHeader",
+            operation, "InsertFragmentOperation",
+            arg-fragment, '<note xmlns="http://www.tei-c.org/ns/1.0"></note>'
+        )) 
+}
+
 /* sourceDesc */
+sourceDesc {
+    content:
+        oxy_label(text,"Beschreibung der Quelle: \a")
+}
 sourceDesc titleStmt {
     display:none;
 }
 
 bibl {
     content:
-        oxy_label(text,"Bibliographische Beschreibung \a")
+        oxy_label(text,"Bibliographische Beschreibung: ")
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
         
 }
 
@@ -420,7 +456,7 @@ repository::after {
 
 physDesc::before {
     content: 
-        oxy_label(text,"Physische Beschreibung: ") !important;
+        oxy_label(text,"Physische Beschreibung: ", styles, "font-weight:normal") !important;
         white-space:nowrap;
 }
 
@@ -435,15 +471,117 @@ encodingDesc{
         oxy_label(text,"Kodierungsbeschreibung ");
 }
 
-samplingDecl{
+projectDesc{
     content:
-        oxy_label(text,"Angabe der Auswahlverfahren: \a")
+        oxy_label(text,"Projektbeschreibung: \a")
+}
+
+projectDesc p{
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
 }
 
 editorialDecl{
     content:
         oxy_label(text,"Zeichendeklaration: \a");
 }
+
+editorialDecl p{
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+classDecl {
+    content:
+        oxy_label(text,"Angabe zur Klassifikation: \a");
+}
+
+taxonomy {
+    content:
+        oxy_label(text, "Typologie: \a");
+}
+
+taxonomy bibl {
+    content:
+        oxy_label(text, "Bibliographischer Verweis: \a")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+        
+}
+
+taxonomy bibl::after {
+    content:"\a"
+        oxy_button(action, oxy_action(
+            name, "Verweis entfernen",
+            description, 'Deletes the current element', 
+            operation, 'DeleteElementOperation' 
+        ))
+        
+}
+
+category {
+    content:
+        oxy_label(text, "\a Kategorie: ")
+        oxy_textfield(
+            edit, '@xml:id',
+            columns, 20,
+            fontInherit,true);
+    visibility: -oxy-collapse-text;
+}
+
+category category{
+    content:
+        oxy_label(text, "\a Unterkategorie: ")
+        oxy_textfield(
+            edit, '@xml:id',
+            columns, 20,
+            fontInherit,true);
+    visibility: -oxy-collapse-text;
+}
+
+taxonomy::after {
+    content: "\a"
+        oxy_button(action, oxy_action(
+            name, "Kategorie hinzufügen",
+            description, "Inserts persName for editor to the TEIHeader",
+            operation, "InsertFragmentOperation",
+            arg-fragment, '<category xmlns="http://www.tei-c.org/ns/1.0" xml:id=""><category><catDesc></catDesc></category></category>'
+        )) 
+
+}
+
+category:has(category)::after {
+    content: "\a"
+        oxy_button(action, oxy_action(
+            name, "Unterkategorie hinzufügen",
+            description, "Inserts persName for editor to the TEIHeader",
+            operation, "InsertFragmentOperation",
+            arg-fragment, '<category xmlns="http://www.tei-c.org/ns/1.0"><catDesc></catDesc></category>'
+        )) 
+
+}
+
+catDesc {
+    content:
+        oxy_label(text, "\a Kategoriebeschreibung: \a")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
 
 /* profileDesc */
 profileDesc{
@@ -523,6 +661,7 @@ classCode{
              fontInherit,true);
      visibility: -oxy-collapse-text;
 }
+
 /* revisionDesc */
 revisionDesc {
     content:
