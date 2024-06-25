@@ -111,7 +111,9 @@ date {
 titleStmt::before{
     content: 
         oxy_label(text,"Titelei");
-    margin: 0 0 0.5em 0;
+    font-weight:bold;
+    font-size: 1em; 
+    color:  black;
 }
 
 title[type="main"] {
@@ -174,6 +176,12 @@ editor surname::before{
         oxy_label(text, "\a Editor/in: ")
 }
 
+respStmt::before{
+    content: 
+        oxy_label(text,"Angabe zur Verantwortlichkeit ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+    white-space: nowrap;
+}
+
 orgName{
     content:
         oxy_label(text, "Name der Institution: ")
@@ -211,7 +219,7 @@ ref {
 /* editionStmt */
 editionStmt::before{
     content: 
-        oxy_label(text,"Angabe zur Ausgabe ");
+        oxy_label(text,"Angabe zur Ausgabe ", styles, "font-weight:bold, font-size: 1em, color:  black;");
     white-space: nowrap;
 }
 
@@ -228,8 +236,8 @@ edition{
 /* publicationStmt */
 publicationStmt::before {
     content:
-        oxy_label(text,"Angaben zur Veröffentlichung \a ");
-    white-space: nowrap;
+        oxy_label(text,"Angaben zur Veröffentlichung \a ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+    white-space:nowrap;
 }
 
 publisher{
@@ -261,6 +269,7 @@ orgName[role="project"]{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
+
 email{
     content:
         oxy_label(text, "Email: ")
@@ -304,6 +313,7 @@ distributor{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
+
 pubPlace{
     content:
         oxy_label(text, "Publikationsort: ")
@@ -362,7 +372,10 @@ idno[type] {
 
 idno:has(idno)::before {
     content: 
-        oxy_label(text, "Identifikation: \a")
+        oxy_label(text, "Identifikation: \a");
+    font-weight: bold;
+    font-size: 1em;
+    color:  black;
 }
 
 idno:has(idno)::after {
@@ -376,9 +389,10 @@ idno:has(idno)::after {
 }
 
 /* notesStmt */
-notesStmt {
+notesStmt::before {
     content: 
-        oxy_label(text, "Zusätzliche Anmerkungen: \a")
+        oxy_label(text, "Zusätzliche Anmerkungen: ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+    white-space:nowrap;
 }
 
 notesStmt note::before{
@@ -406,9 +420,10 @@ notesStmt::after{
 }
 
 /* sourceDesc */
-sourceDesc {
+sourceDesc::before {
     content:
-        oxy_label(text,"Beschreibung der Quelle: \a")
+        oxy_label(text,"Beschreibung der Quelle: ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+    white-space:nowrap;
 }
 sourceDesc titleStmt {
     display:none;
@@ -427,7 +442,7 @@ bibl {
 
 msDesc {
     content: 
-        oxy_label(text,"Manuskriptbeschreibung: ") !important;
+        oxy_label(text,"Manuskriptbeschreibung: ", styles, "font-weight:bold, font-size: 1em, color:  black;") !important;
 }
 
 settlement{
@@ -456,7 +471,7 @@ repository::after {
 
 physDesc::before {
     content: 
-        oxy_label(text,"Physische Beschreibung: ", styles, "font-weight:normal") !important;
+        oxy_label(text,"Physische Beschreibung: ", styles, "font-weight:bold, font-size: 1em, color:  black;") !important;
         white-space:nowrap;
 }
 
@@ -466,9 +481,9 @@ typeDesc{
 }
 
 /* encodingDesc */
-encodingDesc{
+encodingDesc::before{
     content:
-        oxy_label(text,"Kodierungsbeschreibung ");
+        oxy_label(text,"Kodierungsbeschreibung ", styles, "font-weight:bold, font-size: 1em, color:  black;");
 }
 
 projectDesc{
@@ -501,7 +516,7 @@ editorialDecl p{
 
 classDecl {
     content:
-        oxy_label(text,"Angabe zur Klassifikation: \a");
+        oxy_label(text,"Angabe zur Klassifikation: \a", styles, "font-weight:bold, font-size: 1em, color:  black;");
 }
 
 taxonomy {
@@ -586,7 +601,7 @@ catDesc {
 /* profileDesc */
 profileDesc{
     content:
-        oxy_label(text,"Textprofilbeschreibung ");
+        oxy_label(text,"Textprofilbeschreibung ", styles, "font-weight:bold, font-size: 1em, color:  black;");
 }
 
 creation date {
@@ -620,7 +635,7 @@ language {
 
 textClass::before{
     content:
-        oxy_label(text, "Textklassifikation: ")!important
+        oxy_label(text, "Textklassifikation: ", styles, "font-weight:bold, font-size: 1em, color:  black;")!important
 }
 
 keywords::before{
@@ -665,7 +680,7 @@ classCode{
 /* revisionDesc */
 revisionDesc {
     content:
-        oxy_label(text,"Dateihistorie \a");
+        oxy_label(text,"Dateihistorie \a", styles, "font-weight:bold, font-size: 1em, color:  black;");
 }
 revisionDesc::after {
     display:none;

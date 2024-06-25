@@ -3,7 +3,7 @@
 /* profileDesc */
 correspDesc {
     content:
-        oxy_label(text, "Korrespondenzbeschreibung");
+        oxy_label(text, "Korrespondenzbeschreibung", styles, "font-weight:bold, font-size: 1em, color:  black;");
 }
 
 correspAction[type]::before{
@@ -27,7 +27,7 @@ correspAction[type] {
      visibility: -oxy-collapse-text;
 }
 
-correspAction::after{
+correspDesc::after{
     content: 
         oxy_button(action, oxy_action(
             name, "Korrespondenzaktion hinzufügen",
