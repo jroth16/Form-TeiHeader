@@ -140,12 +140,7 @@ title[type="sub"]{
 
 author::after{
     content: "\a"
-        oxy_button(action, oxy_action(
-            name, "Autor hinzufügen",
-            description, "Inserts persName for author to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<persName xmlns="http://www.tei-c.org/ns/1.0"><surname></surname><forename></forename></persName>'
-        )) 
+        oxy_button(actionID, "addAuthor")
 }
 author surname::before{
     content:
@@ -157,19 +152,14 @@ author::before {
         oxy_label(text, "Autor(en): \a")
 }
 
-editor::before {
+editor {
     content: 
-        oxy_label(text, "Editor(en):")
+        oxy_label(text, "Editor(en):") !important;
 }
 
 editor::after{
     content: 
-        oxy_button(action, oxy_action(
-            name, "Editor hinzufügen",
-            description, "Inserts persName for editor to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<persName xmlns="http://www.tei-c.org/ns/1.0"><surname></surname><forename></forename></persName>'
-        )) 
+        oxy_button(actionID, "addEditor")
 }
 editor surname::before{
     content:
@@ -296,12 +286,7 @@ address::before{
 
 address::after {
     content:
-        oxy_button(action, oxy_action(
-             name, "Adresszeile hinzufügen",
-             description, "Inserts addrLine to the TEIHeader",
-             operation, "InsertFragmentOperation",
-             arg-fragment, '<addrLine xmlns="http://www.tei-c.org/ns/1.0"></addrLine>'
-         ))
+        oxy_button(actionID, "addAddrLine")
 }
 
 distributor{
@@ -380,12 +365,7 @@ idno:has(idno)::before {
 
 idno:has(idno)::after {
     content: 
-        oxy_button(action, oxy_action(
-            name, "Identifikator hinzufügen",
-            description, "Inserts idno to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<idno xmlns="http://www.tei-c.org/ns/1.0" type=""></idno>'
-        ));
+        oxy_button(actionID, "addIdno");
 }
 
 /* notesStmt */
@@ -411,12 +391,7 @@ notesStmt note {
 
 notesStmt::after{
     content: 
-        oxy_button(action, oxy_action(
-            name, "Anmerkung hinzufügen",
-            description, "Inserts persName for editor to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<note xmlns="http://www.tei-c.org/ns/1.0"></note>'
-        )) 
+        oxy_button(actionID, "addNote") 
 }
 
 /* sourceDesc */
@@ -537,12 +512,7 @@ taxonomy bibl {
 
 taxonomy bibl::after {
     content:"\a"
-        oxy_button(action, oxy_action(
-            name, "Verweis entfernen",
-            description, 'Deletes the current element', 
-            operation, 'DeleteElementOperation' 
-        ))
-        
+        oxy_button(actionID, "delBibl")      
 }
 
 category {
@@ -567,24 +537,12 @@ category category{
 
 taxonomy::after {
     content: "\a"
-        oxy_button(action, oxy_action(
-            name, "Kategorie hinzufügen",
-            description, "Inserts persName for editor to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<category xmlns="http://www.tei-c.org/ns/1.0" xml:id=""><category><catDesc></catDesc></category></category>'
-        )) 
-
+        oxy_button(actionID, "addCategory")
 }
 
 category:has(category)::after {
     content: "\a"
-        oxy_button(action, oxy_action(
-            name, "Unterkategorie hinzufügen",
-            description, "Inserts persName for editor to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<category xmlns="http://www.tei-c.org/ns/1.0"><catDesc></catDesc></category>'
-        )) 
-
+        oxy_button(actionID, "addSubcategory") 
 }
 
 catDesc {
@@ -645,12 +603,7 @@ keywords::before{
 
 keywords::after{
     content:"\a"
-        oxy_button(action, oxy_action(
-            name, "Schlüsselwort hinzufügen",
-            description, "Inserts term to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<term xmlns="http://www.tei-c.org/ns/1.0"></term>'
-        ));
+        oxy_button(actionID, "addTerm");
 }
 
 term{
@@ -687,12 +640,7 @@ revisionDesc::after {
 }
 
 listChange::before {
-    content: oxy_button(action, oxy_action(
-        name, "Änderung hinzufügen",
-        description, "Inserts change to the TEIHeader",
-        operation, "InsertFragmentOperation",
-        arg-fragment, '<change xmlns="http://www.tei-c.org/ns/1.0" when="" who=""><p></p></change>'
-    )) !important;
+    content: oxy_button(actionID, "addChange") !important;
 }
 
 change::before{
