@@ -5,7 +5,6 @@
         <fileDesc>
             <titleStmt>
                 <title type="main"/>
-                <title type="sub"/>
                 <author>
                     <persName>
                         <surname/>
@@ -18,11 +17,6 @@
                         <forename/>
                     </persName>
                 </editor>
-                <respStmt>
-                    <orgName/>
-                    <note/>
-                    <ref/>
-                </respStmt>
             </titleStmt>
             <editionStmt>
                 <edition>

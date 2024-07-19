@@ -127,6 +127,11 @@ title[type="main"] {
      margin: 0;
 }
 
+title[type="main"]::after{
+    content: "\a"
+        oxy_button(actionID, "addSubtitle")
+}
+
 title[type="sub"]{
     content:  
         oxy_label(text,"Untertitel: ")
@@ -138,13 +143,13 @@ title[type="sub"]{
      margin: 0;
 }
 
+author persName{
+    content:
+        oxy_label(text, "\a Autor/in: ")
+}
 author::after{
     content: "\a"
         oxy_button(actionID, "addAuthor")
-}
-author surname::before{
-    content:
-        oxy_label(text, "\a Autor/in: ")
 }
 
 author::before {
@@ -158,9 +163,10 @@ editor {
 }
 
 editor::after{
-    content: 
-        oxy_button(actionID, "addEditor")
+    content: "\a"
+        oxy_button(actionID, "addEditor")!important
 }
+
 editor surname::before{
     content:
         oxy_label(text, "\a Editor/in: ")
@@ -196,14 +202,26 @@ respStmt note{
      visibility: -oxy-collapse-text;
 }
 
-ref {
+resp {
     content: 
-        oxy_label(text,"Referenz: " attr(target))
+        oxy_label(text,"Verantwortung: ")
         oxy_textfield(
-            edit, '@target',
+            edit, "#text",
             columns, 40,
             fontInherit,true);
     visibility: -oxy-collapse-text;;
+}
+
+respStmt::after{
+    content: "\a"
+        oxy_buttonGroup(
+            label, "Verantwortliche hinzufügen",
+            actionIDs, "addName, addPersName, addOrgName, addResp, addNote")
+}
+
+titleStmt::after{
+    content:
+        oxy_button(actionID, addRespStmt) !important
 }
 
 /* editionStmt */
