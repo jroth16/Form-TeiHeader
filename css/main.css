@@ -68,6 +68,7 @@ surname{
 surname::after {
     display:none;
 }
+
 forename{
     content:
         oxy_label(text, "Vorname: ")
@@ -147,7 +148,8 @@ author persName{
     content:
         oxy_label(text, "\a Autor/in: ")
 }
-author::after{
+
+titleStmt{
     content: "\a"
         oxy_button(actionID, "addAuthor")
 }
@@ -172,9 +174,9 @@ editor surname::before{
         oxy_label(text, "\a Editor/in: ")
 }
 
-respStmt::before{
+respStmt{
     content: 
-        oxy_label(text,"Angabe zur Verantwortlichkeit ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"Angabe zur Verantwortlichkeit \a", styles, "font-weight:bold, font-size: 1em, color:  black;");
     white-space: nowrap;
 }
 
@@ -188,8 +190,22 @@ orgName{
      visibility: -oxy-collapse-text;
 }
 
+respStmt orgName::after{
+    content:"\a"
+}
+
+name{
+    content:
+        oxy_label(text, "Name: ")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
 respStmt note::before, respStmt note::after {
-    display:none;
+    content: "\a";
 }
 
 respStmt note{
@@ -212,11 +228,15 @@ resp {
     visibility: -oxy-collapse-text;;
 }
 
+resp::after{
+    content: "\a"
+}
+
 respStmt::after{
     content: "\a"
         oxy_buttonGroup(
             label, "Verantwortliche hinzufügen",
-            actionIDs, "addName, addPersName, addOrgName, addResp, addNote")
+            actionIDs, "addName , addPersName , addOrgName , addResp , addNote ")
 }
 
 titleStmt::after{
