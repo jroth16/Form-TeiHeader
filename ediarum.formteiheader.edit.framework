@@ -61,39 +61,12 @@
 											<String>authorExtensionDescriptor/cssDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>5</Integer>
-										</field>
-										<field name="value">
-											<cssFile>
-												<field name="href">
-													<String>${framework}/css/xyz.css</String>
-												</field>
-												<field name="title">
-													<String>xyz</String>
-												</field>
-												<field name="alternate">
-													<Boolean>true</Boolean>
-												</field>
-											</cssFile>
-										</field>
-										<field name="patchHandling">
-											<String>addIndex</String>
-										</field>
-										<field name="anchor">
-											<null/>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/cssDescriptors</String>
-										</field>
-										<field name="index">
 											<Integer>3</Integer>
 										</field>
 										<field name="value">
 											<cssFile>
 												<field name="href">
-													<String>${framework}/css/formTeiHeader.css</String>
+													<String>${framework}/css/main.css</String>
 												</field>
 												<field name="title">
 													<String>Formular TEI Header</String>
