@@ -149,24 +149,23 @@ author persName{
         oxy_label(text, "\a Autor/in: ")
 }
 
-titleStmt{
-    content: "\a"
-        oxy_button(actionID, "addAuthor")
-}
-
-author::before {
+author:first-of-type::before {
     content: 
         oxy_label(text, "Autor(en): \a")
 }
 
-editor {
+editor:first-of-type::before {
     content: 
         oxy_label(text, "Editor(en):") !important;
 }
 
-editor::after{
-    content: "\a"
-        oxy_button(actionID, "addEditor")!important
+editor::after {
+    content:"";
+}
+
+editor:last-of-type::after{
+    content:
+        oxy_button(actionID, "addEditor");
 }
 
 editor surname::before{

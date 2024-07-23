@@ -20,7 +20,7 @@
 											<Integer>-1</Integer>
 										</field>
 										<field name="value">
-											<String>ediarum.formTeiHeader.edit</String>
+											<String>ediarum.formTeiHeader.editZ</String>
 										</field>
 										<field name="patchHandling">
 											<String>set</String>
@@ -117,16 +117,18 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::author</String>
+																<String>ancestor-or-self::titleStmt</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
 																	<entry>
 																		<String>fragment</String>
-																		<String>&lt;persName xmlns="http://www.tei-c.org/ns/1.0">
-  &lt;surname>&lt;/surname>
-  &lt;forename>&lt;/forename>
-&lt;/persName></String>
+																		<String>&lt;author xmlns="http://www.tei-c.org/ns/1.0">
+  &lt;persName>
+    &lt;surname>&lt;/surname>
+    &lt;forename>&lt;/forename>
+  &lt;/persName>
+&lt;/author></String>
 																	</entry>
 																	<entry>
 																		<String>insertLocation</String>
@@ -186,16 +188,18 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::editor</String>
+																<String>ancestor-or-self::titleStmt</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
 																	<entry>
 																		<String>fragment</String>
-																		<String>&lt;persName xmlns="http://www.tei-c.org/ns/1.0">
-  &lt;surname>&lt;/surname>
-  &lt;forename>&lt;/forename>
-&lt;/persName></String>
+																		<String>&lt;editor  xmlns="http://www.tei-c.org/ns/1.0">
+  &lt;persName>
+    &lt;surname>&lt;/surname>
+    &lt;forename>&lt;/forename>
+  &lt;/persName>
+&lt;/editor></String>
 																	</entry>
 																	<entry>
 																		<String>insertPosition</String>
@@ -1116,6 +1120,125 @@
 													<Boolean>false</Boolean>
 												</field>
 											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>203</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>mainTitle</String>
+												</field>
+												<field name="name">
+													<String>mainTitle</String>
+												</field>
+												<field name="description">
+													<String>type = "main" zu Titel hinzufügen</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>ancestor-or-self::title</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>elementLocation</String>
+																		<String>ancestor-or-self::title</String>
+																	</entry>
+																	<entry>
+																		<String>name</String>
+																		<String>type</String>
+																	</entry>
+																	<entry>
+																		<String>value</String>
+																		<String>main</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.ChangeAttributeOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>0</Integer>
+										</field>
+										<field name="value">
+											<toolbar>
+												<field name="id">
+													<String>TEI Header</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>mainTitle</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>addAuthor</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>addEditor</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
 										</field>
 										<field name="patchHandling">
 											<String>addIndex</String>
