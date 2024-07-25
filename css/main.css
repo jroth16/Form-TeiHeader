@@ -29,17 +29,17 @@ TEI::before{
     white-space:nowrap;
 }
 
-titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, notesStmt, revisionDesc{
-    border: 1px solid #5A5A5A;
-    border-radius: 4px;
+titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, notesStmt, revisionDesc, profileDesc{
     padding: 1em;
     margin: 0 0 0.5em 0;
     -oxy-foldable: true;
 }
 
-titleStmt, teiHeader, fileDesc, fileDesc > publicationStmt, fileDesc > editionStmt, sourceDesc, encodingDesc, profileDesc{
+titleStmt, publicationStmt, editionStmt, sourceDesc, encodingDesc, profileDesc{
     content: "";
     display: block;
+    border-top: 3px solid gray !important;
+    width: 40em !important;
 }
 
 titleStmt::before, title[type="main"]::before, title[type="sub"]::before{
@@ -135,7 +135,7 @@ title[type="main"]::after{
 
 title[type="sub"]{
     content:  
-        oxy_label(text,"Untertitel: ")
+        oxy_label(text,"\a Untertitel: ")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -151,7 +151,12 @@ author persName{
 
 author:first-of-type::before {
     content: 
-        oxy_label(text, "Autor(en): \a")
+        oxy_label(text, "\a Autor(en): \a")
+}
+
+author:last-of-type::after{
+     content: "\a"
+        oxy_button(actionID, "addAuthor");
 }
 
 editor:first-of-type::before {
@@ -164,7 +169,7 @@ editor::after {
 }
 
 editor:last-of-type::after{
-    content:
+    content: "\a"
         oxy_button(actionID, "addEditor");
 }
 
@@ -239,8 +244,8 @@ respStmt::after{
 }
 
 titleStmt::after{
-    content:
-        oxy_button(actionID, addRespStmt) !important
+    content: "\a"
+        oxy_button(actionID, addRespStmt) !important;
 }
 
 /* editionStmt */
