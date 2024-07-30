@@ -47,7 +47,7 @@ titleStmt::before, title[type="main"]::before, title[type="sub"]::before{
     color: #5A5A5A;
 }
 
-teiHeader p, repository::before, forename::before, surname::before, forename::after, orgName::before, note::before, availability::before, availability::after, idno::after, idno[type]::before,settlement::before, settlement::after, repository::after, physDesc::after, encodingDesc::after, edition::after, date::before {
+teiHeader p, title[type="sub"]::after, repository::before, forename::before, surname::before, forename::after, orgName::before, note::before, availability::before, availability::after, idno::after, idno[type]::before,settlement::before, settlement::after, repository::after, physDesc::after, encodingDesc::after, edition::after, date::before {
     content:"\a";
     white-space: pre;
 }
@@ -150,8 +150,8 @@ author persName{
 }
 
 author:first-of-type::before {
-    content: 
-        oxy_label(text, "\a Autor(en): \a")
+    content: "\a"
+        oxy_label(text, "\a Autor(en):\a")
 }
 
 author:last-of-type::after{
@@ -161,7 +161,7 @@ author:last-of-type::after{
 
 editor:first-of-type::before {
     content: 
-        oxy_label(text, "Editor(en):") !important;
+        oxy_label(text, "Editor(en):\a") !important;
 }
 
 editor::after {
@@ -175,7 +175,7 @@ editor:last-of-type::after{
 
 editor surname::before{
     content:
-        oxy_label(text, "\a Editor/in: ")
+        oxy_label(text, "\a Editor/in: \a")
 }
 
 respStmt{

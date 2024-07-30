@@ -134,6 +134,10 @@
 																		<String>insertLocation</String>
 																		<String></String>
 																	</entry>
+																	<entry>
+																		<String>insertPosition</String>
+																		<String>Inside as last child</String>
+																	</entry>
 																</serializableOrderedMap>
 															</field>
 															<field name="operationID">
@@ -203,7 +207,7 @@
 																	</entry>
 																	<entry>
 																		<String>insertPosition</String>
-																		<String>Inside as first child</String>
+																		<String>Inside as last child</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
@@ -1200,6 +1204,80 @@
 									</poPatch>
 									<poPatch>
 										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>204</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>addEditionStmt</String>
+												</field>
+												<field name="name">
+													<String>editionStmt hinzufügen</String>
+												</field>
+												<field name="description">
+													<String>editionStmt hinzufügen</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>ancestor-or-self::fileDesc</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>element</String>
+																		<String>&lt;editionStmt xmlns="http://www.tei-c.org/ns/1.0">
+    &lt;edition>
+        &lt;date/>
+    &lt;/edition>
+&lt;/editionStmt></String>
+																	</entry>
+																	<entry>
+																		<String>insertAfter</String>
+																		<String>titleStmt</String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String></String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>org.bbaw.telota.ediarum.InsertFragmentAfterOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
 											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
 										</field>
 										<field name="index">
@@ -1234,6 +1312,11 @@
 														<toolbarItem>
 															<field name="actionID">
 																<String>addEditor</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>addEditionStmt</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>
