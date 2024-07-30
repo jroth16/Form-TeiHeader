@@ -117,6 +117,15 @@ titleStmt::before{
     color:  black;
 }
 
+title{
+    content: "\a Name des"
+        oxy_combobox(           
+            edit, "@type",
+            editable, false,
+            values, "main, sub",
+            labels, "Titels, Untertitels");
+}
+
 title[type="main"] {
     content:
         oxy_label(text,"Titel: ")
@@ -126,11 +135,6 @@ title[type="main"] {
             fontInherit,true);
      visibility: -oxy-collapse-text;
      margin: 0;
-}
-
-title[type="main"]::after{
-    content: "\a"
-        oxy_button(actionID, "addSubtitle")
 }
 
 title[type="sub"]{
@@ -272,14 +276,18 @@ publicationStmt::before {
     white-space:nowrap;
 }
 
-publisher{
-    content:
-        oxy_label(text, "Herausgeber: ")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text;
+publisher::after{
+    content:"\a"
+        oxy_button(actionID, addOrgName)
+}
+
+publisher > orgName{
+    content: "Name der/des"
+        oxy_combobox(           
+            edit, "@role",
+            editable, false,
+            values, "project, hostingInstitution",
+            labels, "Projekts, ausrichtenden Insitution");
 }
 
 orgName[role="hostingInstitution"]{
@@ -304,7 +312,7 @@ orgName[role="project"]{
 
 email{
     content:
-        oxy_label(text, "Email: ")
+        oxy_label(text, "\a Email: ")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -349,6 +357,15 @@ pubPlace{
             columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
+}
+
+date{
+    content: "Datum der/des"
+        oxy_combobox(           
+            edit, "@type",
+            editable, false,
+            values, "publication, firstPublication",
+            labels, "Veröffentlichung, Erstveröffentlichung");
 }
 
 date[type="publication"]{
@@ -399,7 +416,7 @@ idno[type] {
 
 idno:has(idno)::before {
     content: 
-        oxy_label(text, "Identifikation: \a");
+        oxy_label(text, "\a Identifikation: \a");
     font-weight: bold;
     font-size: 1em;
     color:  black;

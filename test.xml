@@ -46,8 +46,8 @@
                     </licence>
                 </availability>
                 <idno>
-                    <idno/>
-                    <idno type=""/></idno>
+                    <idno type=""></idno>
+                </idno>
             </publicationStmt>
             <notesStmt>
                 <note></note>
