@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation>
+    <languageList>
+        <language description="English" lang="en_US"/>
+        <language description="German" lang="de_DE"/>
+    </languageList>
+    <key value="list">
+        <comment>List menu item name.</comment>
+        <val lang="en_US">List</val>
+        <val lang="de_DE">Liste</val>
+        <val lang="fr_FR">Liste</val>
+    </key>
+    <key value="title">
+        <val lang="en_US">Title</val>
+        <val lang="de_DE">Titel</val>
+    </key>
+    <key value="title_desc">
+        <val lang="en_US">Inserts a title element and asks for the types according to the DTABF</val>
+        <val lang="de_DE">Fügt ein Titel Element ein und fragt nach der Art des Titels nach dem DTABF</val>
+    </key>
+    <key value="series">
+        <val lang="en_US">Series</val>
+        <val lang="de_DE">Reihe</val>
+    </key>
+    <key value="vol_title">
+        <val lang="en_US">Volume title</val>
+        <val lang="de_DE">Bandtitel</val>
+    </key>
+    <key value="vol_nr">
+        <val lang="en_US">Volume number</val>
+        <val lang="de_DE">Bandnummer</val>
+    </key>
+    <key value="main_title">
+        <val lang="en_US">Main title</val>
+        <val lang="de_DE">Haupttitel</val>
+    </key>
+    <key value="sub_title">
+        <val lang="en_US">Sub title</val>
+        <val lang="de_DE">Untertitel</val>
+    </key>
+    <key value="part_title">
+        <val lang="en_US">Title of the part of a multi-part dependent publication</val>
+        <val lang="de_DE">Titel des Teils einer mehrteiligen unselbständigen Publikation</val>
+    </key>
+</translation> 

@@ -10,32 +10,37 @@
   
 /* Allgemeines */
 * {
-    width: 40%;
     text-align:left;
     font-size: 12pt !important;
     color: black !important;
 }
 
 TEI::before{
-    content: "TEI Dokument\a" "ID:" 
+    content:
+        oxy_label(text, "\a ID")
         oxy_textfield(
             edit, '@xml:id',
-            columns, 40,
+            columns, 30,
             fontInherit,true);
     visibility: -oxy-collapse-text;
     display:block;;
-    color:  #5A5A5A;
-    font-size: 1.2em;
     white-space:nowrap;
+    font-weight:bold;
+    font-size: 1em; 
+    color:  black;
+}
+
+author, publisher, note{
+    -oxy-display-tags: none;
 }
 
 titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, notesStmt, revisionDesc, profileDesc{
-    padding: 1em;
+    padding: 0.2em;
     margin: 0 0 0.5em 0;
     -oxy-foldable: true;
 }
 
-titleStmt, publicationStmt, editionStmt, sourceDesc, encodingDesc, profileDesc{
+publicationStmt, editionStmt, sourceDesc, encodingDesc, profileDesc{
     content: "";
     display: block;
     border-top: 3px solid gray !important;
@@ -55,7 +60,7 @@ oxy|comment {
     display:none !important;
 }
 
-surname{
+surname, surname::after{
     content:
         oxy_label(text, "\a Nachname: ")
         oxy_textfield(
@@ -63,10 +68,6 @@ surname{
             columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
-}
-
-surname::after {
-    display:none;
 }
 
 forename{
@@ -107,7 +108,6 @@ date {
              edit, "date",
              format, "yyyy-MM-dd");
 }
-
 /* titleStmt */
 titleStmt::before{
     content: 
@@ -116,37 +116,47 @@ titleStmt::before{
     font-size: 1em; 
     color:  black;
 }
-
-title{
-    content: "\a Name des"
-        oxy_combobox(           
-            edit, "@type",
-            editable, false,
-            values, "main, sub",
-            labels, "Titels, Untertitels");
+titleStmt{
+    content: oxy_button(actionID, "title", showIcon, true, showText, true)
+             oxy_button(actionID, "respStmt");
 }
-
+title{
+    visibility: -oxy-collapse-text;
+    margin-bottom: 5px;
+    display: block;
+}
 title[type="main"] {
     content:
-        oxy_label(text,"Titel: ")
+        oxy_label(text,"Titel: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '#text',
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
-     margin: 0;
 }
-
 title[type="sub"]{
     content:  
-        oxy_label(text,"\a Untertitel: ")
+        oxy_label(text,"\a Untertitel: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
-     margin: 0;
 }
+title[type="volume"]{
+    content:
+        oxy_label(text, "\a ${i18n(vol_title)}: ", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit, true
+        )
+        oxy_label(text, "\a ${i18n(vol_nr)}: ", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "@n",
+            columns, 15,
+            fontInherit, true
+        );
+}
+
 
 author persName{
     content:
@@ -458,9 +468,6 @@ sourceDesc::before {
     content:
         oxy_label(text,"Beschreibung der Quelle: ", styles, "font-weight:bold, font-size: 1em, color:  black;");
     white-space:nowrap;
-}
-sourceDesc titleStmt {
-    display:none;
 }
 
 bibl {
