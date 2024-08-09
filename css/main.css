@@ -111,7 +111,7 @@ date {
 /* titleStmt */
 titleStmt::before{
     content: 
-        oxy_label(text,"Titelei");
+        oxy_label(text,"${i18n(front_matter)}");
     font-weight:bold;
     font-size: 1em; 
     color:  black;

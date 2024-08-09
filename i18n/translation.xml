@@ -10,6 +10,10 @@
         <val lang="de_DE">Liste</val>
         <val lang="fr_FR">Liste</val>
     </key>
+    <key value="front_matter">
+        <val lang="en_US">Frint matter</val>
+        <val lang="de_DE">Titelei</val>
+    </key>
     <key value="title">
         <val lang="en_US">Title</val>
         <val lang="de_DE">Titel</val>
