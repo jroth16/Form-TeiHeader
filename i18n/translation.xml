@@ -46,4 +46,8 @@
         <val lang="en_US">Title of the part of a multi-part dependent publication</val>
         <val lang="de_DE">Titel des Teils einer mehrteiligen unselbständigen Publikation</val>
     </key>
+    <key value="id_desc">
+        <val lang="en_US">Must be a valid xml:id string</val>
+        <val lang="de_DE">Muss ein valider xml:id string sein</val>
+    </key>
 </translation> 

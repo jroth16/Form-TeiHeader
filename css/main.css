@@ -21,7 +21,7 @@ TEI::before{
         oxy_textfield(
             edit, '@xml:id',
             columns, 30,
-            fontInherit,true);
+            fontInherit,true, tooltip, '${i18n(id_desc)}');
     visibility: -oxy-collapse-text;
     display:block;;
     white-space:nowrap;
