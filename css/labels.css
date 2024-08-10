@@ -1,5 +1,8 @@
 * {
     width: 20%;
-    color: #A9A9A9;
+    color: #696969;
     font-size: 0.8em;
+    word-break: break-all;
+    width: 100%;
+    margin-bottom: 0.2em;
 }

@@ -47,12 +47,7 @@ publicationStmt, editionStmt, sourceDesc, encodingDesc, profileDesc{
     width: 40em !important;
 }
 
-titleStmt::before, title[type="main"]::before, title[type="sub"]::before{
-    display: block;
-    color: #5A5A5A;
-}
-
-teiHeader p, title[type="sub"]::after, repository::before, forename::before, surname::before, forename::after, orgName::before, note::before, availability::before, availability::after, idno::after, idno[type]::before,settlement::before, settlement::after, repository::after, physDesc::after, encodingDesc::after, edition::after, date::before {
+teiHeader p, repository::before, forename::before, surname::before, forename::after, orgName::before, note::before, availability::before, availability::after, idno::after, idno[type]::before,settlement::before, settlement::after, repository::after, physDesc::after, encodingDesc::after, edition::after, date::before {
     content:"\a";
     white-space: pre;
 }
@@ -108,10 +103,15 @@ date {
              edit, "date",
              format, "yyyy-MM-dd");
 }
-/* titleStmt */
+
+/* ==========
+ * titleStmt 
+ * Beispiel Funktionalitaet
+ * ==========*/
+ 
 titleStmt::before{
     content: 
-        oxy_label(text,"${i18n(front_matter)}");
+        oxy_label(text,"${i18n(front_matter)}", styles, "@import 'labels.css';");
     font-weight:bold;
     font-size: 1em; 
     color:  black;
@@ -119,15 +119,15 @@ titleStmt::before{
 titleStmt{
     content: oxy_button(actionID, "title", showIcon, true, showText, true)
              oxy_button(actionID, "respStmt");
+    display: block;
 }
 title{
     visibility: -oxy-collapse-text;
-    margin-bottom: 5px;
     display: block;
 }
 title[type="main"] {
     content:
-        oxy_label(text,"Titel: ", styles, "@import 'labels.css';")
+        oxy_label(text,"${i18n(title)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '#text',
             columns, 40,
@@ -135,7 +135,7 @@ title[type="main"] {
 }
 title[type="sub"]{
     content:  
-        oxy_label(text,"\a Untertitel: ", styles, "@import 'labels.css';")
+        oxy_label(text,"${i18n(sub_title)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -143,20 +143,31 @@ title[type="sub"]{
 }
 title[type="volume"]{
     content:
-        oxy_label(text, "\a ${i18n(vol_title)}: ", styles, "@import 'labels.css';")
+        oxy_label(text, "${i18n(vol_title)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
             fontInherit, true
         )
-        oxy_label(text, "\a ${i18n(vol_nr)}: ", styles, "@import 'labels.css';")
+        oxy_label(text, "${i18n(vol_nr)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "@n",
             columns, 15,
             fontInherit, true
         );
 }
+title[type="part"]{
+    content: oxy_label(text,"${i18n(part_title)}: ", styles, "@import 'labels.css';")
+             oxy_textfield(
+                edit, "#text",
+                columns, 40,
+                fontInherit,true);
+}
 
+/* =======
+ * Ende Beispiel
+ * =======
+ */
 
 author persName{
     content:
