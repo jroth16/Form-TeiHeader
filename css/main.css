@@ -17,7 +17,7 @@
 
 TEI::before{
     content:
-        oxy_label(text, "\a ID")
+        oxy_label(text,"ID: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '@xml:id',
             columns, 30,
@@ -55,9 +55,9 @@ oxy|comment {
     display:none !important;
 }
 
-surname, surname::after{
+surname{
     content:
-        oxy_label(text, "\a Nachname: ")
+        oxy_label(text,"${i18n(surname)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -67,12 +67,13 @@ surname, surname::after{
 
 forename{
     content:
-        oxy_label(text, "Vorname: ")
+        oxy_label(text,"${i18n(forename)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
+     display: block;
 }
 
 teiHeader p{
@@ -97,7 +98,7 @@ span::before {
 
 date {
     content: 
-         oxy_label(text,"Datum: ")
+         oxy_label(text,"${i18n(date)}: ", styles, "@import 'labels.css';")
          oxy_datePicker(
              columns, 10, 
              edit, "date",
@@ -127,7 +128,7 @@ title{
 }
 title[type="main"] {
     content:
-        oxy_label(text,"${i18n(title)}: ", styles, "@import 'labels.css';")
+        oxy_label(text,"${i18n(main_title)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '#text',
             columns, 40,
@@ -171,12 +172,12 @@ title[type="part"]{
 
 author persName{
     content:
-        oxy_label(text, "\a Autor/in: ")
+        oxy_label(text,"${i18n(author)}: ", styles, "@import 'labels.css';")
 }
 
 author:first-of-type::before {
-    content: "\a"
-        oxy_label(text, "\a Autor(en):\a")
+    content: 
+        oxy_label(text,"${i18n(authors)}: ", styles, "@import 'labels.css';")
 }
 
 author:last-of-type::after{
@@ -186,7 +187,7 @@ author:last-of-type::after{
 
 editor:first-of-type::before {
     content: 
-        oxy_label(text, "Editor(en):\a") !important;
+        oxy_label(text,"${i18n(editors)}: ", styles, "@import 'labels.css';") !important;
 }
 
 editor::after {
@@ -200,32 +201,28 @@ editor:last-of-type::after{
 
 editor surname::before{
     content:
-        oxy_label(text, "\a Editor/in: \a")
+        oxy_label(text,"${i18n(editor)}: ", styles, "@import 'labels.css';")
 }
 
 respStmt{
     content: 
-        oxy_label(text,"Angabe zur Verantwortlichkeit \a", styles, "font-weight:bold, font-size: 1em, color:  black;");
-    white-space: nowrap;
+        oxy_label(text,"${i18n(respStmt)}: ", styles, "@import 'labels.css';");
+    display:block;
 }
 
 orgName{
     content:
-        oxy_label(text, "Name der Institution: ")
+        oxy_label(text,"${i18n(orgName)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
-}
-
-respStmt orgName::after{
-    content:"\a"
 }
 
 name{
     content:
-        oxy_label(text, "Name: ")
+        oxy_label(text,"${i18n(name)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -233,13 +230,9 @@ name{
      visibility: -oxy-collapse-text;
 }
 
-respStmt note::before, respStmt note::after {
-    content: "\a";
-}
-
 respStmt note{
     content:
-        oxy_label(text, "Bemerkung zur Bereitstellung: ")
+        oxy_label(text,"${i18n(respStmt_note)}: ", styles, "@import 'labels.css';")
         oxy_textArea(
             edit, "#text",
             columns, 40,
@@ -249,7 +242,7 @@ respStmt note{
 
 resp {
     content: 
-        oxy_label(text,"Verantwortung: ")
+        oxy_label(text,"${i18n(resp)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -257,32 +250,32 @@ resp {
     visibility: -oxy-collapse-text;;
 }
 
-resp::after{
+/* resp::after{
     content: "\a"
-}
+}*/
 
 respStmt::after{
-    content: "\a"
+    content: 
         oxy_buttonGroup(
             label, "Verantwortliche hinzufügen",
             actionIDs, "addName , addPersName , addOrgName , addResp , addNote ")
 }
 
 titleStmt::after{
-    content: "\a"
+    content: 
         oxy_button(actionID, addRespStmt) !important;
 }
 
 /* editionStmt */
 editionStmt::before{
     content: 
-        oxy_label(text,"Angabe zur Ausgabe ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(editionStmt)}: ", styles, "@import 'labels.css';");
     white-space: nowrap;
 }
 
 edition{
     content:
-        oxy_label(text, "Edition: ")
+        oxy_label(text,"${i18n(edition)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -293,7 +286,7 @@ edition{
 /* publicationStmt */
 publicationStmt::before {
     content:
-        oxy_label(text,"Angaben zur Veröffentlichung \a ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(publicationStmt)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
 }
 
@@ -313,7 +306,7 @@ publisher > orgName{
 
 orgName[role="hostingInstitution"]{
     content:
-        oxy_label(text, "Name der ausrichtenden Institution: ")
+        oxy_label(text,"${i18n(hostingInstitution)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -323,7 +316,7 @@ orgName[role="hostingInstitution"]{
 
 orgName[role="project"]{
     content:
-        oxy_label(text, "Name des Projekts: ")
+        oxy_label(text,"${i18n(project)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -333,7 +326,7 @@ orgName[role="project"]{
 
 email{
     content:
-        oxy_label(text, "\a Email: ")
+        oxy_label(text,"${i18n(email)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -352,7 +345,7 @@ addrLine{
 
 address::before{
     content:
-        oxy_label(text,"Adresse: ");
+        oxy_label(text,"${i18n(address)}: ", styles, "@import 'labels.css';");
 }
 
 address::after {
@@ -362,7 +355,7 @@ address::after {
 
 distributor{
     content:
-        oxy_label(text, "Distributor: ")
+        oxy_label(text,"${i18n(distributor)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -372,7 +365,7 @@ distributor{
 
 pubPlace{
     content:
-        oxy_label(text, "Publikationsort: ")
+        oxy_label(text,"${i18n(pubPlace)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -391,7 +384,7 @@ date{
 
 date[type="publication"]{
     content:
-        oxy_label(text,"Veröffentlichung: ")
+        oxy_label(text,"${i18n(publication)}: ", styles, "@import 'labels.css';")
         oxy_datePicker(
             columns, 10, 
             edit, "@date",
@@ -399,7 +392,7 @@ date[type="publication"]{
 }
 date[type="firstPublication"]{
     content:
-        oxy_label(text,"Erstveröffentlichung: ")
+        oxy_label(text,"${i18n(firstPublication)}: ", styles, "@import 'labels.css';")
         oxy_datePicker(
             columns, 10, 
             edit, "@date",
@@ -408,12 +401,12 @@ date[type="firstPublication"]{
 
 availability{
     content:
-        oxy_label(text,"Verfügbarkeit: \a");
+        oxy_label(text,"${i18n(availability)}: ", styles, "@import 'labels.css';");
 }
 
 licence{
     content:
-        oxy_label(text,"Lizenz: \a");
+        oxy_label(text,"${i18n(licence)}: ", styles, "@import 'labels.css';");
 }
 
 idno[type]::before{
@@ -427,7 +420,7 @@ idno[type]::before{
 
 idno[type] {
     content:
-        oxy_label(text, "\a Identifikator: ")
+        oxy_label(text,"${i18n(idno_type)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -437,7 +430,7 @@ idno[type] {
 
 idno:has(idno)::before {
     content: 
-        oxy_label(text, "\a Identifikation: \a");
+        oxy_label(text,"${i18n(idno)}: ", styles, "@import 'labels.css';");
     font-weight: bold;
     font-size: 1em;
     color:  black;
@@ -451,13 +444,13 @@ idno:has(idno)::after {
 /* notesStmt */
 notesStmt::before {
     content: 
-        oxy_label(text, "Zusätzliche Anmerkungen: ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(notesStmt)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
 }
 
 notesStmt note::before{
     content:
-         oxy_label(text, "Anmerkung zum Text: ", styles, "font-weight:normal");
+         oxy_label(text,"${i18n(notesStmt_note)}: ", styles, "@import 'labels.css';");
 }
 
 notesStmt note {
@@ -477,13 +470,13 @@ notesStmt::after{
 /* sourceDesc */
 sourceDesc::before {
     content:
-        oxy_label(text,"Beschreibung der Quelle: ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(sourceDesc)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
 }
 
 bibl {
     content:
-        oxy_label(text,"Bibliographische Beschreibung: ")
+        oxy_label(text,"${i18n(bibl)}: ", styles, "@import 'labels.css';")
         oxy_textArea(
             edit, "#text",
             columns, 40,
@@ -494,12 +487,12 @@ bibl {
 
 msDesc {
     content: 
-        oxy_label(text,"Manuskriptbeschreibung: ", styles, "font-weight:bold, font-size: 1em, color:  black;") !important;
+        oxy_label(text,"${i18n(msDesc)}: ", styles, "@import 'labels.css';") !important;
 }
 
 settlement{
     content:
-        oxy_label(text, "Standort: ")
+        oxy_label(text,"${i18n(settlement)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -509,7 +502,7 @@ settlement{
 
 repository{
      content:
-        oxy_label(text, "Repositorium: ")
+        oxy_label(text,"${i18n(repository)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -523,24 +516,24 @@ repository::after {
 
 physDesc::before {
     content: 
-        oxy_label(text,"Physische Beschreibung: ", styles, "font-weight:bold, font-size: 1em, color:  black;") !important;
+        oxy_label(text,"${i18n(physDesc)}: ", styles, "@import 'labels.css';")!important;
         white-space:nowrap;
 }
 
 typeDesc{
     content:
-        oxy_label(text, "Schriftbeschreibung: ")
+        oxy_label(text,"${i18n(typeDesc)}: ", styles, "@import 'labels.css';")
 }
 
 /* encodingDesc */
 encodingDesc::before{
     content:
-        oxy_label(text,"Kodierungsbeschreibung ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(encodingDesc)}: ", styles, "@import 'labels.css';");
 }
 
 projectDesc{
     content:
-        oxy_label(text,"Projektbeschreibung: \a")
+        oxy_label(text,"${i18n(projectDesc)}: ", styles, "@import 'labels.css';")
 }
 
 projectDesc p{
@@ -554,7 +547,7 @@ projectDesc p{
 
 editorialDecl{
     content:
-        oxy_label(text,"Zeichendeklaration: \a");
+        oxy_label(text,"${i18n(editorialDecl)}: ", styles, "@import 'labels.css';");
 }
 
 editorialDecl p{
@@ -568,17 +561,17 @@ editorialDecl p{
 
 classDecl {
     content:
-        oxy_label(text,"Angabe zur Klassifikation: \a", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(classDecl)}: ", styles, "@import 'labels.css';");
 }
 
 taxonomy {
     content:
-        oxy_label(text, "Typologie: \a");
+        oxy_label(text,"${i18n(taxonomy)}: ", styles, "@import 'labels.css';");
 }
 
 taxonomy bibl {
     content:
-        oxy_label(text, "Bibliographischer Verweis: \a")
+        oxy_label(text,"${i18n(taxonomy_bibl)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -594,7 +587,7 @@ taxonomy bibl::after {
 
 category {
     content:
-        oxy_label(text, "\a Kategorie: ")
+        oxy_label(text,"${i18n(category)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '@xml:id',
             columns, 20,
@@ -604,7 +597,7 @@ category {
 
 category category{
     content:
-        oxy_label(text, "\a Unterkategorie: ")
+        oxy_label(text,"${i18n(sub-category)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '@xml:id',
             columns, 20,
@@ -624,7 +617,7 @@ category:has(category)::after {
 
 catDesc {
     content:
-        oxy_label(text, "\a Kategoriebeschreibung: \a")
+        oxy_label(text,"${i18n(catDesc)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -636,12 +629,12 @@ catDesc {
 /* profileDesc */
 profileDesc{
     content:
-        oxy_label(text,"Textprofilbeschreibung ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(profileDesc)}: ", styles, "@import 'labels.css';");
 }
 
 creation date {
     content:
-        oxy_label(text, "Datei erstellt am: ")
+        oxy_label(text,"${i18n(creation)}: ", styles, "@import 'labels.css';")
         oxy_datePicker(
              columns, 10, 
              edit, "date",
@@ -655,12 +648,12 @@ creation date::before{
 
 language {
     content: 
-        oxy_label(text,"Sprache: ")
+        oxy_label(text,"${i18n(language)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
              edit, "#text",
              columns, 40,
              fontInherit,true)
-        oxy_label(text, "\a Sprachkürzel: ")
+       oxy_label(text,"${i18n(language_abbr)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
               edit, "@ident",
               columns, 40,
@@ -670,12 +663,12 @@ language {
 
 textClass::before{
     content:
-        oxy_label(text, "Textklassifikation: ", styles, "font-weight:bold, font-size: 1em, color:  black;")!important
+        oxy_label(text,"${i18n(textClass)}: ", styles, "@import 'labels.css';")!important
 }
 
 keywords::before{
     content:
-        oxy_label(text,"Schlagwörter/Themen: \a")!important;
+        oxy_label(text,"${i18n(keywords)}: ", styles, "@import 'labels.css';")!important;
 }
 
 keywords::after{
@@ -685,7 +678,7 @@ keywords::after{
 
 term{
     content:
-        oxy_label(text, "\a Schlüsselwort: ")
+        oxy_label(text,"${i18n(term)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
              edit, "#text",
              columns, 40,
@@ -699,7 +692,7 @@ term::after{
 
 classCode{
     content:
-        oxy_label(text, "Klassifikationscode: ")
+        oxy_label(text,"${i18n(classCode)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
              edit, "#text",
              columns, 40,
@@ -710,7 +703,7 @@ classCode{
 /* revisionDesc */
 revisionDesc {
     content:
-        oxy_label(text,"Dateihistorie \a", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(revisionDesc)}: ", styles, "@import 'labels.css';");
 }
 revisionDesc::after {
     display:none;
@@ -738,5 +731,5 @@ change::before{
 
 change p::before{
     content:
-        oxy_label(text, "Beschreibung der Änderung: ");
+        oxy_label(text,"${i18n(change)}: ", styles, "@import 'labels.css';");
 }

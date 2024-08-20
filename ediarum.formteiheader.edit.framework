@@ -110,13 +110,13 @@
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addAuthor</String>
+													<String>author</String>
 												</field>
 												<field name="name">
-													<String>Autor hinzufügen</String>
+													<String>${i18n(author_action)}</String>
 												</field>
 												<field name="description">
-													<String>Autor hinzufügen</String>
+													<String>${i18n(author_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -134,16 +134,18 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::author</String>
+																<String>//teiHeader/fileDesc/titleStmt</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
 																	<entry>
 																		<String>fragment</String>
-																		<String>&lt;persName xmlns="http://www.tei-c.org/ns/1.0">
-  &lt;surname>&lt;/surname>
-  &lt;forename>&lt;/forename>
-&lt;/persName></String>
+																		<String>&lt;author>
+  &lt;persName xmlns="http://www.tei-c.org/ns/1.0">
+    &lt;surname>&lt;/surname>
+    &lt;forename>&lt;/forename>
+  &lt;/persName>
+&lt;/author></String>
 																	</entry>
 																	<entry>
 																		<String>insertLocation</String>
@@ -248,13 +250,13 @@
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addAddrLine</String>
+													<String>addrLine</String>
 												</field>
 												<field name="name">
-													<String>Adresszeile hinzufügen</String>
+													<String>${i18n(addrLine)}</String>
 												</field>
 												<field name="description">
-													<String>Adresszeile hinzufügen</String>
+													<String>${i18n(addrLine_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -272,7 +274,7 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::address</String>
+																<String>parent::address or self::address</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>

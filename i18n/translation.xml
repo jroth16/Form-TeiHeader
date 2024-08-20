@@ -50,4 +50,264 @@
         <val lang="en_US">Must be a valid xml:id string</val>
         <val lang="de_DE">Muss ein valider xml:id string sein</val>
     </key>
+    <key value="surname">
+        <val lang="en_US">Surname</val>
+        <val lang="de_DE">Nachname</val>
+    </key>
+    <key value="forename">
+        <val lang="en_US">Forename</val>
+        <val lang="de_DE">Vorname</val>
+    </key>
+    <key value="date">
+        <val lang="en_US">Date</val>
+        <val lang="de_DE">Datum</val>
+    </key>
+    <key value="author">
+        <val lang="en_US">Author</val>
+        <val lang="de_DE">Autor/in</val>
+    </key>
+    <key value="authors">
+        <val lang="en_US">Author(s)</val>
+        <val lang="de_DE">Autor(en)</val>
+    </key>
+    <key value="author_action">
+        <val lang="en_US">Author</val>
+        <val lang="de_DE">Autor/in</val>
+    </key>
+    <key value="author_desc">
+        <val lang="en_US">Inserts an author</val>
+        <val lang="de_DE">Fügt eine/n Autor/in ein</val>
+    </key>
+    <key value="editors">
+        <val lang="en_US">Editor(s)</val>
+        <val lang="de_DE">Editor(en)</val>
+    </key>
+    <key value="editor">
+        <val lang="en_US">Editor</val>
+        <val lang="de_DE">Editor/in</val>
+    </key>
+    <key value="editor_action">
+        <val lang="en_US">Editor</val>
+        <val lang="de_DE">Editor/in</val>
+    </key>
+    <key value="editor_desc">
+        <val lang="en_US">Inserts an editor</val>
+        <val lang="de_DE">Fügt eine/n Editor/in ein</val>
+    </key>
+    <key value="respStmt">
+        <val lang="en_US">Statement of responsibilityy</val>
+        <val lang="de_DE">Anmerkung zur Verantwortung</val>
+    </key>
+    <key value="orgName">
+        <val lang="en_US">Name of organization</val>
+        <val lang="de_DE">Name der Institution</val>
+    </key>
+    <key value="name">
+        <val lang="en_US">Name of organization</val>
+        <val lang="de_DE">Name der Organisation</val>
+    </key>
+    <key value="respStmt_note">
+        <val lang="en_US">Note on responsibility</val>
+        <val lang="de_DE">Bemerkung zur Verantwortung</val>
+    </key>
+    <key value="resp">
+        <val lang="en_US">Responsibility</val>
+        <val lang="de_DE">Verantwortung</val>
+    </key>
+    <key value="editonStmt">
+        <val lang="en_US">Edition statement</val>
+        <val lang="de_DE">Editionsangabe</val>
+    </key>
+    <key value="edition">
+        <val lang="en_US">Edition</val>
+        <val lang="de_DE">Edition</val>
+    </key>ä
+    <key value="publicationStmt">
+        <val lang="en_US">Publication statement</val>
+        <val lang="de_DE">Angaben zur Veröffentlichung</val>
+    </key>
+    <key value="hostingInstitution">
+        <val lang="en_US">Hosting institution</val>
+        <val lang="de_DE">Herausgebende Institution</val>
+    </key>
+    <key value="project">
+        <val lang="en_US">Project</val>
+        <val lang="de_DE">Projekt</val>
+    </key>
+    <key value="email">
+        <val lang="en_US">Email</val>
+        <val lang="de_DE">E-Mail</val>
+    </key>
+    <key value="address">
+        <val lang="en_US">Address</val>
+        <val lang="de_DE">Adresse</val>
+    </key>
+    <key value="addrLine">
+        <val lang="en_US">Addressline</val>
+        <val lang="de_DE">Adresszeile</val>
+    </key>
+    <key value="addrLine">
+        <val lang="en_US">Inserts an addressline </val>
+        <val lang="de_DE">Fügt eine Adresszeile ein</val>
+    </key>
+    <key value="distributor">
+        <val lang="en_US">Distributor</val>
+        <val lang="de_DE">Distributor</val>
+    </key>
+    <key value="pubPlace">
+        <val lang="en_US">Place of publication</val>
+        <val lang="de_DE">Ort der Veröffentlichung</val>
+    </key>
+    <key value="publication">
+        <val lang="en_US">Date of publication</val>
+        <val lang="de_DE">Datum Veröffentlichung</val>
+    </key>
+    <key value="firstPublication">
+        <val lang="en_US">Date of first publication</val>
+        <val lang="de_DE">Datum der Erstveröffentlichung</val>
+    </key>
+    <key value="availability">
+        <val lang="en_US">Availabbility</val>
+        <val lang="de_DE">Verfügbarkeit</val>
+    </key>
+    <key value="licence">
+        <val lang="en_US">Licence</val>
+        <val lang="de_DE">Lizenz</val>
+    </key>
+    <key value="idno_type">
+        <val lang="en_US">Identifier</val>
+        <val lang="de_DE">Identifikator</val>
+    </key>
+    <key value="idno">
+        <val lang="en_US">Identification</val>
+        <val lang="de_DE">Identifikation</val>
+    </key>
+    <key value="notesStmt">
+        <val lang="en_US">Notes statement</val>
+        <val lang="de_DE">Zusätzliche Anmerkungen</val>
+    </key>
+    <key value="notesStmt_note">
+        <val lang="en_US">Note</val>
+        <val lang="de_DE">Anmerkung</val>
+    </key>
+    <key value="sourceDesc">
+        <val lang="en_US">Source Description</val>
+        <val lang="de_DE">Beschreibung der Quelle</val>
+    </key>
+    <key value="bibl">
+        <val lang="en_US">Bibliographic description</val>
+        <val lang="de_DE">Bibliographische Beschreibung</val>
+    </key>
+    <key value="msDesc">
+        <val lang="en_US">Manuscript description</val>
+        <val lang="de_DE">Manuskriptbeschreibung</val>
+    </key>
+    <key value="settlement">
+        <val lang="en_US">Settlement</val>
+        <val lang="de_DE">Standort</val>
+    </key>
+    <key value="repository">
+        <val lang="en_US">Repository</val>
+        <val lang="de_DE">Repositorium</val>
+    </key>
+    <key value="physDesc">
+        <val lang="en_US">Physical description</val>
+        <val lang="de_DE">Physische Beschreibung</val>
+    </key>
+    <key value="typeDesc">
+        <val lang="en_US">Type description</val>
+        <val lang="de_DE">Schriftbeschreibung</val>
+    </key>
+    <key value="encodingDesc">
+        <val lang="en_US">Encoding description</val>
+        <val lang="de_DE">Kodierungsbeschreibung</val>
+    </key>
+    <key value="projectDesc">
+        <val lang="en_US">Project description</val>
+        <val lang="de_DE">Projektbeschreibung</val>
+    </key>
+    <key value="editorialDecl">
+        <val lang="en_US">Editorial declaration</val>
+        <val lang="de_DE">Zeichendeklaration</val>
+    </key>
+    <key value="classDecl">
+        <val lang="en_US">Class declaration</val>
+        <val lang="de_DE">Angaben zur Klassifikation</val>
+    </key>
+    <key value="taxonomy">
+        <val lang="en_US">Taxonmy</val>
+        <val lang="de_DE">Typologie</val>
+    </key>
+    <key value="taxonomy_bibl">
+        <val lang="en_US">Bibliographical reference</val>
+        <val lang="de_DE">Bibliographischer Verweis</val>
+    </key>
+    <key value="category">
+        <val lang="en_US">Category</val>
+        <val lang="de_DE">Kategorie</val>
+    </key>
+    <key value="sub-category">
+        <val lang="en_US">Sub category</val>
+        <val lang="de_DE">Unterkategorie</val>
+    </key>
+    <key value="category_action">
+        <val lang="en_US">Category</val>
+        <val lang="de_DE">Kategorie</val>
+    </key>
+    <key value="category_desc">
+        <val lang="en_US">Inserts a category</val>
+        <val lang="de_DE">Fügt eine Kategorie ein</val>
+    </key>
+    <key value="catDesc">
+        <val lang="en_US">Category description</val>
+        <val lang="de_DE">Katgoriebeschreibung</val>
+    </key>
+    <key value="profileDesc">
+        <val lang="en_US">Profile description</val>
+        <val lang="de_DE">Textprofilbeschreibung</val>
+    </key>
+    <key value="creation">
+        <val lang="en_US">File created on</val>
+        <val lang="de_DE">Datei erstellt am</val>
+    </key>
+    <key value="language">
+        <val lang="en_US">Language</val>
+        <val lang="de_DE">Sprache</val>
+    </key>
+    <key value="language_abbr">
+        <val lang="en_US">Language abbreviation</val>
+        <val lang="de_DE">Sprachkürzel</val>
+    </key>
+    <key value="textClass">
+        <val lang="en_US">Text classification</val>
+        <val lang="de_DE">Textklassifikation</val>
+    </key>
+    <key value="keywords">
+        <val lang="en_US">Tags/topics</val>
+        <val lang="de_DE">Schlagwörter/Themen</val>
+    </key>
+    <key value="term">
+        <val lang="en_US">Keyword</val>
+        <val lang="de_DE">Schlüsselwort</val>
+    </key>
+    <key value="classCode">
+        <val lang="en_US">Classification code</val>
+        <val lang="de_DE">Klassifikationscode</val>
+    </key>
+    <key value="revisionDesc">
+        <val lang="en_US">Revision description</val>
+        <val lang="de_DE">Dateihistorie</val>
+    </key>
+    <key value="change">
+        <val lang="en_US">Change</val>
+        <val lang="de_DE">Beschreibung der Änderung</val>
+    </key>
+    <key value="change_action">
+        <val lang="en_US">Change</val>
+        <val lang="de_DE">Dateiänderung</val>
+    </key>
+    <key value="change_desc">
+        <val lang="en_US">Inserts a description of the changes of the file</val>
+        <val lang="de_DE">Fügt eine Beschreibung der Dateihistorie ein</val>
+    </key>
 </translation> 
