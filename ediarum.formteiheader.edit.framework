@@ -102,6 +102,148 @@
 									</poPatch>
 									<poPatch>
 										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[130]/name</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>${i18n(notesStmt)}</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[130]/description</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>${i18n(notesStmt_desc)}</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[130]/actionModes</String>
+										</field>
+										<field name="index">
+											<Integer>1</Integer>
+										</field>
+										<field name="value">
+											<actionMode>
+												<field name="xpathCondition">
+													<String>//teiHeader/fileDesc</String>
+												</field>
+												<field name="argValues">
+													<serializableOrderedMap>
+														<entry>
+															<String>fragment</String>
+															<String>&lt;notesStmt xmlns="http://www.tei-c.org/ns/1.0">&lt;note>&lt;p>&lt;/p>&lt;/note>&lt;/notesStmt></String>
+														</entry>
+														<entry>
+															<String>insertLocation</String>
+															<String>//sourceDesc</String>
+														</entry>
+														<entry>
+															<String>insertPosition</String>
+															<String>Before</String>
+														</entry>
+													</serializableOrderedMap>
+												</field>
+												<field name="operationID">
+													<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+												</field>
+											</actionMode>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[133]/name</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>${i18n(editor)}</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[133]/description</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>${i18n(editor_desc)}</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[134]/name</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>${i18n(respStmt_action)}</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[134]/description</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>${i18n(respStmt_desc)}</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
@@ -113,7 +255,7 @@
 													<String>author</String>
 												</field>
 												<field name="name">
-													<String>${i18n(author_action)}</String>
+													<String>${i18n(author)}</String>
 												</field>
 												<field name="description">
 													<String>${i18n(author_desc)}</String>
@@ -181,75 +323,6 @@
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addEditor</String>
-												</field>
-												<field name="name">
-													<String>Editor hinzufügen</String>
-												</field>
-												<field name="description">
-													<String>Editor hinzufügen</String>
-												</field>
-												<field name="largeIconPath">
-													<String></String>
-												</field>
-												<field name="smallIconPath">
-													<String></String>
-												</field>
-												<field name="accessKey">
-													<String></String>
-												</field>
-												<field name="accelerator">
-													<null/>
-												</field>
-												<field name="actionModes">
-													<actionMode-array>
-														<actionMode>
-															<field name="xpathCondition">
-																<String>ancestor-or-self::editor</String>
-															</field>
-															<field name="argValues">
-																<serializableOrderedMap>
-																	<entry>
-																		<String>fragment</String>
-																		<String>&lt;persName xmlns="http://www.tei-c.org/ns/1.0">
-  &lt;surname>&lt;/surname>
-  &lt;forename>&lt;/forename>
-&lt;/persName></String>
-																	</entry>
-																	<entry>
-																		<String>insertPosition</String>
-																		<String>Inside as first child</String>
-																	</entry>
-																</serializableOrderedMap>
-															</field>
-															<field name="operationID">
-																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-															</field>
-														</actionMode>
-													</actionMode-array>
-												</field>
-												<field name="enabledInReadOnlyContext">
-													<Boolean>false</Boolean>
-												</field>
-											</action>
-										</field>
-										<field name="patchHandling">
-											<String>addIndex</String>
-										</field>
-										<field name="anchor">
-											<null/>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/actionDescriptors</String>
-										</field>
-										<field name="index">
-											<Integer>189</Integer>
-										</field>
-										<field name="value">
-											<action>
-												<field name="id">
 													<String>addrLine</String>
 												</field>
 												<field name="name">
@@ -307,18 +380,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>190</Integer>
+											<Integer>189</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addIdno</String>
+													<String>idno_identifier</String>
 												</field>
 												<field name="name">
-													<String>Identifikator hinzufügen</String>
+													<String>${i18n(idno_action)}</String>
 												</field>
 												<field name="description">
-													<String>Identifikator hinzufügen</String>
+													<String>${i18n(idno_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -336,13 +409,13 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::idno[idno]</String>
+																<String>parent::idno[idno] or self::idno[idno]</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
 																	<entry>
 																		<String>fragment</String>
-																		<String>&lt;idno xmlns="http://www.tei-c.org/ns/1.0" type="">&lt;/idno></String>
+																		<String>&lt;idno xmlns="http://www.tei-c.org/ns/1.0" type="${ask('$i18n(type_idno):', combobox, ('ISBN':'ISBN', 'ISSN':'ISSN', 'DOI':'DOI', 'URI':'URI', 'VIAF':'VIAF', 'ESTC':'ESTC', 'OCLC':'OCLC')}">&lt;/idno></String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
@@ -369,18 +442,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>191</Integer>
+											<Integer>190</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addNote</String>
+													<String>insert_note</String>
 												</field>
 												<field name="name">
-													<String>Anmerkung hinzuüfgen</String>
+													<String>${i18n(note)}</String>
 												</field>
 												<field name="description">
-													<String>Anmerkung hinzufügen</String>
+													<String>${i18n(note_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -398,7 +471,7 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::notesStmt</String>
+																<String>parent::notesStmt or self::notesStmt</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
@@ -414,7 +487,7 @@
 														</actionMode>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>self::respStmt</String>
+																<String>parent::respStmt or self::respStmt</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
@@ -455,7 +528,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>192</Integer>
+											<Integer>191</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -517,18 +590,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>193</Integer>
+											<Integer>192</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addCategory</String>
+													<String>category</String>
 												</field>
 												<field name="name">
-													<String>Kategorie hinzufügen</String>
+													<String>${i18n(category)}</String>
 												</field>
 												<field name="description">
-													<String>Kategorie hinzufügen</String>
+													<String>${i18n(category_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -546,7 +619,7 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::taxonomy</String>
+																<String>parent::taxonomy or self::taxonomy</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
@@ -583,18 +656,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>194</Integer>
+											<Integer>193</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addSubcategory</String>
+													<String>subcategory</String>
 												</field>
 												<field name="name">
-													<String>Unterkategorie hinzufügen</String>
+													<String>${i18n(sub-category)}</String>
 												</field>
 												<field name="description">
-													<String>Unterkategorie hinzufügen</String>
+													<String>${i18n(subcategory_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -612,7 +685,7 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::category[category]</String>
+																<String>parent::category[category] or self::category[category]</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
@@ -647,18 +720,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>195</Integer>
+											<Integer>194</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addTerm</String>
+													<String>term</String>
 												</field>
 												<field name="name">
-													<String>Schlüsselwort hinzufügen</String>
+													<String>${i18n(term)}</String>
 												</field>
 												<field name="description">
-													<String>Schlüsselwort hinzufügen</String>
+													<String>${i18n(term_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -676,7 +749,7 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::keywords</String>
+																<String>parent::keywords or self::keywords</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
@@ -709,18 +782,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>196</Integer>
+											<Integer>195</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addChange</String>
+													<String>change</String>
 												</field>
 												<field name="name">
-													<String>Änderung hinzufügen</String>
+													<String>${i18n(change)}</String>
 												</field>
 												<field name="description">
-													<String>Änderung hinzufügen</String>
+													<String>${i18n(change_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -738,7 +811,7 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::listChange</String>
+																<String>parent::listChange or self::listChange</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
@@ -773,142 +846,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>197</Integer>
+											<Integer>196</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addSubtitle</String>
+													<String>name</String>
 												</field>
 												<field name="name">
-													<String>Untertitel hinzufügen</String>
+													<String>${i18n(name_action)}</String>
 												</field>
 												<field name="description">
-													<String>Untertitel hinzufügen</String>
-												</field>
-												<field name="largeIconPath">
-													<String></String>
-												</field>
-												<field name="smallIconPath">
-													<String></String>
-												</field>
-												<field name="accessKey">
-													<String></String>
-												</field>
-												<field name="accelerator">
-													<null/>
-												</field>
-												<field name="actionModes">
-													<actionMode-array>
-														<actionMode>
-															<field name="xpathCondition">
-																<String>ancestor-or-self::title[@type = "main"]</String>
-															</field>
-															<field name="argValues">
-																<serializableOrderedMap>
-																	<entry>
-																		<String>fragment</String>
-																		<String>&lt;title type="sub">&lt;/title></String>
-																	</entry>
-																</serializableOrderedMap>
-															</field>
-															<field name="operationID">
-																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-															</field>
-														</actionMode>
-													</actionMode-array>
-												</field>
-												<field name="enabledInReadOnlyContext">
-													<Boolean>false</Boolean>
-												</field>
-											</action>
-										</field>
-										<field name="patchHandling">
-											<String>addIndex</String>
-										</field>
-										<field name="anchor">
-											<null/>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/actionDescriptors</String>
-										</field>
-										<field name="index">
-											<Integer>198</Integer>
-										</field>
-										<field name="value">
-											<action>
-												<field name="id">
-													<String>addRespStmt</String>
-												</field>
-												<field name="name">
-													<String>RespStmt hinzufügen</String>
-												</field>
-												<field name="description">
-													<String>RespStmt hinzufügen</String>
-												</field>
-												<field name="largeIconPath">
-													<String></String>
-												</field>
-												<field name="smallIconPath">
-													<String></String>
-												</field>
-												<field name="accessKey">
-													<String></String>
-												</field>
-												<field name="accelerator">
-													<null/>
-												</field>
-												<field name="actionModes">
-													<actionMode-array>
-														<actionMode>
-															<field name="xpathCondition">
-																<String>ancestor-or-self::titleStmt</String>
-															</field>
-															<field name="argValues">
-																<serializableOrderedMap>
-																	<entry>
-																		<String>fragment</String>
-																		<String>&lt;respStmt xmlns="http://www.tei-c.org/ns/1.0">&lt;/respStmt></String>
-																	</entry>
-																</serializableOrderedMap>
-															</field>
-															<field name="operationID">
-																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
-															</field>
-														</actionMode>
-													</actionMode-array>
-												</field>
-												<field name="enabledInReadOnlyContext">
-													<Boolean>false</Boolean>
-												</field>
-											</action>
-										</field>
-										<field name="patchHandling">
-											<String>addIndex</String>
-										</field>
-										<field name="anchor">
-											<null/>
-										</field>
-									</poPatch>
-									<poPatch>
-										<field name="fieldPath">
-											<String>authorExtensionDescriptor/actionDescriptors</String>
-										</field>
-										<field name="index">
-											<Integer>199</Integer>
-										</field>
-										<field name="value">
-											<action>
-												<field name="id">
-													<String>addName</String>
-												</field>
-												<field name="name">
-													<String>Name hinzugügen</String>
-												</field>
-												<field name="description">
-													<String>Namen hinzufügen</String>
+													<String>${i18n(name_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -959,18 +908,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>200</Integer>
+											<Integer>197</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addPersName</String>
+													<String>insert_persName</String>
 												</field>
 												<field name="name">
-													<String>Verantwortlichen hinzufügen</String>
+													<String>${i18n(persName)}</String>
 												</field>
 												<field name="description">
-													<String>Verantwortlichen hinzufügen</String>
+													<String>${i18n(persName_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -988,7 +937,7 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>self::respStmt</String>
+																<String>parent::respStmt or self::respStmt</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
@@ -1024,18 +973,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>201</Integer>
+											<Integer>198</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addOrgName</String>
+													<String>insert_orgName</String>
 												</field>
 												<field name="name">
-													<String>Organisation hinzufügen</String>
+													<String>${i18n(orgName)}</String>
 												</field>
 												<field name="description">
-													<String>Organisation hinzufügen</String>
+													<String>${i18n(orgName_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -1053,7 +1002,7 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>self::respStmt</String>
+																<String>parent::respStmt or self::respStmt</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
@@ -1086,18 +1035,18 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>202</Integer>
+											<Integer>199</Integer>
 										</field>
 										<field name="value">
 											<action>
 												<field name="id">
-													<String>addResp</String>
+													<String>resp</String>
 												</field>
 												<field name="name">
-													<String>Verantwortung hinzufügen</String>
+													<String>${i18n(resp_action)}</String>
 												</field>
 												<field name="description">
-													<String>Verantwortung hinzufügen</String>
+													<String>${i18n(resp_desc)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -1115,7 +1064,7 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>self::respStmt</String>
+																<String>parent::respStmt or self::respStmt</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
@@ -1148,7 +1097,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>203</Integer>
+											<Integer>200</Integer>
 										</field>
 										<field name="value">
 											<action>
@@ -1183,7 +1132,7 @@
 																<serializableOrderedMap>
 																	<entry>
 																		<String>fragment</String>
-																		<String>&lt;title xmlns="http://www.tei-c.org/ns/1.0" type="${ask('Typ des Titels:', combobox, ('main':'${i18n(main_title)}';'sub':'${i18n(sub_title)}';'volume':'${i18n(vol_title)}';'part':'${i18n(part_title)}'))}">${caret}&lt;/title></String>
+																		<String>&lt;title xmlns="http://www.tei-c.org/ns/1.0" type="${ask('${i18n(type_title)}:', combobox, ('main':'${i18n(main_title)}';'sub':'${i18n(sub_title)}';'volume':'${i18n(vol_title)}';'part':'${i18n(part_title)}'))}">${caret}&lt;/title></String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
@@ -1238,7 +1187,7 @@
 											<String>authorExtensionDescriptor/actionDescriptors</String>
 										</field>
 										<field name="index">
-											<Integer>204</Integer>
+											<Integer>201</Integer>
 										</field>
 										<field name="value">
 											<action>

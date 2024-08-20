@@ -23,7 +23,7 @@ TEI::before{
             columns, 30,
             fontInherit,true, tooltip, '${i18n(id_desc)}');
     visibility: -oxy-collapse-text;
-    display:block;;
+    display:block;
     white-space:nowrap;
     font-weight:bold;
     font-size: 1em; 
@@ -250,10 +250,6 @@ resp {
     visibility: -oxy-collapse-text;;
 }
 
-/* resp::after{
-    content: "\a"
-}*/
-
 respStmt::after{
     content: 
         oxy_buttonGroup(
@@ -407,15 +403,6 @@ availability{
 licence{
     content:
         oxy_label(text,"${i18n(licence)}: ", styles, "@import 'labels.css';");
-}
-
-idno[type]::before{
-    content:
-        oxy_label(text, "\a Art des Identifikators: " attr(type))
-        oxy_combobox(           
-            edit, "@type",
-            editable, true,
-            values, "ISBN, ISSN, DOI, URI, VIAF, ESTC, OCLC");
 }
 
 idno[type] {

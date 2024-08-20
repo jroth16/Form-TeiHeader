@@ -50,6 +50,14 @@
         <val lang="en_US">Must be a valid xml:id string</val>
         <val lang="de_DE">Muss ein valider xml:id string sein</val>
     </key>
+    <key value="persName">
+        <val lang="en_US">Personal name</val>
+        <val lang="de_DE">Personenname</val>
+    </key>
+    <key value="persName_desc">
+        <val lang="en_US">Inserts a personal name</val>
+        <val lang="de_DE">Fügt einen Personennamen ein</val>
+    </key>
     <key value="surname">
         <val lang="en_US">Surname</val>
         <val lang="de_DE">Nachname</val>
@@ -70,10 +78,6 @@
         <val lang="en_US">Author(s)</val>
         <val lang="de_DE">Autor(en)</val>
     </key>
-    <key value="author_action">
-        <val lang="en_US">Author</val>
-        <val lang="de_DE">Autor/in</val>
-    </key>
     <key value="author_desc">
         <val lang="en_US">Inserts an author</val>
         <val lang="de_DE">Fügt eine/n Autor/in ein</val>
@@ -86,25 +90,41 @@
         <val lang="en_US">Editor</val>
         <val lang="de_DE">Editor/in</val>
     </key>
-    <key value="editor_action">
-        <val lang="en_US">Editor</val>
-        <val lang="de_DE">Editor/in</val>
-    </key>
     <key value="editor_desc">
         <val lang="en_US">Inserts an editor</val>
-        <val lang="de_DE">Fügt eine/n Editor/in ein</val>
+        <val lang="de_DE">Fügt eine/n Herausgeber (Bearbeiter) des edierten Textes ein</val>
     </key>
     <key value="respStmt">
         <val lang="en_US">Statement of responsibilityy</val>
         <val lang="de_DE">Anmerkung zur Verantwortung</val>
     </key>
+    <key value="respStmt_action">
+        <val lang="en_US">Responsibility statement</val>
+        <val lang="de_DE">Mitarbeit</val>
+    </key>
+    <key value="respStmt_desc">
+        <val lang="en_US">Inserts a responsibility</val>
+        <val lang="de_DE">Fügt eine/n Mitarbeiter/in (nicht: Herausgeber) am edierten Text ein</val>
+    </key>
     <key value="orgName">
         <val lang="en_US">Name of organization</val>
         <val lang="de_DE">Name der Institution</val>
     </key>
+    <key value="orgName_desc">
+        <val lang="en_US">Inserts a name of an organization</val>
+        <val lang="de_DE">Fügt einen Namen einer Institution ein</val>
+    </key>
     <key value="name">
         <val lang="en_US">Name of organization</val>
         <val lang="de_DE">Name der Organisation</val>
+    </key>
+    <key value="name_action">
+        <val lang="en_US">Name</val>
+        <val lang="de_DE">Name</val>
+    </key>
+    <key value="name_desc">
+        <val lang="en_US">Inserts an name</val>
+        <val lang="de_DE">Fügt einen Namen ein</val>
     </key>
     <key value="respStmt_note">
         <val lang="en_US">Note on responsibility</val>
@@ -113,6 +133,14 @@
     <key value="resp">
         <val lang="en_US">Responsibility</val>
         <val lang="de_DE">Verantwortung</val>
+    </key>
+    <key value="resp_action">
+        <val lang="en_US">Responsibility</val>
+        <val lang="de_DE">Verantwortung</val>
+    </key>
+    <key value="resp_desc">
+        <val lang="en_US">Inserts a responsibility element</val>
+        <val lang="de_DE">Fügt ein Verantwortungselement ein</val>
     </key>
     <key value="editonStmt">
         <val lang="en_US">Edition statement</val>
@@ -146,7 +174,7 @@
         <val lang="en_US">Addressline</val>
         <val lang="de_DE">Adresszeile</val>
     </key>
-    <key value="addrLine">
+    <key value="addrLine_desc">
         <val lang="en_US">Inserts an addressline </val>
         <val lang="de_DE">Fügt eine Adresszeile ein</val>
     </key>
@@ -182,13 +210,33 @@
         <val lang="en_US">Identification</val>
         <val lang="de_DE">Identifikation</val>
     </key>
+    <key value="type_idno">
+        <val lang="en_US">Type of identification</val>
+        <val lang="de_DE">Typ der Identifikation</val>
+    </key>
+    <key value="idno_action">
+        <val lang="en_US">Identifier</val>
+        <val lang="de_DE">Identifikator</val>
+    </key>
+    <key value="idno_desc">
+        <val lang="en_US">Inserts an identifier </val>
+        <val lang="de_DE">Fügt einen Identifikator ein</val>
+    </key>
     <key value="notesStmt">
         <val lang="en_US">Notes statement</val>
         <val lang="de_DE">Zusätzliche Anmerkungen</val>
     </key>
-    <key value="notesStmt_note">
+    <key value="notesStmt_desc">
+        <val lang="en_US">Inserts a notes statement</val>
+        <val lang="de_DE">Fügt zusätzliche Anmerkungen ein</val>
+    </key>
+    <key value="note">
         <val lang="en_US">Note</val>
         <val lang="de_DE">Anmerkung</val>
+    </key>
+    <key value="note_desc">
+        <val lang="en_US">Inserts a note</val>
+        <val lang="de_DE">Fügt eine Bemerkung ein</val>
     </key>
     <key value="sourceDesc">
         <val lang="en_US">Source Description</val>
@@ -246,17 +294,17 @@
         <val lang="en_US">Category</val>
         <val lang="de_DE">Kategorie</val>
     </key>
+    <key value="category_desc">
+        <val lang="en_US">Inserts a category</val>
+        <val lang="de_DE">Fügt eine Kategorie ein</val>
+    </key>
     <key value="sub-category">
         <val lang="en_US">Sub category</val>
         <val lang="de_DE">Unterkategorie</val>
     </key>
-    <key value="category_action">
-        <val lang="en_US">Category</val>
-        <val lang="de_DE">Kategorie</val>
-    </key>
-    <key value="category_desc">
-        <val lang="en_US">Inserts a category</val>
-        <val lang="de_DE">Fügt eine Kategorie ein</val>
+    <key value="subcategory_desc">
+        <val lang="en_US">Inserts a sub-category</val>
+        <val lang="de_DE">Fügt eine Unterkategorie ein</val>
     </key>
     <key value="catDesc">
         <val lang="en_US">Category description</val>
@@ -290,6 +338,10 @@
         <val lang="en_US">Keyword</val>
         <val lang="de_DE">Schlüsselwort</val>
     </key>
+    <key value="term_desc">
+        <val lang="en_US">Inserts a term</val>
+        <val lang="de_DE">Fügt ein Schlüsselwort ein</val>
+    </key>
     <key value="classCode">
         <val lang="en_US">Classification code</val>
         <val lang="de_DE">Klassifikationscode</val>
@@ -300,11 +352,7 @@
     </key>
     <key value="change">
         <val lang="en_US">Change</val>
-        <val lang="de_DE">Beschreibung der Änderung</val>
-    </key>
-    <key value="change_action">
-        <val lang="en_US">Change</val>
-        <val lang="de_DE">Dateiänderung</val>
+        <val lang="de_DE">Änderung an der Datei</val>
     </key>
     <key value="change_desc">
         <val lang="en_US">Inserts a description of the changes of the file</val>
