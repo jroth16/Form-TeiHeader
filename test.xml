@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="css/main.css"?>
-<?xml-stylesheet type="text/css" href="css/letters.css" title="Briefe" alternate="yes"?>
-<?xml-stylesheet type="text/css" href="css/editorialDecl.css" title="Editionsprinzipien" alternate="yes"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" xml:id="">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:telota="http://www.telota.de" telota:doctype="document" xml:id="">
     <teiHeader>
         <fileDesc>
             <titleStmt>
                 <title type="main"/>
-                <title type="sub"/>
                 <author>
                     <persName>
                         <surname/>
@@ -20,11 +16,6 @@
                         <forename/>
                     </persName>
                 </editor>
-                <respStmt>
-                    <orgName/>
-                    <note/>
-                    <ref/>
-                </respStmt>
             </titleStmt>
             <editionStmt>
                 <edition>
@@ -55,8 +46,8 @@
                     </licence>
                 </availability>
                 <idno>
-                    <idno/>
-                    <idno type=""/></idno>
+                    <idno type=""></idno>
+                </idno>
             </publicationStmt>
             <notesStmt>
                 <note></note>

@@ -10,41 +10,41 @@
   
 /* Allgemeines */
 * {
-    width: 40%;
     text-align:left;
     font-size: 12pt !important;
     color: black !important;
 }
 
 TEI::before{
-    content: "TEI Dokument\a" "ID:" 
+    content:
+        oxy_label(text,"ID: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '@xml:id',
-            columns, 40,
-            fontInherit,true);
+            columns, 30,
+            fontInherit,true, tooltip, '${i18n(id_desc)}');
     visibility: -oxy-collapse-text;
-    display:block;;
-    color:  #5A5A5A;
-    font-size: 1.2em;
+    display:block;
     white-space:nowrap;
+    font-weight:bold;
+    font-size: 1em; 
+    color:  black;
 }
 
-titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, notesStmt, revisionDesc{
-    border: 1px solid #5A5A5A;
-    border-radius: 4px;
-    padding: 1em;
+author, publisher, note{
+    -oxy-display-tags: none;
+}
+
+titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, notesStmt, revisionDesc, profileDesc{
+    padding: 0.2em;
     margin: 0 0 0.5em 0;
     -oxy-foldable: true;
 }
 
-titleStmt, teiHeader, fileDesc, fileDesc > publicationStmt, fileDesc > editionStmt, sourceDesc, encodingDesc, profileDesc{
+publicationStmt, editionStmt, sourceDesc, encodingDesc, profileDesc{
     content: "";
     display: block;
-}
-
-titleStmt::before, title[type="main"]::before, title[type="sub"]::before{
-    display: block;
-    color: #5A5A5A;
+    border-top: 3px solid gray !important;
+    width: 40em !important;
 }
 
 teiHeader p, repository::before, forename::before, surname::before, forename::after, orgName::before, note::before, availability::before, availability::after, idno::after, idno[type]::before,settlement::before, settlement::after, repository::after, physDesc::after, encodingDesc::after, edition::after, date::before {
@@ -57,7 +57,7 @@ oxy|comment {
 
 surname{
     content:
-        oxy_label(text, "\a Nachname: ")
+        oxy_label(text,"${i18n(surname)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -65,17 +65,15 @@ surname{
      visibility: -oxy-collapse-text;
 }
 
-surname::after {
-    display:none;
-}
 forename{
     content:
-        oxy_label(text, "Vorname: ")
+        oxy_label(text,"${i18n(forename)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
+     display: block;
 }
 
 teiHeader p{
@@ -100,91 +98,121 @@ span::before {
 
 date {
     content: 
-         oxy_label(text,"Datum: ")
+         oxy_label(text,"${i18n(date)}: ", styles, "@import 'labels.css';")
          oxy_datePicker(
              columns, 10, 
              edit, "date",
              format, "yyyy-MM-dd");
 }
 
-/* titleStmt */
+/* ==========
+ * titleStmt 
+ * Beispiel Funktionalitaet
+ * ==========*/
+ 
 titleStmt::before{
     content: 
-        oxy_label(text,"Titelei");
+        oxy_label(text,"${i18n(front_matter)}", styles, "@import 'labels.css';");
     font-weight:bold;
     font-size: 1em; 
     color:  black;
 }
-
+titleStmt{
+    content: oxy_button(actionID, "title", showIcon, true, showText, true)
+             oxy_button(actionID, "respStmt");
+    display: block;
+}
+title{
+    visibility: -oxy-collapse-text;
+    display: block;
+}
 title[type="main"] {
     content:
-        oxy_label(text,"Titel: ")
+        oxy_label(text,"${i18n(main_title)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '#text',
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
-     margin: 0;
 }
-
 title[type="sub"]{
     content:  
-        oxy_label(text,"Untertitel: ")
+        oxy_label(text,"${i18n(sub_title)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
-     margin: 0;
 }
-
-author::after{
-    content: "\a"
-        oxy_button(action, oxy_action(
-            name, "Autor hinzufügen",
-            description, "Inserts persName for author to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<persName xmlns="http://www.tei-c.org/ns/1.0"><surname></surname><forename></forename></persName>'
-        )) 
-}
-author surname::before{
+title[type="volume"]{
     content:
-        oxy_label(text, "\a Autor/in: ")
+        oxy_label(text, "${i18n(vol_title)}: ", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit, true
+        )
+        oxy_label(text, "${i18n(vol_nr)}: ", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "@n",
+            columns, 15,
+            fontInherit, true
+        );
+}
+title[type="part"]{
+    content: oxy_label(text,"${i18n(part_title)}: ", styles, "@import 'labels.css';")
+             oxy_textfield(
+                edit, "#text",
+                columns, 40,
+                fontInherit,true);
 }
 
-author::before {
-    content: 
-        oxy_label(text, "Autor(en): \a")
+/* =======
+ * Ende Beispiel
+ * =======
+ */
+
+author persName{
+    content:
+        oxy_label(text,"${i18n(author)}: ", styles, "@import 'labels.css';")
 }
 
-editor::before {
+author:first-of-type::before {
     content: 
-        oxy_label(text, "Editor(en):")
+        oxy_label(text,"${i18n(authors)}: ", styles, "@import 'labels.css';")
 }
 
-editor::after{
-    content: 
-        oxy_button(action, oxy_action(
-            name, "Editor hinzufügen",
-            description, "Inserts persName for editor to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<persName xmlns="http://www.tei-c.org/ns/1.0"><surname></surname><forename></forename></persName>'
-        )) 
+author:last-of-type::after{
+     content: "\a"
+        oxy_button(actionID, "addAuthor");
 }
+
+editor:first-of-type::before {
+    content: 
+        oxy_label(text,"${i18n(editors)}: ", styles, "@import 'labels.css';") !important;
+}
+
+editor::after {
+    content:"";
+}
+
+editor:last-of-type::after{
+    content: "\a"
+        oxy_button(actionID, "addEditor");
+}
+
 editor surname::before{
     content:
-        oxy_label(text, "\a Editor/in: ")
+        oxy_label(text,"${i18n(editor)}: ", styles, "@import 'labels.css';")
 }
 
-respStmt::before{
+respStmt{
     content: 
-        oxy_label(text,"Angabe zur Verantwortlichkeit ", styles, "font-weight:bold, font-size: 1em, color:  black;");
-    white-space: nowrap;
+        oxy_label(text,"${i18n(respStmt)}: ", styles, "@import 'labels.css';");
+    display:block;
 }
 
 orgName{
     content:
-        oxy_label(text, "Name der Institution: ")
+        oxy_label(text,"${i18n(orgName)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -192,13 +220,19 @@ orgName{
      visibility: -oxy-collapse-text;
 }
 
-respStmt note::before, respStmt note::after {
-    display:none;
+name{
+    content:
+        oxy_label(text,"${i18n(name)}: ", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
 }
 
 respStmt note{
     content:
-        oxy_label(text, "Bemerkung zur Bereitstellung: ")
+        oxy_label(text,"${i18n(respStmt_note)}: ", styles, "@import 'labels.css';")
         oxy_textArea(
             edit, "#text",
             columns, 40,
@@ -206,26 +240,38 @@ respStmt note{
      visibility: -oxy-collapse-text;
 }
 
-ref {
+resp {
     content: 
-        oxy_label(text,"Referenz: " attr(target))
+        oxy_label(text,"${i18n(resp)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
-            edit, '@target',
+            edit, "#text",
             columns, 40,
             fontInherit,true);
     visibility: -oxy-collapse-text;;
 }
 
+respStmt::after{
+    content: 
+        oxy_buttonGroup(
+            label, "Verantwortliche hinzufügen",
+            actionIDs, "addName , addPersName , addOrgName , addResp , addNote ")
+}
+
+titleStmt::after{
+    content: 
+        oxy_button(actionID, addRespStmt) !important;
+}
+
 /* editionStmt */
 editionStmt::before{
     content: 
-        oxy_label(text,"Angabe zur Ausgabe ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(editionStmt)}: ", styles, "@import 'labels.css';");
     white-space: nowrap;
 }
 
 edition{
     content:
-        oxy_label(text, "Edition: ")
+        oxy_label(text,"${i18n(edition)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -236,23 +282,27 @@ edition{
 /* publicationStmt */
 publicationStmt::before {
     content:
-        oxy_label(text,"Angaben zur Veröffentlichung \a ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(publicationStmt)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
 }
 
-publisher{
-    content:
-        oxy_label(text, "Herausgeber: ")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text;
+publisher::after{
+    content:"\a"
+        oxy_button(actionID, addOrgName)
+}
+
+publisher > orgName{
+    content: "Name der/des"
+        oxy_combobox(           
+            edit, "@role",
+            editable, false,
+            values, "project, hostingInstitution",
+            labels, "Projekts, ausrichtenden Insitution");
 }
 
 orgName[role="hostingInstitution"]{
     content:
-        oxy_label(text, "Name der ausrichtenden Institution: ")
+        oxy_label(text,"${i18n(hostingInstitution)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -262,7 +312,7 @@ orgName[role="hostingInstitution"]{
 
 orgName[role="project"]{
     content:
-        oxy_label(text, "Name des Projekts: ")
+        oxy_label(text,"${i18n(project)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -272,7 +322,7 @@ orgName[role="project"]{
 
 email{
     content:
-        oxy_label(text, "Email: ")
+        oxy_label(text,"${i18n(email)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -291,22 +341,17 @@ addrLine{
 
 address::before{
     content:
-        oxy_label(text,"Adresse: ");
+        oxy_label(text,"${i18n(address)}: ", styles, "@import 'labels.css';");
 }
 
 address::after {
     content:
-        oxy_button(action, oxy_action(
-             name, "Adresszeile hinzufügen",
-             description, "Inserts addrLine to the TEIHeader",
-             operation, "InsertFragmentOperation",
-             arg-fragment, '<addrLine xmlns="http://www.tei-c.org/ns/1.0"></addrLine>'
-         ))
+        oxy_button(actionID, "addAddrLine")
 }
 
 distributor{
     content:
-        oxy_label(text, "Distributor: ")
+        oxy_label(text,"${i18n(distributor)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -316,7 +361,7 @@ distributor{
 
 pubPlace{
     content:
-        oxy_label(text, "Publikationsort: ")
+        oxy_label(text,"${i18n(pubPlace)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -324,9 +369,18 @@ pubPlace{
      visibility: -oxy-collapse-text;
 }
 
+date{
+    content: "Datum der/des"
+        oxy_combobox(           
+            edit, "@type",
+            editable, false,
+            values, "publication, firstPublication",
+            labels, "Veröffentlichung, Erstveröffentlichung");
+}
+
 date[type="publication"]{
     content:
-        oxy_label(text,"Veröffentlichung: ")
+        oxy_label(text,"${i18n(publication)}: ", styles, "@import 'labels.css';")
         oxy_datePicker(
             columns, 10, 
             edit, "@date",
@@ -334,7 +388,7 @@ date[type="publication"]{
 }
 date[type="firstPublication"]{
     content:
-        oxy_label(text,"Erstveröffentlichung: ")
+        oxy_label(text,"${i18n(firstPublication)}: ", styles, "@import 'labels.css';")
         oxy_datePicker(
             columns, 10, 
             edit, "@date",
@@ -343,26 +397,17 @@ date[type="firstPublication"]{
 
 availability{
     content:
-        oxy_label(text,"Verfügbarkeit: \a");
+        oxy_label(text,"${i18n(availability)}: ", styles, "@import 'labels.css';");
 }
 
 licence{
     content:
-        oxy_label(text,"Lizenz: \a");
-}
-
-idno[type]::before{
-    content:
-        oxy_label(text, "\a Art des Identifikators: " attr(type))
-        oxy_combobox(           
-            edit, "@type",
-            editable, true,
-            values, "ISBN, ISSN, DOI, URI, VIAF, ESTC, OCLC");
+        oxy_label(text,"${i18n(licence)}: ", styles, "@import 'labels.css';");
 }
 
 idno[type] {
     content:
-        oxy_label(text, "\a Identifikator: ")
+        oxy_label(text,"${i18n(idno_type)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -372,7 +417,7 @@ idno[type] {
 
 idno:has(idno)::before {
     content: 
-        oxy_label(text, "Identifikation: \a");
+        oxy_label(text,"${i18n(idno)}: ", styles, "@import 'labels.css';");
     font-weight: bold;
     font-size: 1em;
     color:  black;
@@ -380,24 +425,19 @@ idno:has(idno)::before {
 
 idno:has(idno)::after {
     content: 
-        oxy_button(action, oxy_action(
-            name, "Identifikator hinzufügen",
-            description, "Inserts idno to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<idno xmlns="http://www.tei-c.org/ns/1.0" type=""></idno>'
-        ));
+        oxy_button(actionID, "addIdno");
 }
 
 /* notesStmt */
 notesStmt::before {
     content: 
-        oxy_label(text, "Zusätzliche Anmerkungen: ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(notesStmt)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
 }
 
 notesStmt note::before{
     content:
-         oxy_label(text, "Anmerkung zum Text: ", styles, "font-weight:normal");
+         oxy_label(text,"${i18n(notesStmt_note)}: ", styles, "@import 'labels.css';");
 }
 
 notesStmt note {
@@ -411,27 +451,19 @@ notesStmt note {
 
 notesStmt::after{
     content: 
-        oxy_button(action, oxy_action(
-            name, "Anmerkung hinzufügen",
-            description, "Inserts persName for editor to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<note xmlns="http://www.tei-c.org/ns/1.0"></note>'
-        )) 
+        oxy_button(actionID, "addNote") 
 }
 
 /* sourceDesc */
 sourceDesc::before {
     content:
-        oxy_label(text,"Beschreibung der Quelle: ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(sourceDesc)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
-}
-sourceDesc titleStmt {
-    display:none;
 }
 
 bibl {
     content:
-        oxy_label(text,"Bibliographische Beschreibung: ")
+        oxy_label(text,"${i18n(bibl)}: ", styles, "@import 'labels.css';")
         oxy_textArea(
             edit, "#text",
             columns, 40,
@@ -442,12 +474,12 @@ bibl {
 
 msDesc {
     content: 
-        oxy_label(text,"Manuskriptbeschreibung: ", styles, "font-weight:bold, font-size: 1em, color:  black;") !important;
+        oxy_label(text,"${i18n(msDesc)}: ", styles, "@import 'labels.css';") !important;
 }
 
 settlement{
     content:
-        oxy_label(text, "Standort: ")
+        oxy_label(text,"${i18n(settlement)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -457,7 +489,7 @@ settlement{
 
 repository{
      content:
-        oxy_label(text, "Repositorium: ")
+        oxy_label(text,"${i18n(repository)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -471,24 +503,24 @@ repository::after {
 
 physDesc::before {
     content: 
-        oxy_label(text,"Physische Beschreibung: ", styles, "font-weight:bold, font-size: 1em, color:  black;") !important;
+        oxy_label(text,"${i18n(physDesc)}: ", styles, "@import 'labels.css';")!important;
         white-space:nowrap;
 }
 
 typeDesc{
     content:
-        oxy_label(text, "Schriftbeschreibung: ")
+        oxy_label(text,"${i18n(typeDesc)}: ", styles, "@import 'labels.css';")
 }
 
 /* encodingDesc */
 encodingDesc::before{
     content:
-        oxy_label(text,"Kodierungsbeschreibung ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(encodingDesc)}: ", styles, "@import 'labels.css';");
 }
 
 projectDesc{
     content:
-        oxy_label(text,"Projektbeschreibung: \a")
+        oxy_label(text,"${i18n(projectDesc)}: ", styles, "@import 'labels.css';")
 }
 
 projectDesc p{
@@ -502,7 +534,7 @@ projectDesc p{
 
 editorialDecl{
     content:
-        oxy_label(text,"Zeichendeklaration: \a");
+        oxy_label(text,"${i18n(editorialDecl)}: ", styles, "@import 'labels.css';");
 }
 
 editorialDecl p{
@@ -516,17 +548,17 @@ editorialDecl p{
 
 classDecl {
     content:
-        oxy_label(text,"Angabe zur Klassifikation: \a", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(classDecl)}: ", styles, "@import 'labels.css';");
 }
 
 taxonomy {
     content:
-        oxy_label(text, "Typologie: \a");
+        oxy_label(text,"${i18n(taxonomy)}: ", styles, "@import 'labels.css';");
 }
 
 taxonomy bibl {
     content:
-        oxy_label(text, "Bibliographischer Verweis: \a")
+        oxy_label(text,"${i18n(taxonomy_bibl)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -537,17 +569,12 @@ taxonomy bibl {
 
 taxonomy bibl::after {
     content:"\a"
-        oxy_button(action, oxy_action(
-            name, "Verweis entfernen",
-            description, 'Deletes the current element', 
-            operation, 'DeleteElementOperation' 
-        ))
-        
+        oxy_button(actionID, "delBibl")      
 }
 
 category {
     content:
-        oxy_label(text, "\a Kategorie: ")
+        oxy_label(text,"${i18n(category)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '@xml:id',
             columns, 20,
@@ -557,7 +584,7 @@ category {
 
 category category{
     content:
-        oxy_label(text, "\a Unterkategorie: ")
+        oxy_label(text,"${i18n(sub-category)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '@xml:id',
             columns, 20,
@@ -567,29 +594,17 @@ category category{
 
 taxonomy::after {
     content: "\a"
-        oxy_button(action, oxy_action(
-            name, "Kategorie hinzufügen",
-            description, "Inserts persName for editor to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<category xmlns="http://www.tei-c.org/ns/1.0" xml:id=""><category><catDesc></catDesc></category></category>'
-        )) 
-
+        oxy_button(actionID, "addCategory")
 }
 
 category:has(category)::after {
     content: "\a"
-        oxy_button(action, oxy_action(
-            name, "Unterkategorie hinzufügen",
-            description, "Inserts persName for editor to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<category xmlns="http://www.tei-c.org/ns/1.0"><catDesc></catDesc></category>'
-        )) 
-
+        oxy_button(actionID, "addSubcategory") 
 }
 
 catDesc {
     content:
-        oxy_label(text, "\a Kategoriebeschreibung: \a")
+        oxy_label(text,"${i18n(catDesc)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -601,12 +616,12 @@ catDesc {
 /* profileDesc */
 profileDesc{
     content:
-        oxy_label(text,"Textprofilbeschreibung ", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(profileDesc)}: ", styles, "@import 'labels.css';");
 }
 
 creation date {
     content:
-        oxy_label(text, "Datei erstellt am: ")
+        oxy_label(text,"${i18n(creation)}: ", styles, "@import 'labels.css';")
         oxy_datePicker(
              columns, 10, 
              edit, "date",
@@ -620,12 +635,12 @@ creation date::before{
 
 language {
     content: 
-        oxy_label(text,"Sprache: ")
+        oxy_label(text,"${i18n(language)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
              edit, "#text",
              columns, 40,
              fontInherit,true)
-        oxy_label(text, "\a Sprachkürzel: ")
+       oxy_label(text,"${i18n(language_abbr)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
               edit, "@ident",
               columns, 40,
@@ -635,27 +650,22 @@ language {
 
 textClass::before{
     content:
-        oxy_label(text, "Textklassifikation: ", styles, "font-weight:bold, font-size: 1em, color:  black;")!important
+        oxy_label(text,"${i18n(textClass)}: ", styles, "@import 'labels.css';")!important
 }
 
 keywords::before{
     content:
-        oxy_label(text,"Schlagwörter/Themen: \a")!important;
+        oxy_label(text,"${i18n(keywords)}: ", styles, "@import 'labels.css';")!important;
 }
 
 keywords::after{
     content:"\a"
-        oxy_button(action, oxy_action(
-            name, "Schlüsselwort hinzufügen",
-            description, "Inserts term to the TEIHeader",
-            operation, "InsertFragmentOperation",
-            arg-fragment, '<term xmlns="http://www.tei-c.org/ns/1.0"></term>'
-        ));
+        oxy_button(actionID, "addTerm");
 }
 
 term{
     content:
-        oxy_label(text, "\a Schlüsselwort: ")
+        oxy_label(text,"${i18n(term)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
              edit, "#text",
              columns, 40,
@@ -669,7 +679,7 @@ term::after{
 
 classCode{
     content:
-        oxy_label(text, "Klassifikationscode: ")
+        oxy_label(text,"${i18n(classCode)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
              edit, "#text",
              columns, 40,
@@ -680,19 +690,14 @@ classCode{
 /* revisionDesc */
 revisionDesc {
     content:
-        oxy_label(text,"Dateihistorie \a", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text,"${i18n(revisionDesc)}: ", styles, "@import 'labels.css';");
 }
 revisionDesc::after {
     display:none;
 }
 
 listChange::before {
-    content: oxy_button(action, oxy_action(
-        name, "Änderung hinzufügen",
-        description, "Inserts change to the TEIHeader",
-        operation, "InsertFragmentOperation",
-        arg-fragment, '<change xmlns="http://www.tei-c.org/ns/1.0" when="" who=""><p></p></change>'
-    )) !important;
+    content: oxy_button(actionID, "addChange") !important;
 }
 
 change::before{
@@ -713,5 +718,5 @@ change::before{
 
 change p::before{
     content:
-        oxy_label(text, "Beschreibung der Änderung: ");
+        oxy_label(text,"${i18n(change)}: ", styles, "@import 'labels.css';");
 }
