@@ -3,7 +3,11 @@
 /* editorialDecl */
 editorialDecl>p::after {
     content:"\a"
-        oxy_button(actionID, "delP")   
+        oxy_button(action, oxy_action(
+            name, "Beschreibung entfernen",
+            description, 'Deletes the current element', 
+            operation, 'DeleteElementOperation' 
+        ))   
 }
 
 editorialDecl::after {
@@ -11,7 +15,58 @@ editorialDecl::after {
         oxy_label(text,"\a")
         oxy_buttonGroup(
             label, 'Editionsprinzipien', 
-            actionIDs, "addCorrection, addNormalization, addPunctuation, addQuotation, addHyphenation, addSegmentation, addStdVals, addInterpretation")
+            actions, 
+              oxy_action_list(
+                  oxy_action(
+                        name, 'Korrektur', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<correction status="" method=""><p></p></correction>'
+                  ),
+                  oxy_action(
+                        name, 'Normalisierung', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<normalization source="" method=""><p></p></normalization>'
+                  ),
+                  oxy_action(
+                        name, 'Interpunktion', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<punctuation source="" method=""><p></p></punctuation>'
+                  ),
+                  oxy_action(
+                        name, 'Zitat', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<quotation marks="" placement=""><p></p></quotation>'
+                  ),
+                  oxy_action(
+                        name, 'Silbentrennung', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<hyphenation eol=""><p></p></hyphenation>'
+                  ),
+                  oxy_action(
+                        name, 'Segmentierung', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<segmentation><p></p></segmentation>'
+                  ),
+                  oxy_action(
+                        name, 'Standardwerte', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<stdVals><p></p></stdVals>'
+                  ),
+                  oxy_action(
+                        name, 'Interpretation', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<interpretation><p></p></interpretation>'
+                  )
+              )
+          )
 }
 
 correction::before {
