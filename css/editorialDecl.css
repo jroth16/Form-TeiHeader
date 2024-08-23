@@ -1,0 +1,233 @@
+@import url("../../Form-TeiHeader/css/main.css");
+
+/* editorialDecl */
+editorialDecl>p::after {
+    content:"\a"
+        oxy_button(action, oxy_action(
+            name, "Beschreibung entfernen",
+            description, 'Deletes the current element', 
+            operation, 'DeleteElementOperation' 
+        ))   
+}
+
+editorialDecl::after {
+    content: 
+        oxy_label(text,"\a")
+        oxy_buttonGroup(
+            label, 'Editionsprinzipien', 
+            actions, 
+              oxy_action_list(
+                  oxy_action(
+                        name, 'Korrektur', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<correction status="" method=""><p></p></correction>'
+                  ),
+                  oxy_action(
+                        name, 'Normalisierung', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<normalization source="" method=""><p></p></normalization>'
+                  ),
+                  oxy_action(
+                        name, 'Interpunktion', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<punctuation source="" method=""><p></p></punctuation>'
+                  ),
+                  oxy_action(
+                        name, 'Zitat', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<quotation marks="" placement=""><p></p></quotation>'
+                  ),
+                  oxy_action(
+                        name, 'Silbentrennung', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<hyphenation eol=""><p></p></hyphenation>'
+                  ),
+                  oxy_action(
+                        name, 'Segmentierung', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<segmentation><p></p></segmentation>'
+                  ),
+                  oxy_action(
+                        name, 'Standardwerte', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<stdVals><p></p></stdVals>'
+                  ),
+                  oxy_action(
+                        name, 'Interpretation', 
+                        description, 'Insert an element after the current one', 
+                        operation, 'InsertFragmentOperation', 
+                        arg-fragment, '<interpretation><p></p></interpretation>'
+                  )
+              )
+          )
+}
+
+correction::before {
+    content: 
+        oxy_label(text,"\a Korrektur: \a")
+        oxy_label(text, "Status der Korrektur: " attr(status))
+        oxy_combobox(           
+            edit, "@status",
+            editable, false,
+            values, "high, medium, low, unknown"
+            labels, "hoch, mittel, niedrig, unbekannt")
+        oxy_label(text, "    Methode: " attr(method))
+        oxy_combobox(           
+            edit, "@method",
+            editable, false,
+            values, "silent, markup"
+            labels, "Still, Markup");
+}
+
+correction p {
+    content: "\a"
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+normalization::before {
+    content: 
+        oxy_label(text,"\a Normalisierung: \a")
+        oxy_label(text, "Quelle: " attr(source))
+        oxy_textfield(
+            edit, "@source",
+            columns, 30,
+            fontInherit,true)
+        oxy_label(text, "    Methode: " attr(method))
+        oxy_combobox(           
+            edit, "@method",
+            editable, false,
+            values, "silent, markup"
+            labels, "Still, Markup")
+        oxy_label(text, "\a");
+}
+
+normalization p {
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+punctuation::before {
+    content: 
+        oxy_label(text,"\a Interpunktion: \a")
+        oxy_label(text, "Beibehaltung der Satzzeichen als Inhalt: " attr(marks))
+        oxy_combobox(           
+            edit, "@marks",
+            editable, false,
+            values, "none, some, all"
+            labels, "keine, einige, alle")
+        oxy_label(text, "    Positionierung von Satzzeichen: " attr(placement))
+        oxy_combobox(           
+            edit, "@placement",
+            editable, false,
+            values, "internal, external"
+            labels, "Innerhalb Element, Außerhalb Element")
+        oxy_label(text, "\a");
+}
+
+punctuation p {
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+quotation::before {
+    content: 
+        oxy_label(text,"\a Zitat: \a")
+        oxy_label(text, "Beibehaltung der Anfürhungszeichen als Inhalt: " attr(marks))
+        oxy_combobox(           
+            edit, "@marks",
+            editable, false,
+            values, "none, some, all"
+            labels, "keine, manche, alle")
+        oxy_label(text, "\a");
+}
+
+quotation p {
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+hyphenation::before {
+    content: 
+        oxy_label(text,"\a Zitat: \a")
+        oxy_label(text, "Beibehaltung der Silbentrennung: " attr(eol))
+        oxy_combobox(           
+            edit, "@eol",
+            editable, false,
+            values, "all, some, hard, none"
+            labels, "alle, manche, harte, keine")
+        oxy_label(text, "\a");
+}
+
+hyphenation p {
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+segmentation::before {
+    content: 
+        oxy_label(text,"\a Segmentierung: \a");
+}
+
+segmentation p {
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+stdVals::before {
+    content: 
+        oxy_label(text,"\a Standardwerte: \a");
+}
+
+stdVals p {
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
+
+interpretation::before {
+    content: 
+        oxy_label(text,"\a Interpretation: \a");
+}
+
+interpretation p {
+    content:
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text;
+}
