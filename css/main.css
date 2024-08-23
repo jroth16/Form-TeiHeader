@@ -34,7 +34,7 @@ author, publisher, note{
     -oxy-display-tags: none;
 }
 
-titleStmt, TEI::before, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, notesStmt, revisionDesc, profileDesc{
+titleStmt, TEI::before, titleStmt > respStmt, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, notesStmt, revisionDesc, profileDesc{
     padding: 0.2em;
     margin: 0 0 0.5em 0;
     -oxy-foldable: true;
@@ -181,8 +181,8 @@ author:first-of-type::before {
 }
 
 author:last-of-type::after{
-     content: "\a"
-        oxy_button(actionID, "addAuthor");
+     content:
+        oxy_button(actionID, "author");
 }
 
 editor:first-of-type::before {
@@ -190,13 +190,13 @@ editor:first-of-type::before {
         oxy_label(text,"${i18n(editors)}: ", styles, "@import 'labels.css';") !important;
 }
 
-editor::after {
+editor::after{
     content:"";
 }
 
 editor:last-of-type::after{
-    content: "\a"
-        oxy_button(actionID, "addEditor");
+    content: 
+        oxy_button(actionID, "editor");
 }
 
 editor surname::before{
@@ -250,18 +250,6 @@ resp {
     visibility: -oxy-collapse-text;;
 }
 
-respStmt::after{
-    content: 
-        oxy_buttonGroup(
-            label, "Verantwortliche hinzufügen",
-            actionIDs, "addName , addPersName , addOrgName , addResp , addNote ")
-}
-
-titleStmt::after{
-    content: 
-        oxy_button(actionID, addRespStmt) !important;
-}
-
 /* editionStmt */
 editionStmt::before{
     content: 
@@ -286,18 +274,13 @@ publicationStmt::before {
     white-space:nowrap;
 }
 
+publisher{
+    visibility: -oxy-collapse-text;
+    display: block;
+}
 publisher::after{
     content:"\a"
-        oxy_button(actionID, addOrgName)
-}
-
-publisher > orgName{
-    content: "Name der/des"
-        oxy_combobox(           
-            edit, "@role",
-            editable, false,
-            values, "project, hostingInstitution",
-            labels, "Projekts, ausrichtenden Insitution");
+        oxy_button(actionID, insert_orgName)
 }
 
 orgName[role="hostingInstitution"]{
@@ -346,7 +329,7 @@ address::before{
 
 address::after {
     content:
-        oxy_button(actionID, "addAddrLine")
+        oxy_button(actionID, "addrLine")
 }
 
 distributor{
@@ -367,15 +350,6 @@ pubPlace{
             columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
-}
-
-date{
-    content: "Datum der/des"
-        oxy_combobox(           
-            edit, "@type",
-            editable, false,
-            values, "publication, firstPublication",
-            labels, "Veröffentlichung, Erstveröffentlichung");
 }
 
 date[type="publication"]{
@@ -425,7 +399,7 @@ idno:has(idno)::before {
 
 idno:has(idno)::after {
     content: 
-        oxy_button(actionID, "addIdno");
+        oxy_button(actionID, "idno_identifier");
 }
 
 /* notesStmt */
@@ -451,7 +425,7 @@ notesStmt note {
 
 notesStmt::after{
     content: 
-        oxy_button(actionID, "addNote") 
+        oxy_button(actionID, "insert_note") 
 }
 
 /* sourceDesc */
@@ -568,7 +542,7 @@ taxonomy bibl {
 }
 
 taxonomy bibl::after {
-    content:"\a"
+    content:
         oxy_button(actionID, "delBibl")      
 }
 
@@ -593,13 +567,13 @@ category category{
 }
 
 taxonomy::after {
-    content: "\a"
-        oxy_button(actionID, "addCategory")
+    content: 
+        oxy_button(actionID, "category")
 }
 
 category:has(category)::after {
     content: "\a"
-        oxy_button(actionID, "addSubcategory") 
+        oxy_button(actionID, "subcategory") 
 }
 
 catDesc {
@@ -660,7 +634,7 @@ keywords::before{
 
 keywords::after{
     content:"\a"
-        oxy_button(actionID, "addTerm");
+        oxy_button(actionID, "term");
 }
 
 term{
@@ -697,23 +671,25 @@ revisionDesc::after {
 }
 
 listChange::before {
-    content: oxy_button(actionID, "addChange") !important;
+    content: oxy_button(actionID, "revisionDesc") !important;
 }
 
 change::before{
     content:
-        oxy_label(text,"Datum: " attr(when))
+        oxy_label(text,"${i18n(date)}: ",  styles, "@import 'labels.css';")
         oxy_datePicker(
             columns, 10, 
             edit, "@when",
             format, "yyyy-MM-dd")
-        oxy_label(text, "\a Verantwortliche Person: " attr(who)) 
+        "\a"
+        oxy_label(text, "${i18n(who)}: ", styles, "@import 'labels.css';") 
         oxy_textfield(
             edit, '@who',
             columns, 40,
             fontInherit,true)! important;
     visibility: -oxy-collapse-text;
     white-space:nowrap;
+    display: block;
 }
 
 change p::before{

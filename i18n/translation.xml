@@ -70,6 +70,10 @@
         <val lang="en_US">Date</val>
         <val lang="de_DE">Datum</val>
     </key>
+    <key value="date_desc">
+        <val lang="en_US">Inserts a date</val>
+        <val lang="de_DE">Fügt ein Datum ein</val>
+    </key>
     <key value="author">
         <val lang="en_US">Author</val>
         <val lang="de_DE">Autor/in</val>
@@ -109,6 +113,10 @@
     <key value="orgName">
         <val lang="en_US">Name of organization</val>
         <val lang="de_DE">Name der Institution</val>
+    </key>
+    <key value="role_orgName">
+        <val lang="en_US">Role of organization</val>
+        <val lang="de_DE">Rolle der Institution</val>
     </key>
     <key value="orgName_desc">
         <val lang="en_US">Inserts a name of an organization</val>
@@ -186,9 +194,13 @@
         <val lang="en_US">Place of publication</val>
         <val lang="de_DE">Ort der Veröffentlichung</val>
     </key>
+    <key value="type_date">
+        <val lang="en_US">Type of publication date</val>
+        <val lang="de_DE">Art des Veröffentlichungsdatums</val>
+    </key>
     <key value="publication">
         <val lang="en_US">Date of publication</val>
-        <val lang="de_DE">Datum Veröffentlichung</val>
+        <val lang="de_DE">Datum der Veröffentlichung</val>
     </key>
     <key value="firstPublication">
         <val lang="en_US">Date of first publication</val>
@@ -350,12 +362,28 @@
         <val lang="en_US">Revision description</val>
         <val lang="de_DE">Dateihistorie</val>
     </key>
+    <key value="revisionDesc_desc">
+        <val lang="en_US">Documents a new edit of the document</val>
+        <val lang="de_DE">Dokumentiert eine neue Bearbeitung des Dokuments</val>
+    </key>
+    <key value="revisionDesc[2]">
+        <val lang="en_US">Change @who</val>
+        <val lang="de_DE">Ändert @who</val>
+    </key>
+    <key value="revisionDesc[2]_desc">
+        <val lang="en_US">Sets empty @who to "anonymous"</val>
+        <val lang="de_DE">Setzt leeres @who auf "anonymous"</val>
+    </key>
     <key value="change">
         <val lang="en_US">Change</val>
         <val lang="de_DE">Änderung an der Datei</val>
     </key>
-    <key value="change_desc">
-        <val lang="en_US">Inserts a description of the changes of the file</val>
-        <val lang="de_DE">Fügt eine Beschreibung der Dateihistorie ein</val>
+    <key value="who">
+        <val lang="en_US">Reviser</val>
+        <val lang="de_DE">Bearbeiter</val>
+    </key>
+    <key value="change_who">
+        <val lang="en_US">Abbreviation for reviser</val>
+        <val lang="de_DE">Kürzel Bearbeiter*in</val>
     </key>
 </translation> 
