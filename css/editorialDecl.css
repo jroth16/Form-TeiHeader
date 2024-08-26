@@ -71,14 +71,14 @@ editorialDecl::after {
 
 correction::before {
     content: 
-        oxy_label(text,"\a Korrektur: \a")
-        oxy_label(text, "Status der Korrektur: " attr(status))
+        oxy_label(text,"${i18n(correction)}: ", styles, "@import 'labels.css';")
+        oxy_label(text, "${i18n(status_correction)}: ", styles, "@import 'labels.css';")
         oxy_combobox(           
             edit, "@status",
             editable, false,
             values, "high, medium, low, unknown"
             labels, "hoch, mittel, niedrig, unbekannt")
-        oxy_label(text, "    Methode: " attr(method))
+        oxy_label(text,"${i18n(method_correction)}: ", styles, "@import 'labels.css';")
         oxy_combobox(           
             edit, "@method",
             editable, false,
@@ -97,13 +97,13 @@ correction p {
 
 normalization::before {
     content: 
-        oxy_label(text,"\a Normalisierung: \a")
-        oxy_label(text, "Quelle: " attr(source))
+        oxy_label(text,"${i18n(normalization)}: ", styles, "@import 'labels.css';")
+        oxy_label(text, "${i18n(source_normalization)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "@source",
             columns, 30,
             fontInherit,true)
-        oxy_label(text, "    Methode: " attr(method))
+        oxy_label(text,"${i18n(method_normalization)}: ", styles, "@import 'labels.css';")
         oxy_combobox(           
             edit, "@method",
             editable, false,
@@ -123,14 +123,14 @@ normalization p {
 
 punctuation::before {
     content: 
-        oxy_label(text,"\a Interpunktion: \a")
-        oxy_label(text, "Beibehaltung der Satzzeichen als Inhalt: " attr(marks))
+        oxy_label(text,"${i18n(punctuation)}: ", styles, "@import 'labels.css';")
+        oxy_label(text, "${i18n(marks_punctuation)}: ", styles, "@import 'labels.css';")
         oxy_combobox(           
             edit, "@marks",
             editable, false,
             values, "none, some, all"
             labels, "keine, einige, alle")
-        oxy_label(text, "    Positionierung von Satzzeichen: " attr(placement))
+        oxy_label(text,"${i18n(placement_punctuation)}: ", styles, "@import 'labels.css';")
         oxy_combobox(           
             edit, "@placement",
             editable, false,
@@ -150,8 +150,8 @@ punctuation p {
 
 quotation::before {
     content: 
-        oxy_label(text,"\a Zitat: \a")
-        oxy_label(text, "Beibehaltung der Anfürhungszeichen als Inhalt: " attr(marks))
+        oxy_label(text,"${i18n(quotation)}: ", styles, "@import 'labels.css';")
+        oxy_label(text,"${i18n(marks_quotation)}: ", styles, "@import 'labels.css';")
         oxy_combobox(           
             edit, "@marks",
             editable, false,
@@ -171,8 +171,8 @@ quotation p {
 
 hyphenation::before {
     content: 
-        oxy_label(text,"\a Zitat: \a")
-        oxy_label(text, "Beibehaltung der Silbentrennung: " attr(eol))
+        oxy_label(text,"${i18n(hyphenation)}: ", styles, "@import 'labels.css';")
+        oxy_label(text,"${i18n(eol_hyphenation)}: ", styles, "@import 'labels.css';")
         oxy_combobox(           
             edit, "@eol",
             editable, false,
@@ -192,7 +192,7 @@ hyphenation p {
 
 segmentation::before {
     content: 
-        oxy_label(text,"\a Segmentierung: \a");
+        oxy_label(text,"${i18n(segmentation)}: ", styles, "@import 'labels.css';");
 }
 
 segmentation p {
@@ -206,7 +206,7 @@ segmentation p {
 
 stdVals::before {
     content: 
-        oxy_label(text,"\a Standardwerte: \a");
+        oxy_label(text,"${i18n(stdVals)}: ", styles, "@import 'labels.css';");
 }
 
 stdVals p {
@@ -220,7 +220,7 @@ stdVals p {
 
 interpretation::before {
     content: 
-        oxy_label(text,"\a Interpretation: \a");
+        oxy_label(text,"${i18n(interpretation)}: ", styles, "@import 'labels.css';");
 }
 
 interpretation p {

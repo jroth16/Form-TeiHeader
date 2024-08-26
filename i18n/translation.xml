@@ -290,6 +290,70 @@
         <val lang="en_US">Editorial declaration</val>
         <val lang="de_DE">Zeichendeklaration</val>
     </key>
+    <key value="correction">
+        <val lang="en_US">Correction</val>
+        <val lang="de_DE">Korrektur</val>
+    </key>
+    <key value="status_correction">
+        <val lang="en_US">Status of correction</val>
+        <val lang="de_DE">Status der Korrektur</val>
+    </key>
+    <key value="method_correction">
+        <val lang="en_US">Method of correction</val>
+        <val lang="de_DE">Methode der Korrektur</val>
+    </key>
+    <key value="normalization">
+        <val lang="en_US">Normalization</val>
+        <val lang="de_DE">Normalisierung</val>
+    </key>
+    <key value="source_normalization">
+        <val lang="en_US">Source of noramlization</val>
+        <val lang="de_DE">Quelle der Normalisierung</val>
+    </key>
+    <key value="method_normalization">
+        <val lang="en_US">Method of normalization</val>
+        <val lang="de_DE">Methode der Normalisierung</val>
+    </key>
+    <key value="punctuation">
+        <val lang="en_US">Punctuation</val>
+        <val lang="de_DE">Satzzeichen</val>
+    </key>
+    <key value="marks_punctuation">
+        <val lang="en_US">Punctuation as content</val>
+        <val lang="de_DE">Beibehaltung der Satzzeichen als Inhalt</val>
+    </key>
+    <key value="placement_normalization">
+        <val lang="en_US">Placement of punctuation</val>
+        <val lang="de_DE">Positionierung von Satzzeichen</val>
+    </key>
+    <key value="quotation">
+        <val lang="en_US">Quotation</val>
+        <val lang="de_DE">Zitat</val>
+    </key>
+    <key value="marks_quotation">
+        <val lang="en_US">Quotationmarks as content</val>
+        <val lang="de_DE">Beibehaltung der Anführungszeichen als Inhalt</val>
+    </key>
+    <key value="hyphenation">
+        <val lang="en_US">Hyphenation</val>
+        <val lang="de_DE">Silbentrennung</val>
+    </key>
+    <key value="eol_hyphenation">
+        <val lang="en_US">Retention of hyphenation</val>
+        <val lang="de_DE">Beibehaltung der Silbentrennung</val>
+    </key>
+    <key value="segmentation">
+        <val lang="en_US">Segmentation</val>
+        <val lang="de_DE">Segmentierung</val>
+    </key>
+    <key value="stdVals">
+        <val lang="en_US">Standard values</val>
+        <val lang="de_DE">Standardwerte</val>
+    </key>
+    <key value="interpretation">
+        <val lang="en_US">Interpretation</val>
+        <val lang="de_DE">Interpretation</val>
+    </key>
     <key value="classDecl">
         <val lang="en_US">Class declaration</val>
         <val lang="de_DE">Angaben zur Klassifikation</val>
@@ -357,6 +421,22 @@
     <key value="classCode">
         <val lang="en_US">Classification code</val>
         <val lang="de_DE">Klassifikationscode</val>
+    </key>
+    <key value="correspDesc">
+        <val lang="en_US">Correspondence description</val>
+        <val lang="de_DE">Korrespondenzbeschreibung</val>
+    </key>
+    <key value="correspAction">
+        <val lang="en_US">Action of correspondence</val>
+        <val lang="de_DE">Korrespondenzaktion</val>
+    </key>
+    <key value="type_correspAction">
+        <val lang="en_US">Type of correspondence</val>
+        <val lang="de_DE">Art der Korrespondenz</val>
+    </key>
+    <key value="persName_correspAction">
+        <val lang="en_US">Name of person</val>
+        <val lang="de_DE">Betreffende Person</val>
     </key>
     <key value="revisionDesc">
         <val lang="en_US">Revision description</val>

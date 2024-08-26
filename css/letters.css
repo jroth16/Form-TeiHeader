@@ -3,12 +3,12 @@
 /* profileDesc */
 correspDesc {
     content:
-        oxy_label(text, "Korrespondenzbeschreibung", styles, "font-weight:bold, font-size: 1em, color:  black;");
+        oxy_label(text, "${i18n(correspDesc)}: ", styles, "@import 'labels.css';");
 }
 
 correspAction[type]::before{
     content:
-        oxy_label(text, "Art der Korrespondenzaktion: " attr(type))
+        oxy_label(text, "${i18n(type_correspAction)}: ", styles, "@import 'labels.css';")
         oxy_combobox(           
             edit, "@type",
             editable, false,
@@ -19,7 +19,7 @@ correspAction[type]::before{
 
 correspAction[type] {
     content:
-        oxy_label(text, "\a Korrespondenzaktion: ")
+        oxy_label(text, "${i18n(correspAction)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 60,
@@ -39,7 +39,7 @@ correspDesc::after{
 
 correspAction > persName {
     content:
-        oxy_label(text, "Betreffende Person: ")
+        oxy_label(text, "${i18n(persName_correspAction)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 60,
@@ -49,5 +49,5 @@ correspAction > persName {
 
 correspAction > date::before {
     content:
-        oxy_label(text, "Datum: ")
+        oxy_label(text, "${i18n(date)}: ", styles, "@import 'labels.css';")
 }
