@@ -157,7 +157,7 @@
     <key value="edition">
         <val lang="en_US">Edition</val>
         <val lang="de_DE">Edition</val>
-    </key>ä
+    </key>
     <key value="publicationStmt">
         <val lang="en_US">Publication statement</val>
         <val lang="de_DE">Angaben zur Veröffentlichung</val>
@@ -421,6 +421,10 @@
     <key value="classCode">
         <val lang="en_US">Classification code</val>
         <val lang="de_DE">Klassifikationscode</val>
+    </key>
+    <key value="letters">
+        <val lang="en_US">Letters</val>
+        <val lang="de_DE">Briefe</val>
     </key>
     <key value="correspDesc">
         <val lang="en_US">Correspondence description</val>

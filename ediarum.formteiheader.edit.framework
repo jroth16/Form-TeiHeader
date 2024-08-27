@@ -59,7 +59,34 @@
 													<String>${framework}/css/letters.css</String>
 												</field>
 												<field name="title">
-													<String>Briefe</String>
+													<String>${i18n(letters)}</String>
+												</field>
+												<field name="alternate">
+													<Boolean>true</Boolean>
+												</field>
+											</cssFile>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/cssDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>5</Integer>
+										</field>
+										<field name="value">
+											<cssFile>
+												<field name="href">
+													<String>${framework}/css/editorialDecl.css</String>
+												</field>
+												<field name="title">
+													<String>${i18n(editorialDecl)}</String>
 												</field>
 												<field name="alternate">
 													<Boolean>true</Boolean>
@@ -92,6 +119,99 @@
 													<Boolean>false</Boolean>
 												</field>
 											</cssFile>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[113]/name</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>${i18n(physDesc)}</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[113]/description</String>
+										</field>
+										<field name="index">
+											<Integer>-1</Integer>
+										</field>
+										<field name="value">
+											<String>${i18n(physDesc_desc)}</String>
+										</field>
+										<field name="patchHandling">
+											<String>set</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[113]/actionModes</String>
+										</field>
+										<field name="index">
+											<Integer>0</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[113]/actionModes</String>
+										</field>
+										<field name="index">
+											<Integer>0</Integer>
+										</field>
+										<field name="value">
+											<actionMode>
+												<field name="xpathCondition">
+													<String>//sourceDesc/msDesc[not(physDesc)]</String>
+												</field>
+												<field name="argValues">
+													<serializableOrderedMap>
+														<entry>
+															<String>fragment</String>
+															<String>&lt;physDesc xmlns="http://www.tei-c.org/ns/1.0">
+  &lt;p/>
+&lt;/physDesc></String>
+														</entry>
+														<entry>
+															<String>insertLocation</String>
+															<String>//sourceDesc/msDesc</String>
+														</entry>
+														<entry>
+															<String>insertPosition</String>
+															<String>Inside as last child</String>
+														</entry>
+													</serializableOrderedMap>
+												</field>
+												<field name="operationID">
+													<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+												</field>
+											</actionMode>
 										</field>
 										<field name="patchHandling">
 											<String>addIndex</String>
@@ -213,6 +333,68 @@
 											<String>authorExtensionDescriptor/actionDescriptors/[133]/actionModes</String>
 										</field>
 										<field name="index">
+											<Integer>0</Integer>
+										</field>
+										<field name="value">
+											<null/>
+										</field>
+										<field name="patchHandling">
+											<String>removeIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[133]/actionModes</String>
+										</field>
+										<field name="index">
+											<Integer>0</Integer>
+										</field>
+										<field name="value">
+											<actionMode>
+												<field name="xpathCondition">
+													<String>//teiHeader/fileDesc/titleStmt</String>
+												</field>
+												<field name="argValues">
+													<serializableOrderedMap>
+														<entry>
+															<String>fragment</String>
+															<String>&lt;editor xmlns="http://www.tei-c.org/ns/1.0">
+  &lt;persName ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">
+    &lt;surname>&lt;/surname>
+    &lt;forename>&lt;/forename>
+  &lt;/persName>
+&lt;/editor></String>
+														</entry>
+														<entry>
+															<String>insertLocation</String>
+															<String>//teiHeader/fileDesc/titleStmt</String>
+														</entry>
+														<entry>
+															<String>insertPosition</String>
+															<String>Inside as last child</String>
+														</entry>
+													</serializableOrderedMap>
+												</field>
+												<field name="operationID">
+													<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+												</field>
+											</actionMode>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors/[133]/actionModes</String>
+										</field>
+										<field name="index">
 											<Integer>1</Integer>
 										</field>
 										<field name="value">
@@ -226,8 +408,8 @@
 															<String>fragment</String>
 															<String>&lt;editor xmlns="http://www.tei-c.org/ns/1.0">
   &lt;persName ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">
-    &lt;surname>${ask('Nachname', generic, '')}&lt;/surname>
-    &lt;forename>${ask('Vorname', generic, '')}&lt;/forename>
+    &lt;surname>&lt;/surname>
+    &lt;forename>&lt;/forename>
   &lt;/persName>
 &lt;/editor></String>
 														</entry>
@@ -553,8 +735,8 @@
 																		<String>fragment</String>
 																		<String>&lt;author xmlns="http://www.tei-c.org/ns/1.0">
   &lt;persName>
-    &lt;surname>${ask('Nachname', generic, '')}&lt;/surname>
-    &lt;forename>${ask('Vorname', generic, '')}&lt;/forename>
+    &lt;surname>&lt;/surname>
+    &lt;forename>&lt;/forename>
   &lt;/persName>
 &lt;/author></String>
 																	</entry>
@@ -578,8 +760,8 @@
 																		<String>fragment</String>
 																		<String>&lt;author xmlns="http://www.tei-c.org/ns/1.0">
   &lt;persName>
-    &lt;surname>${ask('Nachname', generic, '')}&lt;/surname>
-    &lt;forename>${ask('Vorname', generic, '')}&lt;/forename>
+    &lt;surname>&lt;/surname>
+    &lt;forename>&lt;/forename>
   &lt;/persName>
 &lt;/author></String>
 																	</entry>
@@ -834,10 +1016,10 @@
 													<String>delBibl</String>
 												</field>
 												<field name="name">
-													<String>Verweis entfernen</String>
+													<String>${i18n(delBibl)}</String>
 												</field>
 												<field name="description">
-													<String>Verweis entfernen</String>
+													<String>${i18n(delBibl)}</String>
 												</field>
 												<field name="largeIconPath">
 													<String></String>
@@ -855,13 +1037,13 @@
 													<actionMode-array>
 														<actionMode>
 															<field name="xpathCondition">
-																<String>ancestor-or-self::bibl</String>
+																<String>parent::taxonomy or self::taxonmy</String>
 															</field>
 															<field name="argValues">
 																<serializableOrderedMap>
 																	<entry>
 																		<String>elementLocation</String>
-																		<String>ancestor-or-self::bibl</String>
+																		<String>self::bibl</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
@@ -923,11 +1105,15 @@
 																<serializableOrderedMap>
 																	<entry>
 																		<String>fragment</String>
-																		<String>&lt;category xmlns="http://www.tei-c.org/ns/1.0" xml:id="">
+																		<String>&lt;category xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('$i18n(category_id)}:', generic, )}">
   &lt;category>
     &lt;catDesc>&lt;/catDesc>
   &lt;/category>
 &lt;/category></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>taxonomy</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
@@ -989,9 +1175,13 @@
 																<serializableOrderedMap>
 																	<entry>
 																		<String>fragment</String>
-																		<String>&lt;category xmlns="http://www.tei-c.org/ns/1.0">
+																		<String>&lt;category xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('$i18n(subcategory_id)}:', generic, )}">
   &lt;catDesc>&lt;/catDesc>
 &lt;/category></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>category[category]</String>
 																	</entry>
 																</serializableOrderedMap>
 															</field>
@@ -1594,6 +1784,1523 @@
 									</poPatch>
 									<poPatch>
 										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>202</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>publisher</String>
+												</field>
+												<field name="name">
+													<String>${i18n(publisher)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(publisher_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::publicationStmt or self::publicationStmt</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;publisher xmlns="https://www.tei-c.org/ns/1.0" >&lt;/publisher></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>publicationStmt</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>203</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>distributor</String>
+												</field>
+												<field name="name">
+													<String>${i18n(distributor)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(distributor_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::publicationStmt or self::publicationStmt</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;distributor xmlns="https://www.tei-c.org/ns/1.0"/></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>publicationStmt</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>204</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>pubPlace</String>
+												</field>
+												<field name="name">
+													<String>${i18n(pubPlace)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(pubPlace_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::publicationStmt or self::publicationStmt</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;pubPlace xmlns="https://www.tei-c.org/ns/1.0" /></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>publicationStmt</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>205</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>availability</String>
+												</field>
+												<field name="name">
+													<String>${i18n(availability)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(availabilty_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::publicationStmt or self::publicationStmt</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;availability xmlns="https://www.tei-c.org/ns/1.0">
+  &lt;licence>
+    &lt;p/>
+  &lt;/licence>
+&lt;/availability></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>publicationStmt</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>206</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>insert_bibl</String>
+												</field>
+												<field name="name">
+													<String>${i18n(insert_bibl)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(insert_bibl)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::sourceDesc or self::sourceDesc</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;bibl xmlns="https://www.tei-c.org/ns/1.0"/></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>sourceDesc</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>207</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>repository</String>
+												</field>
+												<field name="name">
+													<String>${i18n(repository)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(repository_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::msIdentifier or self::msIdentifier</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;repository smlns="https://www.tei-c.org/ns/1.0"/></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>msIdentifier</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>208</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>settlement</String>
+												</field>
+												<field name="name">
+													<String>${i18n(settlement)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(settlement)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::msIdentifier or self::msIdentifier</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;settlement xmlns="https://www.tei-c.org/ns/1.0"/></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>msIdentifier</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>209</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>encodingDesc</String>
+												</field>
+												<field name="name">
+													<String>${i18n(encodingDesc)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(encodingDesc_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>//teiHeader/*</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;encodingDesc xmlns="https://www.tei-c.org/ns/1.0">
+  &lt;projectDesc>
+    &lt;p/>
+  &lt;/projectDesc>
+  &lt;editorialDecl>
+    &lt;p/>
+  &lt;/editorialDecl>
+  &lt;classDecl>
+    &lt;taxonomy xml:id="${ask('$i18n(taxonomy_id)}:', generic, )}">
+      &lt;bibl/>
+      &lt;category xml:id="${ask('$i18n(category_id)}:', generic, )}">
+        &lt;category xml:id="${ask('$i18n(subcategory_id)}:', generic, )}">
+          &lt;catDesc/>
+        &lt;/category>
+      &lt;/category>
+    &lt;/taxonomy>
+  &lt;/classDecl>
+&lt;/encodingDesc></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>//profileDesc</String>
+																	</entry>
+																	<entry>
+																		<String>insertPosition</String>
+																		<String>Before</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>210</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>langUsage</String>
+												</field>
+												<field name="name">
+													<String>${i18n(langUsage)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(langUsage_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::profileDesc or self::profileDesc</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;langUsage xmlns="https://www.tei-c.org/ns/1.0">
+  &lt;language ident="${ask('$i18n(abbr_language)}:', generic, )}"/>
+&lt;/langUsage></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>profileDesc</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>211</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>taxonomy</String>
+												</field>
+												<field name="name">
+													<String>$i18n(taxonomy)}</String>
+												</field>
+												<field name="description">
+													<String>$i18n(taxonomy:desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::classDecl or self::classDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;taxonomy xmlns="https://www.tei-c.org/ns/1.0">
+  &lt;bibl/>
+  &lt;category xml:id="${ask('$i18n(category_id)}:', generic, )}">
+    &lt;category xml:id="${ask('$i18n(subcategory_id)}:', generic, )}">
+      &lt;catDesc/>
+    &lt;/category>
+  &lt;/category>
+&lt;/taxonomy></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>classDecl</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>212</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>textClass</String>
+												</field>
+												<field name="name">
+													<String>$i18n(textClass)}</String>
+												</field>
+												<field name="description">
+													<String>$i18n(textClass)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::profileDesc or self::profileDesc</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;textClass xmlns="https://www.tei-c.org/ns/1.0">
+  &lt;keywords>
+    &lt;term/>
+  &lt;/keywords>
+  &lt;classCode/>
+&lt;/textClass></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>profileDesc</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>213</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>delP</String>
+												</field>
+												<field name="name">
+													<String>$i18n(delP)}</String>
+												</field>
+												<field name="description">
+													<String>$i18n(delP)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::editorialDecl or self::editorialDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>elementLocation</String>
+																		<String>self::p</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.DeleteElementOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>214</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>correction</String>
+												</field>
+												<field name="name">
+													<String>$i18n(correction)}</String>
+												</field>
+												<field name="description">
+													<String>$i18n(correction_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::editorialDecl or self::editorialDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;correction xmlns="https://www.tei-c.org/ns/1.0" status="${ask('${i18n(status_correction)}', combobox, ('high':'${i18n(high)}';'medium':'$i18n(medium)}'; 'low':'$i18n(low)}';'unknown':'$i18n(unknown)}')}" method="${ask('${i18n(method_correction)}', combobox, ('silent':'${i18n(silent)}';'markup':'$i18n(markup)}')}">
+  &lt;p/>
+&lt;/correction></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>editorialDecl</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>215</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>normalization</String>
+												</field>
+												<field name="name">
+													<String>${i18n(normalization)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(normalization_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::editorialDecl or self::editorialDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;normalization xmlns="https://www.tei-c.org/ns/1.0" source="${ask('${i18n(source_normalization)}', generic, }" method="${ask('${i18n(method_normalization)}', combobox, ('silent':'${i18n(silent)}';'markup':'$i18n(markup)}')}">
+  &lt;p/>
+&lt;/normalization></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>editorialDecl</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>216</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>punctuation</String>
+												</field>
+												<field name="name">
+													<String>${i18n(punctuation)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(punctuation_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::editorialDecl or self::editorialDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;punctuation xmlns="https://www.tei-c.org/ns/1.0" marks="${ask('${i18n(marks_punctuation)}', combobox, ('none':'${i18n(none)}';'some':'$i18n(some)}'; 'all':'$i18n(all)}')}" placement="${ask('${i18n(placement_punctuation)}', combobox, ('internal':'${i18n(internal)}';'external':'$i18n(external)}')}">
+  &lt;p/>
+&lt;/punctuation></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>editorialDecl</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>217</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>quotation</String>
+												</field>
+												<field name="name">
+													<String>${i18n(quotation)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(quotation_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::editorialDecl or self::editorialDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;quotation xmlns="https://www.tei-c.org/ns/1.0" marks="${ask('${i18n(marks_quotation)}', combobox, ('none':'${i18n(none)}';'some':'$i18n(some)}'; 'all':'$i18n(all)}')}" placement="${ask('${i18n(placement_quotation)}', combobox, ('internal':'${i18n(internal)}';'external':'$i18n(external)}')}">
+  &lt;p/>
+&lt;/quotation></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>editorialDecl</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>218</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>hyphenation</String>
+												</field>
+												<field name="name">
+													<String>${i18n(hyphenation)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(hyphenation_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::editorialDecl or self::editorialDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;hyphenation xmlns="https://www.tei-c.org/ns/1.0" eol="${ask('${i18n(eol_hyphenation)}', combobox, ('all':'${i18n(all)}';'some':'$i18n(some)}'; 'hard':'$i18n(hard)}';'none':'$i18n(none)}')}">
+  &lt;p/>
+&lt;/hyphenation></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>editorialDecl</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>219</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>segmentation</String>
+												</field>
+												<field name="name">
+													<String>${i18n(segmentation)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(segmentation_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::editorialDecl or self::editorialDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;segmentation xmlns="https://www.tei-c.org/ns/1.0">
+  &lt;p/>
+&lt;/segmentation></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>editorialDecl</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>220</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>stdVals</String>
+												</field>
+												<field name="name">
+													<String>${i18n(stdVals)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(stdVals_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::editorialDecl or self::editorialDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;stdVals xmlns="https://www.tei-c.org/ns/1.0">
+  &lt;p/>
+&lt;/stdVals></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>editorialDecl</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>221</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>interpretation</String>
+												</field>
+												<field name="name">
+													<String>${i18n(interpretation)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(interpretation_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::editorialDecl or self::editorialDecl</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;interpretation xmlns="https://www.tei-c.org/ns/1.0">
+  &lt;p/>
+&lt;/interpretation></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>editorialDecl</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>222</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>correspDesc</String>
+												</field>
+												<field name="name">
+													<String>${i18n(correspDesc)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(correspDesc_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>//profileDesc/*</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;correspDesc xmlns="https://www.tei-c.org/ns/1.0" xml:id="${ask('${i18n(id_correspDesc)}', generic, )}">
+  &lt;correspAction type="${ask('${i18n(type_corresp)}', combobox, ('sent':'${sent}';'received':'${received}';'transmitted':'${transmitted}';'redirected':'${redirected}';'forwarded':'${forwarded}')}">
+    &lt;persName/>
+    &lt;settlement/>
+    &lt;date/>
+  &lt;/correspAction>
+&lt;/correspDesc></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>textClass</String>
+																	</entry>
+																	<entry>
+																		<String>insertPosition</String>
+																		<String>After</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/actionDescriptors</String>
+										</field>
+										<field name="index">
+											<Integer>223</Integer>
+										</field>
+										<field name="value">
+											<action>
+												<field name="id">
+													<String>correspAction</String>
+												</field>
+												<field name="name">
+													<String>${i18n(correspAction)}</String>
+												</field>
+												<field name="description">
+													<String>${i18n(correspAction_desc)}</String>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="accessKey">
+													<String></String>
+												</field>
+												<field name="accelerator">
+													<null/>
+												</field>
+												<field name="actionModes">
+													<actionMode-array>
+														<actionMode>
+															<field name="xpathCondition">
+																<String>parent::correspDesc or self::correspDesc</String>
+															</field>
+															<field name="argValues">
+																<serializableOrderedMap>
+																	<entry>
+																		<String>fragment</String>
+																		<String>&lt;correspAction xmlns="https://www.tei-c.org/ns/1.0" type="${ask('${i18n(type_corresp)}', combobox, ('sent':'${sent}';'received':'${received}';'transmitted':'${transmitted}';'redirected':'${redirected}';'forwarded':'${forwarded}')}">
+    &lt;persName/>
+    &lt;settlement/>
+    &lt;date/>
+  &lt;/correspAction></String>
+																	</entry>
+																	<entry>
+																		<String>insertLocation</String>
+																		<String>correspDesc</String>
+																	</entry>
+																</serializableOrderedMap>
+															</field>
+															<field name="operationID">
+																<String>ro.sync.ecss.extensions.commons.operations.InsertFragmentOperation</String>
+															</field>
+														</actionMode>
+													</actionMode-array>
+												</field>
+												<field name="enabledInReadOnlyContext">
+													<Boolean>false</Boolean>
+												</field>
+											</action>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
 											<String>authorExtensionDescriptor/toolbarDescriptor/id</String>
 										</field>
 										<field name="index">
@@ -2144,11 +3851,44 @@
 											<Integer>0</Integer>
 										</field>
 										<field name="value">
-											<toolbarItem>
-												<field name="actionID">
-													<String>revisionDesc</String>
+											<toolbar>
+												<field name="id">
+													<String>${i18n(titleStmt)}</String>
 												</field>
-											</toolbarItem>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>title</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>author</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>editor</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>respStmt</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
 										</field>
 										<field name="patchHandling">
 											<String>addIndex</String>
@@ -2167,7 +3907,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>TitleStmt</String>
+													<String>${i18n(editionStmt)}</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -2182,12 +3922,376 @@
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
-																<String>author</String>
+																<String>date</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>2</Integer>
+										</field>
+										<field name="value">
+											<toolbar>
+												<field name="id">
+													<String>${i18n(publicationStmt)}</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>publisher</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>editor</String>
+																<String>distributor</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>address</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>addrLine</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>availability</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>pubPlace</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>date</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>idno_identifier</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>3</Integer>
+										</field>
+										<field name="value">
+											<toolbar>
+												<field name="id">
+													<String>${i18n(notesStmt)}</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>notesStmt</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert_note</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>4</Integer>
+										</field>
+										<field name="value">
+											<toolbar>
+												<field name="id">
+													<String>${i18n(sourceDesc)}</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>msDesc/physDesc</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>insert_bibl</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>repository</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>settlement</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>5</Integer>
+										</field>
+										<field name="value">
+											<toolbar>
+												<field name="id">
+													<String>${i18n(encodingDesc)}</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>encodingDesc</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>delP</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>delBibl</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>taxonomy</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>category</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>subcategory</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>term</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>correction</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>interpretation</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>hyphenation</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>punctuation</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>segmentation</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>quotation</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>stdVals</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>6</Integer>
+										</field>
+										<field name="value">
+											<toolbar>
+												<field name="id">
+													<String>${i18n(profileDesc)}</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>correspAction</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>correspDesc</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>langUsage</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
+																<String>textClass</String>
+															</field>
+														</toolbarItem>
+													</toolbarEntry-array>
+												</field>
+											</toolbar>
+										</field>
+										<field name="patchHandling">
+											<String>addIndex</String>
+										</field>
+										<field name="anchor">
+											<null/>
+										</field>
+									</poPatch>
+									<poPatch>
+										<field name="fieldPath">
+											<String>authorExtensionDescriptor/toolbarDescriptor/toolbarEntriesDescriptorList</String>
+										</field>
+										<field name="index">
+											<Integer>7</Integer>
+										</field>
+										<field name="value">
+											<toolbar>
+												<field name="id">
+													<String>${i18n(revisionDesc)}</String>
+												</field>
+												<field name="type">
+													<Integer>3</Integer>
+												</field>
+												<field name="largeIconPath">
+													<String></String>
+												</field>
+												<field name="smallIconPath">
+													<String></String>
+												</field>
+												<field name="toolbarEntriesDescriptorList">
+													<toolbarEntry-array>
+														<toolbarItem>
+															<field name="actionID">
+																<String>revisionDesc</String>
 															</field>
 														</toolbarItem>
 													</toolbarEntry-array>
