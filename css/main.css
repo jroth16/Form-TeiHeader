@@ -326,7 +326,7 @@ licence{
 
 idno[type] {
     content:
-        oxy_label(text,"${i18n(idno_type)}: ", styles, "@import 'labels.css';")
+        oxy_label(text,attr(type), styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
