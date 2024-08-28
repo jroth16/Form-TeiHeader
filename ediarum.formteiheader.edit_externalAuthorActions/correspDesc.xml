@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:authorAction xmlns:a="http://www.oxygenxml.com/ns/author/external-action"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/author/external-action http://www.oxygenxml.com/ns/author/external-action/authorAction.xsd"
+  id="correspDesc">
+  <a:name>${i18n(correspDesc)}</a:name>
+  <a:description>${i18n(correspDesc_desc)}</a:description>
+  <a:operations>
+    <a:operation id="InsertFragmentOperation">
+      <a:xpathCondition>//profileDesc/*</a:xpathCondition>
+      <a:arguments>
+        <a:argument name="fragment"><correspDesc xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('${i18n(id_correspDesc)}', generic, )}">
+  <correspAction type="${ask('${i18n(type_corresp)}', combobox, ('sent':'${i18n(sent)}';'received':'${i18n(received)}';'transmitted':'${i18n(transmitted)}';'redirected':'${i18n(redirected)}';'forwarded':'${i18n(forwarded)}'))}">
+    <persName/>
+    <settlement/>
+    <date/>
+  </correspAction>
+</correspDesc></a:argument>
+        <a:argument name="insertLocation">//teiHeader/profileDesc</a:argument>
+        <a:argument name="insertPosition">Inside as last child</a:argument>
+      </a:arguments>
+    </a:operation>
+  </a:operations>
+  <a:enabledInReadOnlyContext>false</a:enabledInReadOnlyContext>
+</a:authorAction>

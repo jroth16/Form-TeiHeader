@@ -14,6 +14,10 @@
         <val lang="en_US">Front matter</val>
         <val lang="de_DE">Titelei</val>
     </key>
+    <key value="titleStmt">
+        <val lang="en_US">Title statement</val>
+        <val lang="de_DE">Titelangaben</val>
+    </key>
     <key value="title">
         <val lang="en_US">Title</val>
         <val lang="de_DE">Titel</val>
@@ -53,10 +57,6 @@
     <key value="persName">
         <val lang="en_US">Personal name</val>
         <val lang="de_DE">Personenname</val>
-    </key>
-    <key value="persName_desc">
-        <val lang="en_US">Inserts a personal name</val>
-        <val lang="de_DE">Fügt einen Personennamen ein</val>
     </key>
     <key value="surname">
         <val lang="en_US">Surname</val>
@@ -110,30 +110,6 @@
         <val lang="en_US">Inserts a responsibility</val>
         <val lang="de_DE">Fügt eine/n Mitarbeiter/in (nicht: Herausgeber) am edierten Text ein</val>
     </key>
-    <key value="orgName">
-        <val lang="en_US">Name of organization</val>
-        <val lang="de_DE">Name der Institution</val>
-    </key>
-    <key value="role_orgName">
-        <val lang="en_US">Role of organization</val>
-        <val lang="de_DE">Rolle der Institution</val>
-    </key>
-    <key value="orgName_desc">
-        <val lang="en_US">Inserts a name of an organization</val>
-        <val lang="de_DE">Fügt einen Namen einer Institution ein</val>
-    </key>
-    <key value="name">
-        <val lang="en_US">Name of organization</val>
-        <val lang="de_DE">Name der Organisation</val>
-    </key>
-    <key value="name_action">
-        <val lang="en_US">Name</val>
-        <val lang="de_DE">Name</val>
-    </key>
-    <key value="name_desc">
-        <val lang="en_US">Inserts an name</val>
-        <val lang="de_DE">Fügt einen Namen ein</val>
-    </key>
     <key value="respStmt_note">
         <val lang="en_US">Note on responsibility</val>
         <val lang="de_DE">Bemerkung zur Verantwortung</val>
@@ -142,17 +118,13 @@
         <val lang="en_US">Responsibility</val>
         <val lang="de_DE">Verantwortung</val>
     </key>
-    <key value="resp_action">
-        <val lang="en_US">Responsibility</val>
-        <val lang="de_DE">Verantwortung</val>
-    </key>
-    <key value="resp_desc">
-        <val lang="en_US">Inserts a responsibility element</val>
-        <val lang="de_DE">Fügt ein Verantwortungselement ein</val>
-    </key>
-    <key value="editonStmt">
+    <key value="editionStmt">
         <val lang="en_US">Edition statement</val>
         <val lang="de_DE">Editionsangabe</val>
+    </key>
+    <key value="editionStmt_desc">
+        <val lang="en_US">Inserts an edition statement</val>
+        <val lang="de_DE">Fügt ein Element zur Editionsangabe ein</val>
     </key>
     <key value="edition">
         <val lang="en_US">Edition</val>
@@ -162,37 +134,33 @@
         <val lang="en_US">Publication statement</val>
         <val lang="de_DE">Angaben zur Veröffentlichung</val>
     </key>
-    <key value="hostingInstitution">
-        <val lang="en_US">Hosting institution</val>
-        <val lang="de_DE">Herausgebende Institution</val>
+    <key value="publisher_desc">
+        <val lang="en_US">Insert a publisher</val>
+        <val lang="de_DE">Fügt einen Verleger ein</val>
     </key>
-    <key value="project">
-        <val lang="en_US">Project</val>
-        <val lang="de_DE">Projekt</val>
-    </key>
-    <key value="email">
-        <val lang="en_US">Email</val>
-        <val lang="de_DE">E-Mail</val>
-    </key>
-    <key value="address">
-        <val lang="en_US">Address</val>
-        <val lang="de_DE">Adresse</val>
-    </key>
-    <key value="addrLine">
-        <val lang="en_US">Addressline</val>
-        <val lang="de_DE">Adresszeile</val>
-    </key>
-    <key value="addrLine_desc">
-        <val lang="en_US">Inserts an addressline </val>
-        <val lang="de_DE">Fügt eine Adresszeile ein</val>
+    <key value="publisher">
+        <val lang="en_US">Publisher</val>
+        <val lang="de_DE">Verleger</val>
     </key>
     <key value="distributor">
         <val lang="en_US">Distributor</val>
         <val lang="de_DE">Distributor</val>
     </key>
+    <key value="distributor_desc">
+        <val lang="en_US">Inserts a distributor</val>
+        <val lang="de_DE">Fügt einen Distributor ein</val>
+    </key>
+    <key value="email">
+        <val lang="en_US">Email</val>
+        <val lang="de_DE">E-Mail</val>
+    </key>
     <key value="pubPlace">
         <val lang="en_US">Place of publication</val>
         <val lang="de_DE">Ort der Veröffentlichung</val>
+    </key>
+    <key value="pubPlace_desc">
+        <val lang="en_US">Inserts place of publication</val>
+        <val lang="de_DE">Fügt den Ort der Veröffentlichung ein</val>
     </key>
     <key value="type_date">
         <val lang="en_US">Type of publication date</val>
@@ -210,17 +178,17 @@
         <val lang="en_US">Availabbility</val>
         <val lang="de_DE">Verfügbarkeit</val>
     </key>
+    <key value="availability_desc">
+        <val lang="en_US">Inserts an availabbility element</val>
+        <val lang="de_DE">Fügt ein Element zur Verfügbarkeit ein</val>
+    </key>
     <key value="licence">
         <val lang="en_US">Licence</val>
         <val lang="de_DE">Lizenz</val>
     </key>
-    <key value="idno_type">
+    <key value="idno">
         <val lang="en_US">Identifier</val>
         <val lang="de_DE">Identifikator</val>
-    </key>
-    <key value="idno">
-        <val lang="en_US">Identification</val>
-        <val lang="de_DE">Identifikation</val>
     </key>
     <key value="type_idno">
         <val lang="en_US">Type of identification</val>
@@ -258,6 +226,10 @@
         <val lang="en_US">Bibliographic description</val>
         <val lang="de_DE">Bibliographische Beschreibung</val>
     </key>
+    <key value="insert_bibl_desc">
+        <val lang="en_US">Inserts a bibliographic description</val>
+        <val lang="de_DE">Fügt einen bibliographische Beschreibung ein</val>
+    </key>
     <key value="msDesc">
         <val lang="en_US">Manuscript description</val>
         <val lang="de_DE">Manuskriptbeschreibung</val>
@@ -266,13 +238,25 @@
         <val lang="en_US">Settlement</val>
         <val lang="de_DE">Standort</val>
     </key>
+    <key value="settlement_desc">
+        <val lang="en_US">Inserts a settlement</val>
+        <val lang="de_DE">Fügt einen Standort ein</val>
+    </key>
     <key value="repository">
         <val lang="en_US">Repository</val>
         <val lang="de_DE">Repositorium</val>
     </key>
+    <key value="repository_desc">
+        <val lang="en_US">Inserts a repository</val>
+        <val lang="de_DE">Fügt ein Repositorium ein</val>
+    </key>
     <key value="physDesc">
         <val lang="en_US">Physical description</val>
         <val lang="de_DE">Physische Beschreibung</val>
+    </key>
+    <key value="physDesc_desc">
+        <val lang="en_US">Inserts physical description</val>
+        <val lang="de_DE">Fügt eine physische Beschreibung ein</val>
     </key>
     <key value="typeDesc">
         <val lang="en_US">Type description</val>
@@ -282,6 +266,10 @@
         <val lang="en_US">Encoding description</val>
         <val lang="de_DE">Kodierungsbeschreibung</val>
     </key>
+    <key value="encodingDesc_desc">
+        <val lang="en_US">Inserts an encoding description</val>
+        <val lang="de_DE">Fügt eine Kodierungsbeschreibung ein</val>
+    </key>
     <key value="projectDesc">
         <val lang="en_US">Project description</val>
         <val lang="de_DE">Projektbeschreibung</val>
@@ -290,21 +278,61 @@
         <val lang="en_US">Editorial declaration</val>
         <val lang="de_DE">Zeichendeklaration</val>
     </key>
+    <key value="editorialDecl_button">
+        <val lang="en_US">Principals of editorial declaration</val>
+        <val lang="de_DE">Editionsprinzipien</val>
+    </key>
+    <key value="delP">
+        <val lang="en_US">Delete paragraph</val>
+        <val lang="de_DE">Entferne Absatz</val>
+    </key>
     <key value="correction">
         <val lang="en_US">Correction</val>
         <val lang="de_DE">Korrektur</val>
+    </key>
+    <key value="correction_desc">
+        <val lang="en_US">Inserts a correction element</val>
+        <val lang="de_DE">Fügt ein Element zur Korrektur ein</val>
     </key>
     <key value="status_correction">
         <val lang="en_US">Status of correction</val>
         <val lang="de_DE">Status der Korrektur</val>
     </key>
+    <key value="high">
+        <val lang="en_US">High</val>
+        <val lang="de_DE">Hoch</val>
+    </key>
+    <key value="medium">
+        <val lang="en_US">Medium</val>
+        <val lang="de_DE">Mittel</val>
+    </key>
+    <key value="low">
+        <val lang="en_US">Low</val>
+        <val lang="de_DE">Niedirg</val>
+    </key>
+    <key value="unknown">
+        <val lang="en_US">Unknown</val>
+        <val lang="de_DE">Unbekannt</val>
+    </key>
     <key value="method_correction">
         <val lang="en_US">Method of correction</val>
         <val lang="de_DE">Methode der Korrektur</val>
     </key>
+    <key value="silent">
+        <val lang="en_US">Silent</val>
+        <val lang="de_DE">Still</val>
+    </key>
+    <key value="markup">
+        <val lang="en_US">Markup</val>
+        <val lang="de_DE">Markup</val>
+    </key>
     <key value="normalization">
         <val lang="en_US">Normalization</val>
         <val lang="de_DE">Normalisierung</val>
+    </key>
+    <key value="normalization_desc">
+        <val lang="en_US">Inserts a normalization element</val>
+        <val lang="de_DE">Fügt ein Element zur Normalisierung ein</val>
     </key>
     <key value="source_normalization">
         <val lang="en_US">Source of noramlization</val>
@@ -318,17 +346,45 @@
         <val lang="en_US">Punctuation</val>
         <val lang="de_DE">Satzzeichen</val>
     </key>
+    <key value="punctuation_desc">
+        <val lang="en_US">Inserts a punctuation element</val>
+        <val lang="de_DE">Fügt ein Element zu Satzzeichen ein</val>
+    </key>
     <key value="marks_punctuation">
         <val lang="en_US">Punctuation as content</val>
         <val lang="de_DE">Beibehaltung der Satzzeichen als Inhalt</val>
     </key>
-    <key value="placement_normalization">
+    <key value="none">
+        <val lang="en_US">None</val>
+        <val lang="de_DE">Keine</val>
+    </key>
+    <key value="some">
+        <val lang="en_US">Some</val>
+        <val lang="de_DE">Einige</val>
+    </key>
+    <key value="all">
+        <val lang="en_US">All</val>
+        <val lang="de_DE">Alle</val>
+    </key>
+    <key value="placement_punctuation">
         <val lang="en_US">Placement of punctuation</val>
         <val lang="de_DE">Positionierung von Satzzeichen</val>
+    </key>
+    <key value="internal">
+        <val lang="en_US">Internal</val>
+        <val lang="de_DE">Innerhalb des Elements</val>
+    </key>
+    <key value="external">
+        <val lang="en_US">External</val>
+        <val lang="de_DE">Außerhalb des Elements</val>
     </key>
     <key value="quotation">
         <val lang="en_US">Quotation</val>
         <val lang="de_DE">Zitat</val>
+    </key>
+    <key value="quotation_desc">
+        <val lang="en_US">Inserts a quotation element</val>
+        <val lang="de_DE">Fügt ein Element zu Zitaten ein</val>
     </key>
     <key value="marks_quotation">
         <val lang="en_US">Quotationmarks as content</val>
@@ -338,21 +394,41 @@
         <val lang="en_US">Hyphenation</val>
         <val lang="de_DE">Silbentrennung</val>
     </key>
+    <key value="hyphenation_desc">
+        <val lang="en_US">Insesrts a hyphenation element</val>
+        <val lang="de_DE">Fügt ein Element zu Silbentrennung ein</val>
+    </key>
     <key value="eol_hyphenation">
         <val lang="en_US">Retention of hyphenation</val>
         <val lang="de_DE">Beibehaltung der Silbentrennung</val>
+    </key>
+    <key value="hard">
+        <val lang="en_US">Hard</val>
+        <val lang="de_DE">Harte</val>
     </key>
     <key value="segmentation">
         <val lang="en_US">Segmentation</val>
         <val lang="de_DE">Segmentierung</val>
     </key>
+    <key value="segmentation_desc">
+        <val lang="en_US">Inserts a segmentation element</val>
+        <val lang="de_DE">Fügt ein Element zur Segmentierung ein</val>
+    </key>
     <key value="stdVals">
         <val lang="en_US">Standard values</val>
         <val lang="de_DE">Standardwerte</val>
     </key>
+    <key value="stdVals_desc">
+        <val lang="en_US">Inserts a standard values element</val>
+        <val lang="de_DE">Fügt eine Element zu Standardwerten ein</val>
+    </key>
     <key value="interpretation">
         <val lang="en_US">Interpretation</val>
         <val lang="de_DE">Interpretation</val>
+    </key>
+    <key value="interpretation_desc">
+        <val lang="en_US">Inserts an interpretation element</val>
+        <val lang="de_DE">Fügt eine Element zu Interpretationen ein</val>
     </key>
     <key value="classDecl">
         <val lang="en_US">Class declaration</val>
@@ -362,9 +438,21 @@
         <val lang="en_US">Taxonmy</val>
         <val lang="de_DE">Typologie</val>
     </key>
+    <key value="taxonomy_desc">
+        <val lang="en_US">Inserts a taxonmy</val>
+        <val lang="de_DE">Fügt eine Typologie ein</val>
+    </key>
+    <key value="taxonomy_id">
+        <val lang="en_US">ID of taxonmy</val>
+        <val lang="de_DE">ID der Typologie</val>
+    </key>
     <key value="taxonomy_bibl">
         <val lang="en_US">Bibliographical reference</val>
         <val lang="de_DE">Bibliographischer Verweis</val>
+    </key>
+    <key value="delBibl">
+        <val lang="en_US">Delete bibliographical reference</val>
+        <val lang="de_DE">Entferne Bibliographischen Verweis</val>
     </key>
     <key value="category">
         <val lang="en_US">Category</val>
@@ -374,6 +462,10 @@
         <val lang="en_US">Inserts a category</val>
         <val lang="de_DE">Fügt eine Kategorie ein</val>
     </key>
+    <key value="category_id">
+        <val lang="en_US">ID of category</val>
+        <val lang="de_DE">ID der Kategorie</val>
+    </key>
     <key value="sub-category">
         <val lang="en_US">Sub category</val>
         <val lang="de_DE">Unterkategorie</val>
@@ -381,6 +473,10 @@
     <key value="subcategory_desc">
         <val lang="en_US">Inserts a sub-category</val>
         <val lang="de_DE">Fügt eine Unterkategorie ein</val>
+    </key>
+    <key value="subcategory_id">
+        <val lang="en_US">ID of sub category</val>
+        <val lang="de_DE">ID der Unterkategorie</val>
     </key>
     <key value="catDesc">
         <val lang="en_US">Category description</val>
@@ -394,6 +490,14 @@
         <val lang="en_US">File created on</val>
         <val lang="de_DE">Datei erstellt am</val>
     </key>
+    <key value="langUsage">
+        <val lang="en_US">Language usage</val>
+        <val lang="de_DE">Sprachgebrauch</val>
+    </key>
+    <key value="langUsage_desc">
+        <val lang="en_US">Inserts language usage</val>
+        <val lang="de_DE">Fügt Sprachgebrauch ein</val>
+    </key>
     <key value="language">
         <val lang="en_US">Language</val>
         <val lang="de_DE">Sprache</val>
@@ -405,6 +509,10 @@
     <key value="textClass">
         <val lang="en_US">Text classification</val>
         <val lang="de_DE">Textklassifikation</val>
+    </key>
+    <key value="textClass_desc">
+        <val lang="en_US">Inserts a text classification</val>
+        <val lang="de_DE">Fügt eine Textklassifikation ein</val>
     </key>
     <key value="keywords">
         <val lang="en_US">Tags/topics</val>
@@ -430,13 +538,49 @@
         <val lang="en_US">Correspondence description</val>
         <val lang="de_DE">Korrespondenzbeschreibung</val>
     </key>
+    <key value="id_correspDesc">
+        <val lang="en_US">ID of correspondence description</val>
+        <val lang="de_DE">ID der Korrespondenzbeschreibung</val>
+    </key>
+    <key value="correspDesc_desc">
+        <val lang="en_US">Inserts a correspondence description</val>
+        <val lang="de_DE">Fügt eine Korrespondenzbeschreibung ein</val>
+    </key>
+    <key value="add_corresp">
+        <val lang="en_US">Add correspondence</val>
+        <val lang="de_DE">Korrespondenz hinzufügen</val>
+    </key>
     <key value="correspAction">
         <val lang="en_US">Action of correspondence</val>
         <val lang="de_DE">Korrespondenzaktion</val>
     </key>
-    <key value="type_correspAction">
+    <key value="correspAction_desc">
+        <val lang="en_US">Inserts an action of correspondence</val>
+        <val lang="de_DE">Fügt eine Korrespondenzaktion ein</val>
+    </key>
+    <key value="type_corresp">
         <val lang="en_US">Type of correspondence</val>
         <val lang="de_DE">Art der Korrespondenz</val>
+    </key>
+    <key value="sent">
+        <val lang="en_US">Sent</val>
+        <val lang="de_DE">Gesendet</val>
+    </key>
+    <key value="received">
+        <val lang="en_US">Received</val>
+        <val lang="de_DE">Erhalten</val>
+    </key>
+    <key value="transmitted">
+        <val lang="en_US">Transmitted</val>
+        <val lang="de_DE">Übermittelt</val>
+    </key>
+    <key value="redirected">
+        <val lang="en_US">Redirected</val>
+        <val lang="de_DE">Umgeleitet</val>
+    </key>
+    <key value="forwarded">
+        <val lang="en_US">Forwarded</val>
+        <val lang="de_DE">Weitergeleitet</val>
     </key>
     <key value="persName_correspAction">
         <val lang="en_US">Name of person</val>

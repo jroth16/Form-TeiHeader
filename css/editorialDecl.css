@@ -1,93 +1,31 @@
 @import url("../../Form-TeiHeader/css/main.css");
 
 /* editorialDecl */
-editorialDecl>p::after {
-    content:"\a"
-        oxy_button(action, oxy_action(
-            name, "Beschreibung entfernen",
-            description, 'Deletes the current element', 
-            operation, 'DeleteElementOperation' 
-        ))   
-}
+/* editorialDecl p::after {
+    content:
+        oxy_button(
+            actionID, "delP" 
+        )   
+}*/
 
 editorialDecl::after {
     content: 
-        oxy_label(text,"\a")
+        oxy_button(actionID, "delP")
         oxy_buttonGroup(
-            label, 'Editionsprinzipien', 
-            actions, 
-              oxy_action_list(
-                  oxy_action(
-                        name, 'Korrektur', 
-                        description, 'Insert an element after the current one', 
-                        operation, 'InsertFragmentOperation', 
-                        arg-fragment, '<correction status="" method=""><p></p></correction>'
-                  ),
-                  oxy_action(
-                        name, 'Normalisierung', 
-                        description, 'Insert an element after the current one', 
-                        operation, 'InsertFragmentOperation', 
-                        arg-fragment, '<normalization source="" method=""><p></p></normalization>'
-                  ),
-                  oxy_action(
-                        name, 'Interpunktion', 
-                        description, 'Insert an element after the current one', 
-                        operation, 'InsertFragmentOperation', 
-                        arg-fragment, '<punctuation source="" method=""><p></p></punctuation>'
-                  ),
-                  oxy_action(
-                        name, 'Zitat', 
-                        description, 'Insert an element after the current one', 
-                        operation, 'InsertFragmentOperation', 
-                        arg-fragment, '<quotation marks="" placement=""><p></p></quotation>'
-                  ),
-                  oxy_action(
-                        name, 'Silbentrennung', 
-                        description, 'Insert an element after the current one', 
-                        operation, 'InsertFragmentOperation', 
-                        arg-fragment, '<hyphenation eol=""><p></p></hyphenation>'
-                  ),
-                  oxy_action(
-                        name, 'Segmentierung', 
-                        description, 'Insert an element after the current one', 
-                        operation, 'InsertFragmentOperation', 
-                        arg-fragment, '<segmentation><p></p></segmentation>'
-                  ),
-                  oxy_action(
-                        name, 'Standardwerte', 
-                        description, 'Insert an element after the current one', 
-                        operation, 'InsertFragmentOperation', 
-                        arg-fragment, '<stdVals><p></p></stdVals>'
-                  ),
-                  oxy_action(
-                        name, 'Interpretation', 
-                        description, 'Insert an element after the current one', 
-                        operation, 'InsertFragmentOperation', 
-                        arg-fragment, '<interpretation><p></p></interpretation>'
-                  )
-              )
-          )
+            label, '${i18n(editorialDecl_button)}', 
+            actionIDs, "correction, normalization, punctuation, quotation, hyphenation, segmentation, stdVals, interpretation"
+          );
 }
 
 correction::before {
     content: 
         oxy_label(text,"${i18n(correction)}: ", styles, "@import 'labels.css';")
         oxy_label(text, "${i18n(status_correction)}: ", styles, "@import 'labels.css';")
-        oxy_combobox(           
-            edit, "@status",
-            editable, false,
-            values, "high, medium, low, unknown"
-            labels, "hoch, mittel, niedrig, unbekannt")
         oxy_label(text,"${i18n(method_correction)}: ", styles, "@import 'labels.css';")
-        oxy_combobox(           
-            edit, "@method",
-            editable, false,
-            values, "silent, markup"
-            labels, "Still, Markup");
 }
 
 correction p {
-    content: "\a"
+    content: 
         oxy_textArea(
             edit, "#text",
             columns, 40,
@@ -99,17 +37,7 @@ normalization::before {
     content: 
         oxy_label(text,"${i18n(normalization)}: ", styles, "@import 'labels.css';")
         oxy_label(text, "${i18n(source_normalization)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, "@source",
-            columns, 30,
-            fontInherit,true)
         oxy_label(text,"${i18n(method_normalization)}: ", styles, "@import 'labels.css';")
-        oxy_combobox(           
-            edit, "@method",
-            editable, false,
-            values, "silent, markup"
-            labels, "Still, Markup")
-        oxy_label(text, "\a");
 }
 
 normalization p {
@@ -125,18 +53,7 @@ punctuation::before {
     content: 
         oxy_label(text,"${i18n(punctuation)}: ", styles, "@import 'labels.css';")
         oxy_label(text, "${i18n(marks_punctuation)}: ", styles, "@import 'labels.css';")
-        oxy_combobox(           
-            edit, "@marks",
-            editable, false,
-            values, "none, some, all"
-            labels, "keine, einige, alle")
         oxy_label(text,"${i18n(placement_punctuation)}: ", styles, "@import 'labels.css';")
-        oxy_combobox(           
-            edit, "@placement",
-            editable, false,
-            values, "internal, external"
-            labels, "Innerhalb Element, Außerhalb Element")
-        oxy_label(text, "\a");
 }
 
 punctuation p {
@@ -152,12 +69,6 @@ quotation::before {
     content: 
         oxy_label(text,"${i18n(quotation)}: ", styles, "@import 'labels.css';")
         oxy_label(text,"${i18n(marks_quotation)}: ", styles, "@import 'labels.css';")
-        oxy_combobox(           
-            edit, "@marks",
-            editable, false,
-            values, "none, some, all"
-            labels, "keine, manche, alle")
-        oxy_label(text, "\a");
 }
 
 quotation p {
@@ -173,12 +84,6 @@ hyphenation::before {
     content: 
         oxy_label(text,"${i18n(hyphenation)}: ", styles, "@import 'labels.css';")
         oxy_label(text,"${i18n(eol_hyphenation)}: ", styles, "@import 'labels.css';")
-        oxy_combobox(           
-            edit, "@eol",
-            editable, false,
-            values, "all, some, hard, none"
-            labels, "alle, manche, harte, keine")
-        oxy_label(text, "\a");
 }
 
 hyphenation p {

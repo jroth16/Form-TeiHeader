@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:authorAction xmlns:a="http://www.oxygenxml.com/ns/author/external-action"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/author/external-action http://www.oxygenxml.com/ns/author/external-action/authorAction.xsd"
+  id="title">
+  <a:name>${i18n(title)}</a:name>
+  <a:description>${i18n(title_desc)}</a:description>
+  <a:smallIconPath href="${framework}/icons/heading-solid_12x12.png"/>
+  <a:largeIconPath href="${framework}/icons/heading-solid_24x24.png"/>
+  <a:operations>
+    <a:operation id="InsertFragmentOperation">
+      <a:xpathCondition>parent::titleStmt or self::titleStmt</a:xpathCondition>
+      <a:arguments>
+        <a:argument name="fragment"><title xmlns="http://www.tei-c.org/ns/1.0" type="${ask('${i18n(type_title)}:', combobox, ('main':'${i18n(main_title)}';'sub':'${i18n(sub_title)}';'volume':'${i18n(vol_title)}';'part':'${i18n(part_title)}'))}">${caret}</title></a:argument>
+        <a:argument name="insertPosition">Inside as last child</a:argument>
+      </a:arguments>
+    </a:operation>
+    <a:operation id="ChangeAttributeOperation">
+      <a:xpathCondition>self::title/@type="volume"</a:xpathCondition>
+      <a:arguments>
+        <a:argument name="elementLocation"/>
+        <a:argument name="name">n</a:argument>
+        <a:argument name="namespace"/>
+        <a:argument name="value">${ask('${i18n(vol_nr}: ', generic, 'default')}</a:argument>
+      </a:arguments>
+    </a:operation>
+  </a:operations>
+  <a:enabledInReadOnlyContext>false</a:enabledInReadOnlyContext>
+</a:authorAction>

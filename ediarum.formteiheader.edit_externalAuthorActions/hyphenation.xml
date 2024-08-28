@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:authorAction xmlns:a="http://www.oxygenxml.com/ns/author/external-action"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/author/external-action http://www.oxygenxml.com/ns/author/external-action/authorAction.xsd"
+  id="hyphenation">
+  <a:name>${i18n(hyphenation)}</a:name>
+  <a:description>${i18n(hyphenation_desc)}</a:description>
+  <a:operations>
+    <a:operation id="InsertFragmentOperation">
+      <a:xpathCondition>parent::editorialDecl or self::editorialDecl</a:xpathCondition>
+      <a:arguments>
+        <a:argument name="fragment"><hyphenation xmlns="https://www.tei-c.org/ns/1.0" eol="${ask('${i18n(eol_hyphenation)}', combobox, ('all':'${i18n(all)}';'some':'$i18n(some)}'; 'hard':'$i18n(hard)}';'none':'$i18n(none)}'))}">
+  <p/>
+</hyphenation></a:argument>
+        <a:argument name="insertLocation">//encodingDesc/editorialDecl</a:argument>
+        <a:argument name="insertPosition">Inside as last child</a:argument>
+      </a:arguments>
+    </a:operation>
+  </a:operations>
+  <a:enabledInReadOnlyContext>false</a:enabledInReadOnlyContext>
+</a:authorAction>

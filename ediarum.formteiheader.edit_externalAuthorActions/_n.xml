@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:authorAction xmlns:a="http://www.oxygenxml.com/ns/author/external-action"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/author/external-action http://www.oxygenxml.com/ns/author/external-action/authorAction.xsd"
+  id="@n">
+  <a:name>${i18n(vol_nr)}</a:name>
+  <a:description>${i18n(vol_nr)}</a:description>
+  <a:operations>
+    <a:operation id="ChangeAttributeOperation">
+      <a:xpathCondition>self::title[@type='volume'] or parent::title[@type='volume']</a:xpathCondition>
+      <a:arguments>
+        <a:argument name="elementLocation">self::title</a:argument>
+        <a:argument name="name">n</a:argument>
+        <a:argument name="namespace"/>
+        <a:argument name="value">${ask('Bandnummer eingeben: ', generic)}</a:argument>
+      </a:arguments>
+    </a:operation>
+  </a:operations>
+  <a:enabledInReadOnlyContext>false</a:enabledInReadOnlyContext>
+</a:authorAction>

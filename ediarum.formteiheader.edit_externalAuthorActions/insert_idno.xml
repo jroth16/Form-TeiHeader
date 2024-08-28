@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:authorAction xmlns:a="http://www.oxygenxml.com/ns/author/external-action"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/author/external-action http://www.oxygenxml.com/ns/author/external-action/authorAction.xsd"
+  id="insert_idno">
+  <a:name>${i18n(idno_action)}</a:name>
+  <a:description>${i18n(idno_desc)}</a:description>
+  <a:operations>
+    <a:operation id="InsertFragmentOperation">
+      <a:xpathCondition>parent::publicationStmt or self::publicationStmt</a:xpathCondition>
+      <a:arguments>
+        <a:argument name="fragment"><idno xmlns="http://www.tei-c.org/ns/1.0" type="${ask('${i18n(type_idno)}', combobox, ('ISBN':'ISBN'; 'ISSN':'ISSN';'DOI':'DOI';'URI':'URI'; 'VIAF':'VIAF'; 'ESTC':'ESTC'; 'OCLC':'OCLC'))}"/></a:argument>
+        <a:argument name="insertLocation">//fileDesc/publicationStmt</a:argument>
+        <a:argument name="insertPosition">Inside as last child</a:argument>
+      </a:arguments>
+    </a:operation>
+  </a:operations>
+  <a:enabledInReadOnlyContext>false</a:enabledInReadOnlyContext>
+</a:authorAction>

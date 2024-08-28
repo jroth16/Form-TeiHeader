@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:authorAction xmlns:a="http://www.oxygenxml.com/ns/author/external-action"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/author/external-action http://www.oxygenxml.com/ns/author/external-action/authorAction.xsd"
+  id="editionStmt">
+  <a:name>${i18n(editionStmt)}</a:name>
+  <a:description>${i18n(editionStmt_desc)}</a:description>
+  <a:operations>
+    <a:operation id="InsertFragmentOperation">
+      <a:xpathCondition>//teiHeader/*</a:xpathCondition>
+      <a:arguments>
+        <a:argument name="fragment"><editionStmt xmlns="https://www.tei-c.org/ns/1.0">
+  <edition>
+    <date/>
+  </edition>
+</editionStmt></a:argument>
+        <a:argument name="insertLocation">//fileDesc/titleStmt</a:argument>
+        <a:argument name="insertPosition">After</a:argument>
+      </a:arguments>
+    </a:operation>
+  </a:operations>
+  <a:enabledInReadOnlyContext>false</a:enabledInReadOnlyContext>
+</a:authorAction>

@@ -210,26 +210,6 @@ respStmt{
     display:block;
 }
 
-orgName{
-    content:
-        oxy_label(text,"${i18n(orgName)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text;
-}
-
-name{
-    content:
-        oxy_label(text,"${i18n(name)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text;
-}
-
 respStmt note{
     content:
         oxy_label(text,"${i18n(respStmt_note)}: ", styles, "@import 'labels.css';")
@@ -257,6 +237,9 @@ editionStmt::before{
     white-space: nowrap;
 }
 
+editionStmt{
+    content: oxy_button(actionID, "respStmt");
+}
 edition{
     content:
         oxy_label(text,"${i18n(edition)}: ", styles, "@import 'labels.css';")
@@ -275,27 +258,8 @@ publicationStmt::before {
 }
 
 publisher{
-    visibility: -oxy-collapse-text;
-    display: block;
-}
-publisher::after{
-    content:"\a"
-        oxy_button(actionID, insert_orgName)
-}
-
-orgName[role="hostingInstitution"]{
     content:
-        oxy_label(text,"${i18n(hostingInstitution)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text;
-}
-
-orgName[role="project"]{
-    content:
-        oxy_label(text,"${i18n(project)}: ", styles, "@import 'labels.css';")
+        oxy_label(text,"${i18n(publisher)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 40,
@@ -311,25 +275,6 @@ email{
             columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
-}
-
-addrLine{
-    content:
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text;
-}
-
-address::before{
-    content:
-        oxy_label(text,"${i18n(address)}: ", styles, "@import 'labels.css';");
-}
-
-address::after {
-    content:
-        oxy_button(actionID, "addrLine")
 }
 
 distributor{
@@ -389,17 +334,10 @@ idno[type] {
      visibility: -oxy-collapse-text;
 }
 
-idno:has(idno)::before {
-    content: 
-        oxy_label(text,"${i18n(idno)}: ", styles, "@import 'labels.css';");
-    font-weight: bold;
-    font-size: 1em;
-    color:  black;
-}
 
-idno:has(idno)::after {
-    content: 
-        oxy_button(actionID, "idno_identifier");
+idno[type]:last-of-type::after {
+    content: "\a"
+        oxy_button(actionID, "insert_idno");
 }
 
 /* notesStmt */
@@ -411,7 +349,7 @@ notesStmt::before {
 
 notesStmt note::before{
     content:
-         oxy_label(text,"${i18n(notesStmt_note)}: ", styles, "@import 'labels.css';");
+         oxy_label(text,"${i18n(note)}: ", styles, "@import 'labels.css';");
 }
 
 notesStmt note {
@@ -421,11 +359,6 @@ notesStmt note {
             columns, 40,
             fontInherit,true);
      visibility: -oxy-collapse-text;
-}
-
-notesStmt::after{
-    content: 
-        oxy_button(actionID, "insert_note") 
 }
 
 /* sourceDesc */

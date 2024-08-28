@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:authorAction xmlns:a="http://www.oxygenxml.com/ns/author/external-action"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/author/external-action http://www.oxygenxml.com/ns/author/external-action/authorAction.xsd"
+  id="normalization">
+  <a:name>${i18n(normalization)}</a:name>
+  <a:description>${i18n(normalization_desc)}</a:description>
+  <a:operations>
+    <a:operation id="InsertFragmentOperation">
+      <a:xpathCondition>parent::editorialDecl or self::editorialDecl</a:xpathCondition>
+      <a:arguments>
+        <a:argument name="fragment"><normalization xmlns="https://www.tei-c.org/ns/1.0" source="${ask('${i18n(source_normalization)}', generic, )}" method="${ask('${i18n(method_normalization)}', combobox, ('silent':'${i18n(silent)}';'markup':'$i18n(markup)}'))}">
+  <p/>
+</normalization></a:argument>
+        <a:argument name="insertLocation">//encodingDesc/editorialDecl</a:argument>
+        <a:argument name="insertPosition">Inside as last child</a:argument>
+      </a:arguments>
+    </a:operation>
+  </a:operations>
+  <a:enabledInReadOnlyContext>false</a:enabledInReadOnlyContext>
+</a:authorAction>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:authorAction xmlns:a="http://www.oxygenxml.com/ns/author/external-action"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.oxygenxml.com/ns/author/external-action http://www.oxygenxml.com/ns/author/external-action/authorAction.xsd"
+  id="punctuation">
+  <a:name>${i18n(punctuation)}</a:name>
+  <a:description>${i18n(punctuation_desc)}</a:description>
+  <a:operations>
+    <a:operation id="InsertFragmentOperation">
+      <a:xpathCondition>parent::editorialDecl or self::editorialDecl</a:xpathCondition>
+      <a:arguments>
+        <a:argument name="fragment"><punctuation xmlns="https://www.tei-c.org/ns/1.0" marks="${ask('${i18n(marks_punctuation)}', combobox, ('none':'${i18n(none)}';'some':'$i18n(some)}'; 'all':'$i18n(all)}'))}" placement="${ask('${i18n(placement_punctuation)}', combobox, ('internal':'${i18n(internal)}';'external':'$i18n(external)}'))}">
+  <p/>
+</punctuation></a:argument>
+        <a:argument name="insertLocation">//encodingDesc/editorialDecl</a:argument>
+        <a:argument name="insertPosition">Inside as last child</a:argument>
+      </a:arguments>
+    </a:operation>
+  </a:operations>
+  <a:enabledInReadOnlyContext>false</a:enabledInReadOnlyContext>
+</a:authorAction>
