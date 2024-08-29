@@ -3,25 +3,23 @@
 /* profileDesc */
 correspDesc {
     content:
-        oxy_label(text, "${i18n(correspDesc)}: ", styles, "@import 'labels.css';");
-}
-
-correspAction[type]::before{
-    content:
-        oxy_label(text, "${i18n(type_corresp)}: ", styles, "@import 'labels.css';");
-    white-space:nowrap;
-}
-
-correspAction[type] {
-    content:
-        oxy_label(text, "${i18n(correspAction)}: ", styles, "@import 'labels.css';")
+        oxy_label(text, "${i18n(correspDesc)}: ", styles, "@import 'labels.css';")
+        oxy_label(text, "${i18n(correspDesc_id)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, "#text",
             columns, 60,
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
+correspAction[type] {
+    content:
+        oxy_label(text, "${i18n(type_corresp)}: ", styles, "@import 'labels.css';")
+        oxy_combobox(           
+            edit, "@type",
+            editable, false,
+            values, "sent, received, transmitted, redirected, forwarded",
+            labels, "${i18n(sent)}, ${i18n(received)}, ${i18n(transmitted)}, ${i18n(redirected)},${i18n(forwarded)}");
+}
 correspDesc::after{
     content: 
         oxy_buttonGroup(
@@ -30,7 +28,9 @@ correspDesc::after{
             actionStyle, both
         );
 }
-
+correspAction persName:before {
+    display:none;
+}
 correspAction > persName {
     content:
         oxy_label(text, "${i18n(persName_correspAction)}: ", styles, "@import 'labels.css';")
@@ -40,7 +40,9 @@ correspAction > persName {
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
+correspAction date:before {
+    display:none;
+}
 correspAction > date::before {
     content:
         oxy_label(text, "${i18n(date)}: ", styles, "@import 'labels.css';")

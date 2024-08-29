@@ -22,6 +22,10 @@
         <val lang="en_US">Title</val>
         <val lang="de_DE">Titel</val>
     </key>
+    <key value="type_title">
+        <val lang="en_US">Type of the title</val>
+        <val lang="de_DE">Art des Titels</val>
+    </key>
     <key value="title_desc">
         <val lang="en_US">Inserts a title element and asks for the types according to the DTABF</val>
         <val lang="de_DE">Fügt ein Titel Element ein und fragt nach der Art des Titels nach dem DTABF</val>
@@ -114,6 +118,10 @@
         <val lang="en_US">Note on responsibility</val>
         <val lang="de_DE">Bemerkung zur Verantwortung</val>
     </key>
+    <key value="ref_persName">
+        <val lang="en_US">Reference of responsible person</val>
+        <val lang="de_DE">Verweis auf zuständige Person</val>
+    </key>
     <key value="resp">
         <val lang="en_US">Responsibility</val>
         <val lang="de_DE">Verantwortung</val>
@@ -149,10 +157,6 @@
     <key value="distributor_desc">
         <val lang="en_US">Inserts a distributor</val>
         <val lang="de_DE">Fügt einen Distributor ein</val>
-    </key>
-    <key value="email">
-        <val lang="en_US">Email</val>
-        <val lang="de_DE">E-Mail</val>
     </key>
     <key value="pubPlace">
         <val lang="en_US">Place of publication</val>
@@ -234,6 +238,18 @@
         <val lang="en_US">Manuscript description</val>
         <val lang="de_DE">Manuskriptbeschreibung</val>
     </key>
+    <key value="msIdentifier">
+        <val lang="en_US">Manuscript identifier</val>
+        <val lang="de_DE">Manuskript-Identifikator</val>
+    </key>
+    <key value="institution">
+        <val lang="en_US">Institution</val>
+        <val lang="de_DE">Institution</val>
+    </key>
+    <key value="collection">
+        <val lang="en_US">Collection</val>
+        <val lang="de_DE">Kollektion</val>
+    </key>
     <key value="settlement">
         <val lang="en_US">Settlement</val>
         <val lang="de_DE">Standort</val>
@@ -290,6 +306,10 @@
         <val lang="en_US">Correction</val>
         <val lang="de_DE">Korrektur</val>
     </key>
+    <key value="p_correction">
+        <val lang="en_US">Information on correction</val>
+        <val lang="de_DE">Angaben zur Korrektur</val>
+    </key>
     <key value="correction_desc">
         <val lang="en_US">Inserts a correction element</val>
         <val lang="de_DE">Fügt ein Element zur Korrektur ein</val>
@@ -330,6 +350,10 @@
         <val lang="en_US">Normalization</val>
         <val lang="de_DE">Normalisierung</val>
     </key>
+    <key value="p_normalization">
+        <val lang="en_US">Information on normalization</val>
+        <val lang="de_DE">Angaben zur Normalisierung</val>
+    </key>
     <key value="normalization_desc">
         <val lang="en_US">Inserts a normalization element</val>
         <val lang="de_DE">Fügt ein Element zur Normalisierung ein</val>
@@ -345,6 +369,10 @@
     <key value="punctuation">
         <val lang="en_US">Punctuation</val>
         <val lang="de_DE">Satzzeichen</val>
+    </key>
+    <key value="p_punctuation">
+        <val lang="en_US">Information on punctuation</val>
+        <val lang="de_DE">Angaben zur Satzzeichen</val>
     </key>
     <key value="punctuation_desc">
         <val lang="en_US">Inserts a punctuation element</val>
@@ -382,6 +410,10 @@
         <val lang="en_US">Quotation</val>
         <val lang="de_DE">Zitat</val>
     </key>
+    <key value="p_quotation">
+        <val lang="en_US">Information on quotation</val>
+        <val lang="de_DE">Angaben zur Zitaten</val>
+    </key>
     <key value="quotation_desc">
         <val lang="en_US">Inserts a quotation element</val>
         <val lang="de_DE">Fügt ein Element zu Zitaten ein</val>
@@ -393,6 +425,10 @@
     <key value="hyphenation">
         <val lang="en_US">Hyphenation</val>
         <val lang="de_DE">Silbentrennung</val>
+    </key>
+    <key value="p_hyphenation">
+        <val lang="en_US">Information on hyphenation</val>
+        <val lang="de_DE">Angaben zur Silbentrennung</val>
     </key>
     <key value="hyphenation_desc">
         <val lang="en_US">Insesrts a hyphenation element</val>
@@ -538,6 +574,10 @@
         <val lang="en_US">Correspondence description</val>
         <val lang="de_DE">Korrespondenzbeschreibung</val>
     </key>
+    <key value="correspDesc_id">
+        <val lang="en_US">ID of correspondence description</val>
+        <val lang="de_DE">ID der Korrespondenzbeschreibung</val>
+    </key>
     <key value="id_correspDesc">
         <val lang="en_US">ID of correspondence description</val>
         <val lang="de_DE">ID der Korrespondenzbeschreibung</val>
@@ -559,8 +599,8 @@
         <val lang="de_DE">Fügt eine Korrespondenzaktion ein</val>
     </key>
     <key value="type_corresp">
-        <val lang="en_US">Type of correspondence</val>
-        <val lang="de_DE">Art der Korrespondenz</val>
+        <val lang="en_US">Type of correspondence action</val>
+        <val lang="de_DE">Art der Korrespondenzaktion</val>
     </key>
     <key value="sent">
         <val lang="en_US">Sent</val>

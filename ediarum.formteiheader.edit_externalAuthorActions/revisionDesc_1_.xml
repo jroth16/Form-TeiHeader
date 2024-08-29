@@ -9,9 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>//revisionDesc</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><change xmlns="http://www.tei-c.org/ns/1.0" when="${date(yyyy-MM-dd)}" who="${ask('${i18n(change_who)}', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">
-  <p/>
-</change></a:argument>
+        <a:argument name="fragment"><change xmlns="http://www.tei-c.org/ns/1.0" when="${date(yyyy-MM-dd)}" who="${ask('${i18n(change_who)}', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}"/></a:argument>
         <a:argument name="insertLocation">//listChange</a:argument>
         <a:argument name="insertPosition">Inside as first child</a:argument>
       </a:arguments>
@@ -21,9 +19,7 @@
       <a:arguments>
         <a:argument name="fragment"><revisionDesc xmlns="http://www.tei-c.org/ns/1.0">
   <listChange>
-    <change when="${date(yyyy-MM-dd)}" who="${ask('${i18n(change_who)}', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}">
-      <p/>
-    </change>
+    <change when="${date(yyyy-MM-dd)}" who="${ask('${i18n(change_who)}', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}"/>
   </listChange>
 </revisionDesc></a:argument>
         <a:argument name="insertLocation">//profileDesc</a:argument>

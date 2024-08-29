@@ -10,9 +10,9 @@
       <a:xpathCondition>parent::taxonomy or self::taxonomy</a:xpathCondition>
       <a:arguments>
         <a:argument name="fragment"><category xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('${i18n(category_id)}:', generic, )}">
-  <category>
-    <catDesc/>
-  </category>
+  <category xml:id="${ask('${i18n(subcategory_id)}:', generic, )}">
+  <catDesc/>
+</category>
 </category></a:argument>
         <a:argument name="insertLocation">//classDecl/taxonomy</a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>

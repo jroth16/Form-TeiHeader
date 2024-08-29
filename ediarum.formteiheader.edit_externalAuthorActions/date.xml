@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.oxygenxml.com/ns/author/external-action http://www.oxygenxml.com/ns/author/external-action/authorAction.xsd"
   id="date">
-  <a:name>${i18n(date_action)}</a:name>
+  <a:name>${i18n(date)}</a:name>
   <a:description>${i18n(date_desc)}</a:description>
   <a:operations>
     <a:operation id="InsertFragmentOperation">
@@ -23,9 +23,10 @@
       </a:arguments>
     </a:operation>
     <a:operation id="InsertFragmentOperation">
-      <a:xpathCondition>parent::creation or self::creation</a:xpathCondition>
+      <a:xpathCondition>parent::profileDesc or self::profileDesc</a:xpathCondition>
       <a:arguments>
         <a:argument name="fragment"><date xmlns="http://www.tei-c.org/ns/1.0"/></a:argument>
+        <a:argument name="insertLocation">//profileDesc/creation</a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>
       </a:arguments>
     </a:operation>

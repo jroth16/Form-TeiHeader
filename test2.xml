@@ -4,8 +4,7 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title type="main"/>
-                <title type="sub"/>
+                <title/>
             </titleStmt>
             <publicationStmt>
                 <publisher>Herausgebende Institution</publisher>

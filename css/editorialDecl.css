@@ -1,13 +1,6 @@
 @import url("../../Form-TeiHeader/css/main.css");
 
 /* editorialDecl */
-/* editorialDecl p::after {
-    content:
-        oxy_button(
-            actionID, "delP" 
-        )   
-}*/
-
 editorialDecl::after {
     content: 
         oxy_button(actionID, "delP")
@@ -16,123 +9,147 @@ editorialDecl::after {
             actionIDs, "correction, normalization, punctuation, quotation, hyphenation, segmentation, stdVals, interpretation"
           );
 }
-
 correction::before {
     content: 
         oxy_label(text,"${i18n(correction)}: ", styles, "@import 'labels.css';")
         oxy_label(text, "${i18n(status_correction)}: ", styles, "@import 'labels.css';")
+        oxy_combobox(           
+            edit, "@status",
+            editable, false,
+            values, "high, medium, low, unknown"
+            labels, "${i18n(high)}, ${i18n(medium)}, ${i18n(low)}, ${i18n(unknown)}")
         oxy_label(text,"${i18n(method_correction)}: ", styles, "@import 'labels.css';")
+        oxy_combobox(           
+            edit, "@method",
+            editable, false,
+            values, "silent, markup"
+            labels, "${i18n(silent)}, ${i18n(markup)}")
+        oxy_label(text,"${i18n(p_correction)}:", styles, "@import 'labels.css';")
 }
-
 correction p {
     content: 
         oxy_textArea(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
 }
-
 normalization::before {
     content: 
         oxy_label(text,"${i18n(normalization)}: ", styles, "@import 'labels.css';")
         oxy_label(text, "${i18n(source_normalization)}: ", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, '@source',
+            columns, 20,
+            fontInherit,true)
         oxy_label(text,"${i18n(method_normalization)}: ", styles, "@import 'labels.css';")
+        oxy_combobox(           
+            edit, "@method",
+            editable, false,
+            values, "silent, markup"
+            labels, "${i18n(silent)}, ${i18n(markup)}")
+        oxy_label(text, "${i18n(p_normalization)}:", styles, "@import 'labels.css';")
 }
-
 normalization p {
     content:
         oxy_textArea(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
+     display:block;
 }
-
 punctuation::before {
     content: 
         oxy_label(text,"${i18n(punctuation)}: ", styles, "@import 'labels.css';")
         oxy_label(text, "${i18n(marks_punctuation)}: ", styles, "@import 'labels.css';")
+        oxy_combobox(           
+            edit, "@marks",
+            editable, false,
+            values, "none, some, all"
+            labels, "${i18n(none)}, ${i18n(some)}, ${i18n(all)}")
         oxy_label(text,"${i18n(placement_punctuation)}: ", styles, "@import 'labels.css';")
+        oxy_combobox(           
+            edit, "@placement",
+            editable, false,
+            values, "internal, external"
+            labels, "${i18n(internal)}, ${i18n(external)}")
+        oxy_label(text, "${i18n(p_punctuation)}:", styles, "@import 'labels.css';")
 }
-
 punctuation p {
     content:
         oxy_textArea(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
 }
-
 quotation::before {
     content: 
         oxy_label(text,"${i18n(quotation)}: ", styles, "@import 'labels.css';")
         oxy_label(text,"${i18n(marks_quotation)}: ", styles, "@import 'labels.css';")
+        oxy_combobox(           
+            edit, "@marks",
+            editable, false,
+            values, "none, some, all"
+            labels, "${i18n(none)}, ${i18n(some)}, ${i18n(all)}")
+        oxy_label(text, "${i18n(p_quotation)}:", styles, "@import 'labels.css';")
 }
-
 quotation p {
     content:
         oxy_textArea(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
 }
-
 hyphenation::before {
     content: 
         oxy_label(text,"${i18n(hyphenation)}: ", styles, "@import 'labels.css';")
         oxy_label(text,"${i18n(eol_hyphenation)}: ", styles, "@import 'labels.css';")
+        oxy_combobox(           
+            edit, "@eol",
+            editable, false,
+            values, "all, some, hard, none"
+            labels, "${i18n(all)}, ${i18n(some)}, ${i18n(hard)}, ${i18n(none)}")
+        oxy_label(text, "${i18n(p_hyphenation)}:", styles, "@import 'labels.css';")
 }
-
 hyphenation p {
     content:
         oxy_textArea(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
+     display:block;
 }
-
 segmentation::before {
     content: 
         oxy_label(text,"${i18n(segmentation)}: ", styles, "@import 'labels.css';");
 }
-
 segmentation p {
     content:
         oxy_textArea(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
+    display:block;
 }
-
 stdVals::before {
     content: 
         oxy_label(text,"${i18n(stdVals)}: ", styles, "@import 'labels.css';");
 }
-
 stdVals p {
     content:
         oxy_textArea(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
+     display:block;
 }
-
 interpretation::before {
     content: 
         oxy_label(text,"${i18n(interpretation)}: ", styles, "@import 'labels.css';");
 }
-
 interpretation p {
     content:
         oxy_textArea(
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
 }

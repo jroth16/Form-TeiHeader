@@ -10,10 +10,10 @@
       <a:xpathCondition>parent::profileDesc or self::profileDesc</a:xpathCondition>
       <a:arguments>
         <a:argument name="fragment"><textClass xmlns="http://www.tei-c.org/ns/1.0">
+  <classCode/>
   <keywords>
     <term/>
   </keywords>
-  <classCode/>
 </textClass></a:argument>
         <a:argument name="insertLocation">//teiHeader/profileDesc</a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>

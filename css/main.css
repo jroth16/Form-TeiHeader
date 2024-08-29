@@ -14,39 +14,34 @@
     font-size: 12pt !important;
     color: black !important;
 }
-
 TEI::before{
     content:
         oxy_label(text,"ID: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '@xml:id',
             columns, 30,
-            fontInherit,true, tooltip, '${i18n(id_desc)}');
+            fontInherit,true, 
+            tooltip, '${i18n(id_desc)}');
     visibility: -oxy-collapse-text;
     display:block;
-    white-space:nowrap;
     font-weight:bold;
     font-size: 1em; 
     color:  black;
 }
-
 author, publisher, note{
     -oxy-display-tags: none;
 }
-
 titleStmt, TEI::before, titleStmt > respStmt, fileDesc > editionStmt, fileDesc > publicationStmt, sourceDesc, encodingDesc, profileDesc, editionStmt, notesStmt, revisionDesc, profileDesc{
     padding: 0.2em;
     margin: 0 0 0.5em 0;
     -oxy-foldable: true;
 }
-
 publicationStmt, editionStmt, sourceDesc, encodingDesc, profileDesc{
     content: "";
     display: block;
     border-top: 3px solid gray !important;
     width: 40em !important;
 }
-
 teiHeader p, repository::before, forename::before, surname::before, forename::after, orgName::before, note::before, availability::before, availability::after, idno::after, idno[type]::before,settlement::before, settlement::after, repository::after, physDesc::after, encodingDesc::after, edition::after, date::before {
     content:"\a";
     white-space: pre;
@@ -54,7 +49,6 @@ teiHeader p, repository::before, forename::before, surname::before, forename::af
 oxy|comment {
     display:none !important;
 }
-
 surname{
     content:
         oxy_label(text,"${i18n(surname)}: ", styles, "@import 'labels.css';")
@@ -64,7 +58,6 @@ surname{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 forename{
     content:
         oxy_label(text,"${i18n(forename)}: ", styles, "@import 'labels.css';")
@@ -75,7 +68,6 @@ forename{
      visibility: -oxy-collapse-text;
      display: block;
 }
-
 teiHeader p{
     content:
         oxy_textArea(
@@ -84,7 +76,6 @@ teiHeader p{
             fontInherit,true);
     visibility: -oxy-collapse-text;
 }
-
 span {
     display: inline-block;
     background-color: #d8c8b7;
@@ -95,21 +86,16 @@ span::before {
     content: attr(type) ": ";
     background-color: #c6af98;
 }
-
 date {
     content: 
          oxy_label(text,"${i18n(date)}: ", styles, "@import 'labels.css';")
          oxy_datePicker(
              columns, 10, 
-             edit, "date",
+             edit, "@when",
              format, "yyyy-MM-dd");
 }
 
-/* ==========
- * titleStmt 
- * Beispiel Funktionalitaet
- * ==========*/
- 
+/* TitleStmt */
 titleStmt::before{
     content: 
         oxy_label(text,"${i18n(front_matter)}", styles, "@import 'labels.css';");
@@ -164,52 +150,38 @@ title[type="part"]{
                 columns, 40,
                 fontInherit,true);
 }
-
-/* =======
- * Ende Beispiel
- * =======
- */
-
 author persName{
     content:
         oxy_label(text,"${i18n(author)}: ", styles, "@import 'labels.css';")
 }
-
 author:first-of-type::before {
     content: 
         oxy_label(text,"${i18n(authors)}: ", styles, "@import 'labels.css';")
 }
-
 author:last-of-type::after{
      content:
         oxy_button(actionID, "author");
 }
-
 editor:first-of-type::before {
     content: 
         oxy_label(text,"${i18n(editors)}: ", styles, "@import 'labels.css';") !important;
 }
-
 editor::after{
     content:"";
 }
-
 editor:last-of-type::after{
     content: 
         oxy_button(actionID, "editor");
 }
-
 editor surname::before{
     content:
         oxy_label(text,"${i18n(editor)}: ", styles, "@import 'labels.css';")
 }
-
 respStmt{
     content: 
         oxy_label(text,"${i18n(respStmt)}: ", styles, "@import 'labels.css';");
     display:block;
 }
-
 respStmt note{
     content:
         oxy_label(text,"${i18n(respStmt_note)}: ", styles, "@import 'labels.css';")
@@ -219,7 +191,21 @@ respStmt note{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
+respStmt note:before {
+    display:none;
+}
+respStmt note:after {
+    display:none;
+}
+respStmt persName{
+    content:
+        oxy_label(text, "${i18n(ref_persName)}", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+    visibility: -oxy-collapse-text;
+}
 resp {
     content: 
         oxy_label(text,"${i18n(resp)}: ", styles, "@import 'labels.css';")
@@ -227,7 +213,7 @@ resp {
             edit, "#text",
             columns, 40,
             fontInherit,true);
-    visibility: -oxy-collapse-text;;
+    visibility: -oxy-collapse-text;
 }
 
 /* editionStmt */
@@ -235,10 +221,6 @@ editionStmt::before{
     content: 
         oxy_label(text,"${i18n(editionStmt)}: ", styles, "@import 'labels.css';");
     white-space: nowrap;
-}
-
-editionStmt{
-    content: oxy_button(actionID, "respStmt");
 }
 edition{
     content:
@@ -256,7 +238,6 @@ publicationStmt::before {
         oxy_label(text,"${i18n(publicationStmt)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
 }
-
 publisher{
     content:
         oxy_label(text,"${i18n(publisher)}: ", styles, "@import 'labels.css';")
@@ -266,7 +247,6 @@ publisher{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 email{
     content:
         oxy_label(text,"${i18n(email)}: ", styles, "@import 'labels.css';")
@@ -276,7 +256,6 @@ email{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 distributor{
     content:
         oxy_label(text,"${i18n(distributor)}: ", styles, "@import 'labels.css';")
@@ -286,7 +265,6 @@ distributor{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 pubPlace{
     content:
         oxy_label(text,"${i18n(pubPlace)}: ", styles, "@import 'labels.css';")
@@ -296,13 +274,12 @@ pubPlace{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 date[type="publication"]{
     content:
         oxy_label(text,"${i18n(publication)}: ", styles, "@import 'labels.css';")
         oxy_datePicker(
             columns, 10, 
-            edit, "@date",
+            edit, "@when",
             format, "yyyy-MM-dd");
 }
 date[type="firstPublication"]{
@@ -310,20 +287,17 @@ date[type="firstPublication"]{
         oxy_label(text,"${i18n(firstPublication)}: ", styles, "@import 'labels.css';")
         oxy_datePicker(
             columns, 10, 
-            edit, "@date",
+            edit, "@when",
             format, "yyyy-MM-dd");
 }
-
 availability{
     content:
         oxy_label(text,"${i18n(availability)}: ", styles, "@import 'labels.css';");
 }
-
 licence{
     content:
         oxy_label(text,"${i18n(licence)}: ", styles, "@import 'labels.css';");
 }
-
 idno[type] {
     content:
         oxy_label(text,attr(type), styles, "@import 'labels.css';")
@@ -333,8 +307,6 @@ idno[type] {
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
-
 idno[type]:last-of-type::after {
     content: "\a"
         oxy_button(actionID, "insert_idno");
@@ -346,12 +318,10 @@ notesStmt::before {
         oxy_label(text,"${i18n(notesStmt)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
 }
-
 notesStmt note::before{
     content:
          oxy_label(text,"${i18n(note)}: ", styles, "@import 'labels.css';");
 }
-
 notesStmt note {
     content:
         oxy_textArea(
@@ -367,7 +337,6 @@ sourceDesc::before {
         oxy_label(text,"${i18n(sourceDesc)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
 }
-
 bibl {
     content:
         oxy_label(text,"${i18n(bibl)}: ", styles, "@import 'labels.css';")
@@ -375,15 +344,48 @@ bibl {
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
-        
+     visibility: -oxy-collapse-text;      
 }
-
 msDesc {
     content: 
         oxy_label(text,"${i18n(msDesc)}: ", styles, "@import 'labels.css';") !important;
 }
-
+msIdentifier {
+    content: 
+        oxy_label(text,"${i18n(msIdentifier)}: ", styles, "@import 'labels.css';") !important;
+}
+institution{
+    content:
+        oxy_label(text, "${i18n(institution)}:", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+    visibility: -oxy-collapse-text;
+}
+collection{
+    content:
+        oxy_label(text, "${i18n(collection)}:", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+    visibility: -oxy-collapse-text;
+}
+idno{
+    content:
+        oxy_label(text, "${i18n(idno)}:", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+    visibility: -oxy-collapse-text;
+}
+sourceDesc msDesc institution:after,
+sourceDesc msDesc repository:after,
+sourceDesc msDesc collection:after{
+    display:none;
+}
 settlement{
     content:
         oxy_label(text,"${i18n(settlement)}: ", styles, "@import 'labels.css';")
@@ -393,7 +395,6 @@ settlement{
             fontInherit,true);
     visibility: -oxy-collapse-text;
 }
-
 repository{
      content:
         oxy_label(text,"${i18n(repository)}: ", styles, "@import 'labels.css';")
@@ -403,17 +404,14 @@ repository{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 repository::after {
     display:none;
 }
-
 physDesc::before {
     content: 
         oxy_label(text,"${i18n(physDesc)}: ", styles, "@import 'labels.css';")!important;
         white-space:nowrap;
 }
-
 typeDesc{
     content:
         oxy_label(text,"${i18n(typeDesc)}: ", styles, "@import 'labels.css';")
@@ -424,12 +422,10 @@ encodingDesc::before{
     content:
         oxy_label(text,"${i18n(encodingDesc)}: ", styles, "@import 'labels.css';");
 }
-
 projectDesc{
     content:
         oxy_label(text,"${i18n(projectDesc)}: ", styles, "@import 'labels.css';")
 }
-
 projectDesc p{
     content:
         oxy_textArea(
@@ -438,12 +434,10 @@ projectDesc p{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 editorialDecl{
     content:
         oxy_label(text,"${i18n(editorialDecl)}: ", styles, "@import 'labels.css';");
 }
-
 editorialDecl p{
     content:
         oxy_textArea(
@@ -452,17 +446,20 @@ editorialDecl p{
             fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 classDecl {
     content:
         oxy_label(text,"${i18n(classDecl)}: ", styles, "@import 'labels.css';");
 }
-
 taxonomy {
     content:
-        oxy_label(text,"${i18n(taxonomy)}: ", styles, "@import 'labels.css';");
+        oxy_label(text,"${i18n(taxonomy)}: ", styles, "@import 'labels.css';")
+        oxy_label(text,"${i18n(taxonomy_id)}: ", styles, "@import 'labels.css';")
+        oxy_textfield(
+            edit, "@xml:id",
+            columns, 40,
+            fontInherit,true);
+     visibility: -oxy-collapse-text; 
 }
-
 taxonomy bibl {
     content:
         oxy_label(text,"${i18n(taxonomy_bibl)}: ", styles, "@import 'labels.css';")
@@ -470,45 +467,40 @@ taxonomy bibl {
             edit, "#text",
             columns, 40,
             fontInherit,true);
-     visibility: -oxy-collapse-text;
-        
+     visibility: -oxy-collapse-text;       
 }
-
 taxonomy bibl::after {
     content:
         oxy_button(actionID, "delBibl")      
 }
-
 category {
     content:
         oxy_label(text,"${i18n(category)}: ", styles, "@import 'labels.css';")
+        oxy_label(text,"${i18n(category_id)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '@xml:id',
             columns, 20,
             fontInherit,true);
     visibility: -oxy-collapse-text;
 }
-
 category category{
     content:
         oxy_label(text,"${i18n(sub-category)}: ", styles, "@import 'labels.css';")
+        oxy_label(text,"${i18n(subcategory_id)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
             edit, '@xml:id',
             columns, 20,
             fontInherit,true);
     visibility: -oxy-collapse-text;
 }
-
 taxonomy::after {
     content: 
         oxy_button(actionID, "category")
 }
-
 category:has(category)::after {
     content: "\a"
         oxy_button(actionID, "subcategory") 
 }
-
 catDesc {
     content:
         oxy_label(text,"${i18n(catDesc)}: ", styles, "@import 'labels.css';")
@@ -519,27 +511,22 @@ catDesc {
      visibility: -oxy-collapse-text;
 }
 
-
 /* profileDesc */
 profileDesc{
     content:
         oxy_label(text,"${i18n(profileDesc)}: ", styles, "@import 'labels.css';");
 }
-
 creation date {
     content:
         oxy_label(text,"${i18n(creation)}: ", styles, "@import 'labels.css';")
         oxy_datePicker(
              columns, 10, 
-             edit, "date",
+             edit, "@when",
              format, "yyyy-MM-dd");
-     white-space:nowrap;
 }
-
 creation date::before{
     display:none;
 }
-
 language {
     content: 
         oxy_label(text,"${i18n(language)}: ", styles, "@import 'labels.css';")
@@ -554,22 +541,18 @@ language {
               fontInherit,true);
         visibility: -oxy-collapse-text;  
 }
-
 textClass::before{
     content:
         oxy_label(text,"${i18n(textClass)}: ", styles, "@import 'labels.css';")!important
 }
-
 keywords::before{
     content:
         oxy_label(text,"${i18n(keywords)}: ", styles, "@import 'labels.css';")!important;
 }
-
 keywords::after{
     content:"\a"
         oxy_button(actionID, "term");
 }
-
 term{
     content:
         oxy_label(text,"${i18n(term)}: ", styles, "@import 'labels.css';")
@@ -579,11 +562,9 @@ term{
              fontInherit,true);
      visibility: -oxy-collapse-text;
 }
-
 term::after{
     display:none;
 }
-
 classCode{
     content:
         oxy_label(text,"${i18n(classCode)}: ", styles, "@import 'labels.css';")
@@ -602,11 +583,12 @@ revisionDesc {
 revisionDesc::after {
     display:none;
 }
-
 listChange::before {
-    content: oxy_button(actionID, "revisionDesc") !important;
+    content: oxy_button(actionID, "revisionDesc")!important;
 }
-
+revisionDesc listChange {
+    -oxy-foldable:false;
+}
 change::before{
     content:
         oxy_label(text,"${i18n(date)}: ",  styles, "@import 'labels.css';")
@@ -614,18 +596,21 @@ change::before{
             columns, 10, 
             edit, "@when",
             format, "yyyy-MM-dd")
-        "\a"
         oxy_label(text, "${i18n(who)}: ", styles, "@import 'labels.css';") 
         oxy_textfield(
             edit, '@who',
             columns, 40,
             fontInherit,true)! important;
     visibility: -oxy-collapse-text;
-    white-space:nowrap;
-    display: block;
 }
-
-change p::before{
+change{
     content:
-        oxy_label(text,"${i18n(change)}: ", styles, "@import 'labels.css';");
+        oxy_label(text,"${i18n(change)}: ", styles, "@import 'labels.css';")
+        oxy_textArea(
+            edit, "#text",
+            columns, 40,
+            fontInherit,true);
+    display:block;
+    visibility: -oxy-collapse-text;
+    -oxy-show-placeholder:no !important;
 }

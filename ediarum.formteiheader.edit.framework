@@ -1174,6 +1174,11 @@
 													<toolbarEntry-array>
 														<toolbarItem>
 															<field name="actionID">
+																<String>date</String>
+															</field>
+														</toolbarItem>
+														<toolbarItem>
+															<field name="actionID">
 																<String>langUsage</String>
 															</field>
 														</toolbarItem>
