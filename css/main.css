@@ -13,6 +13,7 @@
     text-align:left;
     font-size: 12pt !important;
     color: black !important;
+    -oxy-display-tags: none;
 }
 TEI::before{
     content:
