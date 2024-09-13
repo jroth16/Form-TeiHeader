@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>//teiHeader/*</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><editionStmt xmlns="https://www.tei-c.org/ns/1.0">
+        <a:argument name="fragment"><editionStmt>
   <edition>
     <date/>
   </edition>
