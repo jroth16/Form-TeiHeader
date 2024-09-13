@@ -800,7 +800,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>${i18n(titleStmt)}</String>
+													<String>Titelangaben</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -854,7 +854,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>${i18n(editionStmt)}</String>
+													<String>Editionsangabe</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -893,7 +893,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>${i18n(publicationStmt)}</String>
+													<String>Angaben zur Veröffentlichung</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -957,7 +957,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>${i18n(notesStmt)}</String>
+													<String>Zusätzliche Anmerkungen</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -1001,7 +1001,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>${i18n(sourceDesc)}</String>
+													<String>Beschreibug der Quelle</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -1055,7 +1055,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>${i18n(encodingDesc)}</String>
+													<String>Kodierungsbeschreibung</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -1080,7 +1080,7 @@
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>delBibl</String>
+																<String>ediarum_remove_empty_attributes</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
@@ -1159,7 +1159,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>${i18n(profileDesc)}</String>
+													<String>Textprofilbeschreibung</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -1223,7 +1223,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>${i18n(revisionDesc)}</String>
+													<String>Dateihistorie</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
