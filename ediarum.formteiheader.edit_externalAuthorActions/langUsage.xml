@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::profileDesc or self::profileDesc</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><langUsage>
+        <a:argument name="fragment"><langUsage xmlns="http://www.tei-c.org/ns/1.0">
   <language ident="${ask('${i18n(language_abbr)}:', generic, )}"/>
 </langUsage></a:argument>
         <a:argument name="insertLocation">//teiHeader/profileDesc</a:argument>

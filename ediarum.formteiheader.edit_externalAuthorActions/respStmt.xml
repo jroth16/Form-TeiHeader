@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>//teiHeader/fileDesc/titleStmt</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><respStmt>
+        <a:argument name="fragment"><respStmt xmlns="http://www.tei-c.org/ns/1.0">
   <persName ref="${ask('GND, VIAF etc. (URI) der Person', generic, '')}">
     <surname/>
     <forename/>

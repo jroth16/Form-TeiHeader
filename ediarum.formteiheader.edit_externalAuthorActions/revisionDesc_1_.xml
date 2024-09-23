@@ -17,7 +17,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>not(//revisionDesc)</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><revisionDesc>
+        <a:argument name="fragment"><revisionDesc xmlns="http://www.tei-c.org/ns/1.0">
   <listChange>
     <change when="${date(yyyy-MM-dd)}" who="${ask('${i18n(change_who)}', editable_combobox, ('${author.name}':'${author.name}';), '${author.name}')}"/>
   </listChange>

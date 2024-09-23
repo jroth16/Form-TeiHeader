@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::editorialDecl or self::editorialDecl</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><correction status="${ask('${i18n(status_correction)}', combobox, ('high':'${i18n(high)}';'medium':'$i18n(medium)}'; 'low':'$i18n(low)}';'unknown':'$i18n(unknown)}'))}" method="${ask('${i18n(method_correction)}', combobox, ('silent':'${i18n(silent)}';'markup':'$i18n(markup)}'))}">
+        <a:argument name="fragment"><correction xmlns="http://www.tei-c.org/ns/1.0" status="${ask('${i18n(status_correction)}', combobox, ('high':'${i18n(high)}';'medium':'$i18n(medium)}'; 'low':'$i18n(low)}';'unknown':'$i18n(unknown)}'))}" method="${ask('${i18n(method_correction)}', combobox, ('silent':'${i18n(silent)}';'markup':'$i18n(markup)}'))}">
   <p/>
 </correction></a:argument>
         <a:argument name="insertLocation">//encodingDesc/editorialDecl</a:argument>

@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::editorialDecl or self::editorialDecl</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><hyphenation eol="${ask('${i18n(eol_hyphenation)}', combobox, ('all':'${i18n(all)}';'some':'${i18n(some)}'; 'hard':'${i18n(hard)}';'none':'${i18n(none)}'))}">
+        <a:argument name="fragment"><hyphenation xmlns="http://www.tei-c.org/ns/1.0" eol="${ask('${i18n(eol_hyphenation)}', combobox, ('all':'${i18n(all)}';'some':'${i18n(some)}'; 'hard':'${i18n(hard)}';'none':'${i18n(none)}'))}">
   <p/>
 </hyphenation></a:argument>
         <a:argument name="insertLocation">//encodingDesc/editorialDecl</a:argument>
