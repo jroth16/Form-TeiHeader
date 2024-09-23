@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::editorialDecl or self::editorialDecl</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><stdVals xmlns="https://www.tei-c.org/ns/1.0">
+        <a:argument name="fragment"><stdVals>
   <p/>
 </stdVals></a:argument>
         <a:argument name="insertLocation">//encodingDesc/editorialDecl</a:argument>

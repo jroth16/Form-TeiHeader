@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>//teiHeader/fileDesc/titleStmt</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><editor xmlns="http://www.tei-c.org/ns/1.0">
+        <a:argument name="fragment"><editor>
   <persName>
     <surname/>
     <forename/>
@@ -22,7 +22,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::editor or self::editor</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><editor xmlns="http://www.tei-c.org/ns/1.0">
+        <a:argument name="fragment"><editor>
   <persName>
     <surname/>
     <forename/>

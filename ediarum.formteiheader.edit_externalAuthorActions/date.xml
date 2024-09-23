@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::publicationStmt or self::publicationStmt</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><date xmlns="http://www.tei-c.org/ns/1.0" type="${ask('${i18n(type_date)}', combobox, ('firstPublication':'${i18n(firstPublication)}';'publication':'${i18n(publication)}'))}"/></a:argument>
+        <a:argument name="fragment"><date type="${ask('${i18n(type_date)}', combobox, ('firstPublication':'${i18n(firstPublication)}';'publication':'${i18n(publication)}'))}"/></a:argument>
         <a:argument name="insertLocation">//fileDesc/publicationStmt</a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>
       </a:arguments>
@@ -17,7 +17,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::date[@type] or self::date[@type]</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><date xmlns="http://www.tei-c.org/ns/1.0" type="${ask('${i18n(type_date)}:', combobox, ('firstPublication':'${i18n(firstPublication)}';'publication':'${i18n(publication)}';))}"/></a:argument>
+        <a:argument name="fragment"><date type="${ask('${i18n(type_date)}:', combobox, ('firstPublication':'${i18n(firstPublication)}';'publication':'${i18n(publication)}';))}"/></a:argument>
         <a:argument name="insertLocation">date[@type]</a:argument>
         <a:argument name="insertPosition">After</a:argument>
       </a:arguments>
@@ -25,7 +25,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::profileDesc or self::profileDesc</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><date xmlns="http://www.tei-c.org/ns/1.0"/></a:argument>
+        <a:argument name="fragment"><date/></a:argument>
         <a:argument name="insertLocation">//profileDesc/creation</a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>
       </a:arguments>

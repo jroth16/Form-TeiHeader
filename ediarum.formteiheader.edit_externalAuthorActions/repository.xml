@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::msDesc or self::msDesc</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><repository smlns="https://www.tei-c.org/ns/1.0"/></a:argument>
+        <a:argument name="fragment"><repository/></a:argument>
         <a:argument name="insertLocation">//sourceDesc/msDesc/msIdentifier</a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>
       </a:arguments>

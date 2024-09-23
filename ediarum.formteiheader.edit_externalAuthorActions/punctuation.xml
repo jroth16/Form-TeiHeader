@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::editorialDecl or self::editorialDecl</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><punctuation xmlns="https://www.tei-c.org/ns/1.0" marks="${ask('${i18n(marks_punctuation)}', combobox, ('none':'${i18n(none)}';'some':'${i18n(some)}'; 'all':'${i18n(all)}'))}" placement="${ask('${i18n(placement_punctuation)}', combobox, ('internal':'${i18n(internal)}';'external':'$i18n(external)}'))}">
+        <a:argument name="fragment"><punctuation marks="${ask('${i18n(marks_punctuation)}', combobox, ('none':'${i18n(none)}';'some':'${i18n(some)}'; 'all':'${i18n(all)}'))}" placement="${ask('${i18n(placement_punctuation)}', combobox, ('internal':'${i18n(internal)}';'external':'$i18n(external)}'))}">
   <p/>
 </punctuation></a:argument>
         <a:argument name="insertLocation">//encodingDesc/editorialDecl</a:argument>

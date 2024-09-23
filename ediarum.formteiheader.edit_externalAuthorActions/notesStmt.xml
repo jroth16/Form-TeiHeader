@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>//teiHeader/fileDesc</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><notesStmt xmlns="http://www.tei-c.org/ns/1.0"><note/></notesStmt></a:argument>
+        <a:argument name="fragment"><notesStmt><note/></notesStmt></a:argument>
         <a:argument name="insertLocation">//sourceDesc</a:argument>
         <a:argument name="insertPosition">Before</a:argument>
       </a:arguments>
@@ -17,7 +17,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>not(//correspDesc)</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><notesStmt xmlns="http://www.tei-c.org/ns/1.0"><note type="editorial"><p/></note></notesStmt></a:argument>
+        <a:argument name="fragment"><notesStmt><note type="editorial"><p/></note></notesStmt></a:argument>
         <a:argument name="insertLocation">//sourceDesc</a:argument>
         <a:argument name="insertPosition">Before</a:argument>
       </a:arguments>

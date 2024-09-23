@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::publicationStmt or self::publicationStmt</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><publisher xmlns="https://www.tei-c.org/ns/1.0"/></a:argument>
+        <a:argument name="fragment"><publisher/></a:argument>
         <a:argument name="insertLocation">//fileDesc/publicationStmt</a:argument>
       </a:arguments>
     </a:operation>

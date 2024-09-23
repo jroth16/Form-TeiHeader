@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>//sourceDesc/msDesc[not(physDesc)]</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><physDesc xmlns="http://www.tei-c.org/ns/1.0">
+        <a:argument name="fragment"><physDesc>
   <p/>
 </physDesc></a:argument>
         <a:argument name="insertLocation">//sourceDesc/msDesc</a:argument>

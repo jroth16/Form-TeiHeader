@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::profileDesc or self::profileDesc</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><correspAction xmlns="https://www.tei-c.org/ns/1.0" type="${ask('${i18n(type_corresp)}', combobox, ('sent':'${i18n(sent)}';'received':'${i18n(received)}';'transmitted':'${i18n(transmitted)}';'redirected':'${i18n(redirected)}';'forwarded':'${i18n(forwarded)}'))}">
+        <a:argument name="fragment"><correspAction type="${ask('${i18n(type_corresp)}', combobox, ('sent':'${i18n(sent)}';'received':'${i18n(received)}';'transmitted':'${i18n(transmitted)}';'redirected':'${i18n(redirected)}';'forwarded':'${i18n(forwarded)}'))}">
     <persName/>
     <settlement/>
     <date/>

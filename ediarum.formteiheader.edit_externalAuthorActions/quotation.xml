@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::editorialDecl or self::editorialDecl</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><quotation xmlns="https://www.tei-c.org/ns/1.0" marks="${ask('${i18n(marks_quotation)}', combobox, ('none':'${i18n(none)}';'some':'${i18n(some)}'; 'all':'${i18n(all)}'))}">
+        <a:argument name="fragment"><quotation marks="${ask('${i18n(marks_quotation)}', combobox, ('none':'${i18n(none)}';'some':'${i18n(some)}'; 'all':'${i18n(all)}'))}">
   <p/>
 </quotation></a:argument>
         <a:argument name="insertLocation">//encodingDesc/editorialDecl</a:argument>

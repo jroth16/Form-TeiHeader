@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::publicationStmt or self::publicationStmt</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><idno xmlns="http://www.tei-c.org/ns/1.0" type="${ask('${i18n(type_idno)}', combobox, ('ISBN':'ISBN'; 'ISSN':'ISSN';'DOI':'DOI';'URI':'URI'; 'VIAF':'VIAF'; 'ESTC':'ESTC'; 'OCLC':'OCLC'))}"/></a:argument>
+        <a:argument name="fragment"><idno type="${ask('${i18n(type_idno)}', combobox, ('ISBN':'ISBN'; 'ISSN':'ISSN';'DOI':'DOI';'URI':'URI'; 'VIAF':'VIAF'; 'ESTC':'ESTC'; 'OCLC':'OCLC'))}"/></a:argument>
         <a:argument name="insertLocation">//fileDesc/publicationStmt</a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>
       </a:arguments>

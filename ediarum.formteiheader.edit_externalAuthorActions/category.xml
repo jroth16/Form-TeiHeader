@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::taxonomy or self::taxonomy</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><category xmlns="http://www.tei-c.org/ns/1.0" xml:id="${ask('${i18n(category_id)}:', generic, )}">
+        <a:argument name="fragment"><category xml:id="${ask('${i18n(category_id)}:', generic, )}">
   <category xml:id="${ask('${i18n(subcategory_id)}:', generic, )}">
   <catDesc/>
 </category>

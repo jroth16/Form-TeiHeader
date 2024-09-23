@@ -11,7 +11,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::titleStmt or self::titleStmt</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><title xmlns="http://www.tei-c.org/ns/1.0" type="${ask('${i18n(type_title)}', combobox, ('main':'${i18n(main_title)}';'sub':'${i18n(sub_title)}';'volume':'${i18n(vol_title)}';'part':'${i18n(part_title)}'))}">${caret}</title></a:argument>
+        <a:argument name="fragment"><title type="${ask('${i18n(type_title)}', combobox, ('main':'${i18n(main_title)}';'sub':'${i18n(sub_title)}';'volume':'${i18n(vol_title)}';'part':'${i18n(part_title)}'))}">${caret}</title></a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>
       </a:arguments>
     </a:operation>

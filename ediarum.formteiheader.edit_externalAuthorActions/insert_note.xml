@@ -9,14 +9,14 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::notesStmt or self::notesStmt</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><note xmlns="http://www.tei-c.org/ns/1.0"/></a:argument>
+        <a:argument name="fragment"><note/></a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>
       </a:arguments>
     </a:operation>
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::respStmt or self::respStmt</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><note xmlns="http://www.tei-c.org/ns/1.0"/></a:argument>
+        <a:argument name="fragment"><note/></a:argument>
         <a:argument name="insertLocation">self::respStmt/*[last()]</a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>
       </a:arguments>

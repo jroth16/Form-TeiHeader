@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::publicationStmt or self::publicationStmt</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><availability xmlns="https://www.tei-c.org/ns/1.0">
+        <a:argument name="fragment"><availability>
   <licence>
     <p/>
   </licence>

@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::textClass or self::textClass</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><term xmlns="http://www.tei-c.org/ns/1.0"/></a:argument>
+        <a:argument name="fragment"><term/></a:argument>
         <a:argument name="insertLocation">//textClass/keywords</a:argument>
         <a:argument name="insertPosition">Inside as last child</a:argument>
       </a:arguments>

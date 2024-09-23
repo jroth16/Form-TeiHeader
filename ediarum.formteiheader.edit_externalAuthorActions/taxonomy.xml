@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::classDecl or self::classDecl</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><taxonomy xmlns="https://www.tei-c.org/ns/1.0" xml:id="${ask('${i18n(taxonomy_id)}:', generic, )}">
+        <a:argument name="fragment"><taxonomy xml:id="${ask('${i18n(taxonomy_id)}:', generic, )}">
   <bibl/>
   <category xml:id="${ask('${i18n(category_id)}:', generic, )}">
     <category xml:id="${ask('${i18n(subcategory_id)}:', generic, )}">

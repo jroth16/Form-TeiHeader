@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::profileDesc or self::profileDesc</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><textClass xmlns="http://www.tei-c.org/ns/1.0">
+        <a:argument name="fragment"><textClass>
   <classCode/>
   <keywords>
     <term/>

@@ -1080,12 +1080,12 @@
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>ediarum_remove_empty_attributes</String>
+																<String>taxonomy</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>taxonomy</String>
+																<String>delBibl</String>
 															</field>
 														</toolbarItem>
 														<toolbarItem>
