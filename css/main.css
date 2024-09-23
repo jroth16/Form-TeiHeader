@@ -113,6 +113,9 @@ title{
     visibility: -oxy-collapse-text;
     display: block;
 }
+title:not([type]){
+    display:none;
+}
 title[type="main"] {
     content:
         oxy_label(text,"${i18n(main_title)}: ", styles, "@import 'labels.css';")
