@@ -9,7 +9,7 @@
     <a:operation id="InsertFragmentOperation">
       <a:xpathCondition>parent::sourceDesc or self::sourceDesc</a:xpathCondition>
       <a:arguments>
-        <a:argument name="fragment"><bibl xmlns="http://www.tei-c.org/ns/1.0"/></a:argument>
+        <a:argument name="fragment"><bibl/></a:argument>
         <a:argument name="insertLocation">//fileDesc/sourceDesc</a:argument>
         <a:argument name="insertPosition">Inside as first child</a:argument>
       </a:arguments>
