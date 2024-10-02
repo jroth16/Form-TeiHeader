@@ -6,7 +6,7 @@ correspDesc {
         oxy_label(text, "${i18n(correspDesc)}: ", styles, "@import 'labels.css';")
         oxy_label(text, "${i18n(correspDesc_id)}: ", styles, "@import 'labels.css';")
         oxy_textfield(
-            edit, "#text",
+            edit, "@xml:id",
             columns, 60,
             fontInherit,true);
      visibility: -oxy-collapse-text;
