@@ -800,7 +800,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>Titelangaben</String>
+													<String>${i18n(titleStmt)}</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -854,7 +854,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>Editionsangabe</String>
+													<String>${i18n(editionStmt)}</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -893,7 +893,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>Angaben zur Veröffentlichung</String>
+													<String>${i18n(publicationStmt)}</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -957,7 +957,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>Zusätzliche Anmerkungen</String>
+													<String>${i18n(notesStmt)}</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -1001,7 +1001,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>Beschreibug der Quelle</String>
+													<String>${i18n(sourceDesc)}</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -1055,7 +1055,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>Kodierungsbeschreibung</String>
+													<String>${i18n(encodingDesc)}</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -1159,7 +1159,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>Textprofilbeschreibung</String>
+													<String>${i18n(profileDesc)}</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>
@@ -1223,7 +1223,7 @@
 										<field name="value">
 											<toolbar>
 												<field name="id">
-													<String>Dateihistorie</String>
+													<String>${i18n(revisionDesc)}</String>
 												</field>
 												<field name="type">
 													<Integer>3</Integer>

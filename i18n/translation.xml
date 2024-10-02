@@ -224,7 +224,7 @@
     </key>
     <key value="sourceDesc">
         <val lang="en_US">Source Description</val>
-        <val lang="de_DE">Beschreibung der Quelle</val>
+        <val lang="de_DE">Quellenbeschreibung</val>
     </key>
     <key value="bibl">
         <val lang="en_US">Bibliographic description</val>
