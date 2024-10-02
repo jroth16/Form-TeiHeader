@@ -454,75 +454,19 @@ classDecl {
     content:
         oxy_label(text,"${i18n(classDecl)}: ", styles, "@import 'labels.css';");
 }
-taxonomy {
-    content:
-        oxy_label(text,"${i18n(taxonomy)}: ", styles, "@import 'labels.css';")
-        oxy_label(text,"${i18n(taxonomy_id)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, "@xml:id",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text; 
-}
-taxonomy bibl {
-    content:
-        oxy_label(text,"${i18n(taxonomy_bibl)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text;       
-}
-taxonomy bibl::after {
-    content:
-        oxy_button(actionID, "delBibl")      
-}
-category {
-    content:
-        oxy_label(text,"${i18n(category)}: ", styles, "@import 'labels.css';")
-        oxy_label(text,"${i18n(category_id)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, '@xml:id',
-            columns, 20,
-            fontInherit,true);
-    visibility: -oxy-collapse-text;
-}
-category category{
-    content:
-        oxy_label(text,"${i18n(sub-category)}: ", styles, "@import 'labels.css';")
-        oxy_label(text,"${i18n(subcategory_id)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, '@xml:id',
-            columns, 20,
-            fontInherit,true);
-    visibility: -oxy-collapse-text;
-}
-taxonomy::after {
-    content: 
-        oxy_button(actionID, "category")
-}
-category:has(category)::after {
-    content: "\a"
-        oxy_button(actionID, "subcategory") 
-}
-catDesc {
-    content:
-        oxy_label(text,"${i18n(catDesc)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text;
-}
 
 /* profileDesc */
 profileDesc{
     content:
         oxy_label(text,"${i18n(profileDesc)}: ", styles, "@import 'labels.css';");
 }
-creation date {
+creation {
     content:
         oxy_label(text,"${i18n(creation)}: ", styles, "@import 'labels.css';")
+        oxy_button(actionID, "date");
+}
+creation date {
+    content:
         oxy_datePicker(
              columns, 10, 
              edit, "@when",
@@ -539,11 +483,11 @@ language {
              columns, 40,
              fontInherit,true)
        oxy_label(text,"${i18n(language_abbr)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
+       oxy_textfield(
               edit, "@ident",
               columns, 40,
               fontInherit,true);
-        visibility: -oxy-collapse-text;  
+       visibility: -oxy-collapse-text;  
 }
 textClass::before{
     content:
