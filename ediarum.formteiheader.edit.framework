@@ -1080,31 +1080,6 @@
 														</toolbarItem>
 														<toolbarItem>
 															<field name="actionID">
-																<String>taxonomy</String>
-															</field>
-														</toolbarItem>
-														<toolbarItem>
-															<field name="actionID">
-																<String>delBibl</String>
-															</field>
-														</toolbarItem>
-														<toolbarItem>
-															<field name="actionID">
-																<String>category</String>
-															</field>
-														</toolbarItem>
-														<toolbarItem>
-															<field name="actionID">
-																<String>subcategory</String>
-															</field>
-														</toolbarItem>
-														<toolbarItem>
-															<field name="actionID">
-																<String>term</String>
-															</field>
-														</toolbarItem>
-														<toolbarItem>
-															<field name="actionID">
 																<String>correction</String>
 															</field>
 														</toolbarItem>
