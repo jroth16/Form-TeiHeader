@@ -1,6 +1,10 @@
 @import url("../../Form-TeiHeader/css/main.css");
 
 /* profileDesc */
+profileDesc {
+    content:
+        oxy_button(actionID, "correspDesc");
+}
 correspDesc {
     content:
         oxy_label(text, "${i18n(correspDesc)}: ", styles, "@import 'labels.css';")

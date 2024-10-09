@@ -7,7 +7,7 @@
   <a:description>${i18n(encodingDesc_desc)}</a:description>
   <a:operations>
     <a:operation id="InsertFragmentOperation">
-      <a:xpathCondition>//teiHeader/*</a:xpathCondition>
+      <a:xpathCondition>not(exists(//teiHeader/encodingDesc))</a:xpathCondition>
       <a:arguments>
         <a:argument name="fragment"><encodingDesc xmlns="http://www.tei-c.org/ns/1.0">
   <projectDesc>
@@ -16,16 +16,6 @@
   <editorialDecl>
     <p/>
   </editorialDecl>
-  <classDecl>
-    <taxonomy xml:id="${ask('${i18n(taxonomy_id)}:', generic, )}">
-      <bibl/>
-      <category xml:id="${ask('${i18n(category_id)}:', generic, )}">
-        <category xml:id="${ask('${i18n(subcategory_id)}:', generic, )}">
-          <catDesc/>
-        </category>
-      </category>
-    </taxonomy>
-  </classDecl>
 </encodingDesc></a:argument>
         <a:argument name="insertLocation">//profileDesc</a:argument>
         <a:argument name="insertPosition">Before</a:argument>

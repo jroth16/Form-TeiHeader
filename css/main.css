@@ -106,7 +106,9 @@ titleStmt::before{
 }
 titleStmt{
     content: oxy_button(actionID, "title", showIcon, true, showText, true)
-             oxy_button(actionID, "respStmt");
+             oxy_button(actionID, "respStmt")
+             oxy_button(actionID, "author")
+             oxy_button(actionID, "editor");
     display: block;
 }
 title{
@@ -220,6 +222,12 @@ resp {
     visibility: -oxy-collapse-text;
 }
 
+titleStmt::after{
+    content:
+        oxy_button(actionID, "editionStmt");
+    display: block;
+}
+
 /* editionStmt */
 editionStmt::before{
     content: 
@@ -241,6 +249,13 @@ publicationStmt::before {
     content:
         oxy_label(text,"${i18n(publicationStmt)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
+}
+publicationStmt{
+    content:
+        oxy_buttonGroup(
+            label, '${i18n(publicationStmt)}', 
+            actionIDs, "publisher, distributor, availability, pubPlace, date, insert_idno"
+          );
 }
 publisher{
     content:
@@ -316,11 +331,20 @@ idno[type]:last-of-type::after {
         oxy_button(actionID, "insert_idno");
 }
 
+publicationStmt::after{
+    content: "\a"
+        oxy_button(actionID, "notesStmt");
+}
+
 /* notesStmt */
 notesStmt::before {
     content: 
         oxy_label(text,"${i18n(notesStmt)}: ", styles, "@import 'labels.css';");
     white-space:nowrap;
+}
+notesStmt {
+    content:
+        oxy_button(actionID, "insert_note");
 }
 notesStmt note::before{
     content:
@@ -338,8 +362,15 @@ notesStmt note {
 /* sourceDesc */
 sourceDesc::before {
     content:
-        oxy_label(text,"${i18n(sourceDesc)}: ", styles, "@import 'labels.css';");
+        oxy_label(text,"${i18n(sourceDesc)}: ", styles, "@import 'labels.css';");   
     white-space:nowrap;
+}
+sourceDesc{
+    content:
+        oxy_buttonGroup(
+            label, '${i18n(sourceDesc)}', 
+            actionIDs, "msDesc/physDesc, insert_bibl"
+          );
 }
 bibl {
     content:
@@ -390,27 +421,6 @@ sourceDesc msDesc repository:after,
 sourceDesc msDesc collection:after{
     display:none;
 }
-settlement{
-    content:
-        oxy_label(text,"${i18n(settlement)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-    visibility: -oxy-collapse-text;
-}
-repository{
-     content:
-        oxy_label(text,"${i18n(repository)}: ", styles, "@import 'labels.css';")
-        oxy_textfield(
-            edit, "#text",
-            columns, 40,
-            fontInherit,true);
-     visibility: -oxy-collapse-text;
-}
-repository::after {
-    display:none;
-}
 physDesc::before {
     content: 
         oxy_label(text,"${i18n(physDesc)}: ", styles, "@import 'labels.css';")!important;
@@ -419,6 +429,10 @@ physDesc::before {
 typeDesc{
     content:
         oxy_label(text,"${i18n(typeDesc)}: ", styles, "@import 'labels.css';")
+}
+sourceDesc::after{
+    content:
+        oxy_button(actionID, "encodingDesc");
 }
 
 /* encodingDesc */
@@ -458,7 +472,11 @@ classDecl {
 /* profileDesc */
 profileDesc{
     content:
-        oxy_label(text,"${i18n(profileDesc)}: ", styles, "@import 'labels.css';");
+        oxy_label(text,"${i18n(profileDesc)}: ", styles, "@import 'labels.css';")
+        oxy_buttonGroup(
+            label, '${i18n(profileDesc)}', 
+            actionIDs, "langUsage, textClass"
+          );;
 }
 creation {
     content:
@@ -521,6 +539,10 @@ classCode{
              columns, 40,
              fontInherit,true);
      visibility: -oxy-collapse-text;
+}
+profileDesc::after{
+    content:
+        oxy_button(actionID, "revisionDesc");
 }
 
 /* revisionDesc */

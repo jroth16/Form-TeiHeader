@@ -23,7 +23,8 @@
       </a:arguments>
     </a:operation>
     <a:operation id="InsertFragmentOperation">
-      <a:xpathCondition>parent::profileDesc or self::profileDesc</a:xpathCondition>
+      <a:xpathCondition>not(exists(//profileDesc/creation/date))
+</a:xpathCondition>
       <a:arguments>
         <a:argument name="fragment"><date xmlns="http://www.tei-c.org/ns/1.0"/></a:argument>
         <a:argument name="insertLocation">//profileDesc/creation</a:argument>

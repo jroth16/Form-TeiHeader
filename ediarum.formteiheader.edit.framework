@@ -1024,16 +1024,6 @@
 																<String>insert_bibl</String>
 															</field>
 														</toolbarItem>
-														<toolbarItem>
-															<field name="actionID">
-																<String>repository</String>
-															</field>
-														</toolbarItem>
-														<toolbarItem>
-															<field name="actionID">
-																<String>settlement</String>
-															</field>
-														</toolbarItem>
 													</toolbarEntry-array>
 												</field>
 											</toolbar>
@@ -1714,7 +1704,7 @@
 											<Integer>-1</Integer>
 										</field>
 										<field name="value">
-											<Integer>4</Integer>
+											<Integer>5</Integer>
 										</field>
 										<field name="patchHandling">
 											<String>set</String>
